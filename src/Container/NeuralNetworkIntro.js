@@ -1,10 +1,10 @@
 import React, { Component } from './node_modules/react';
-import TextAndImg from '../Component/TextAndImg';
+import TextAndImg from '../Components/TextAndImg';
 
 class NeuralNetworkIntro extends Component {
     render() {
         return (
-            <div>
+            <div className='container'>
                 <h1>類神經網路</h1>
                 <h2>Artificial Neural Network</h2>
                 <TextAndImg
