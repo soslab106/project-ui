@@ -1,4 +1,4 @@
-import React, { Component } from './node_modules/react';
+import React, { Component } from '../../node_modules/react';
 import TextAndImg from '../Components/TextAndImg';
 
 class NeuralNetworkIntro extends Component {
@@ -11,7 +11,7 @@ class NeuralNetworkIntro extends Component {
                     textWidth='9'
                     imgWidth='3'
                     text='gijhfiosajriergtre'
-                    imgPath='../../public/logo192.png'
+                    imgPath='../../public/images/howAI-icon.png'
                 />
             </div>
         );
