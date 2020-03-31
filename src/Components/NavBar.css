@@ -1,6 +1,14 @@
+.navbar{
+  /* border: 1px solid #50EAFF; */
+}
+
 .btn-personal{
   border-radius: 80px;
-  border: solid 1.25px blue;
+  border: solid 1.25px #50EAFF;
   padding: 3px;
   width: 120px;
+}
+
+.nav-link{
+  color: #50EAFF !important;
 }

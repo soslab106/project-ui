@@ -5,7 +5,7 @@ class TextAndImg extends Component {
         return (
             <div className='d-flex'>
                 <div className={'col-'+this.props.textWidth}>{this.props.text}</div>
-                <div className={'col-'+this.props.imgWidth}><img src={this.props.imgPath}/></div>
+                <div className={'col-'+this.props.imgWidth}><img alt=" " src={this.props.imgPath}/></div>
             </div>
         );
     }

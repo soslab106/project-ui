@@ -5,8 +5,8 @@ class NeuralNetworkIntro extends Component {
     render() {
         return (
             <div className='container'>
-                <h1>類神經網路</h1>
-                <h2>Artificial Neural Network</h2>
+                <h1 className='title'>類神經網路</h1>
+                <h2 className='title'>Artificial Neural Network</h2>
                 <TextAndImg
                     textWidth='9'
                     imgWidth='3'
