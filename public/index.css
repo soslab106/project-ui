@@ -6,3 +6,7 @@
 .title{
     color: #31A3E0;
 }
+
+.bg-light-block{
+    background-color: rgba(18, 86, 123, 0.13);
+}
