@@ -47,7 +47,7 @@ class Welcome extends Component {
         </div>
         <div className="col col-sm-6 col-lg-4">
           <img
-            src="https://www.oxxostudio.tw/img/articles/201407/20140726_1_02.png"
+            src="https://miro.medium.com/max/676/1*XEgA1TTwXa5AvAdw40GFow.png"
             style={{ width: "500px", height: "500px" }}
           ></img>
         </div>
