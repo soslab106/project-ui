@@ -1,28 +1,8 @@
+
 .navbar {
   /* border: 1px solid #50EAFF; */
 }
 
-.btn {
-  border-radius: 80px !important;
-  border: solid 1.25px;
-  padding: 3px 10px !important;
-}
-
-.btn-personal {
-  border-radius: 80px;
-  border: solid 1.25px #50eaff;
-}
-
 .nav-link {
   color: #50eaff !important;
-}
-
-.btn-previous {
-  line-height: 30px;
-  border: 0px;
-  background-color: rgba(56, 125, 226, 0.26);
-  color: #50eaff;
-}
-.btn-previous:hover {
-  background-color: #fff;
 }
