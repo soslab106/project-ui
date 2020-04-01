@@ -24,26 +24,8 @@ class Welcome extends Component {
             Contentalotofcontent
           </p>
           <div className="d-flex align-items-center">
-            <button
-              className="btn btn-lg"
-              style={{
-                borderRradius: "80px",
-                border: "solid 1.25px #50eaff",
-                color: "#50eaff"
-              }}
-            >
-              進入教學
-            </button>
-            <button
-              className="btn btn-lg ml-5"
-              style={{
-                borderRradius: "80px",
-                border: "solid 1.25px #50eaff",
-                color: "#50eaff"
-              }}
-            >
-              進入訓練
-            </button>
+            <button className="btn btn-lg btn-main">進入教學</button>
+            <button className="btn btn-lg ml-5 btn-main">進入訓練</button>
           </div>
         </div>
         <div className="col col-sm-6 col-lg-4">
