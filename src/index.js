@@ -1,29 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom'
-
-import App from './Components/App'
-
-
-ReactDOM.render(<App />, document.querySelector('#root'))
-
-/////
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import { routes } from './component/routes';
+import React from "react";
+import ReactDOM from "react-dom";
+import { routes } from "./route";
 import { renderRoutes } from 'react-router-config'
-import './index.css';
-import Navbar from './component/Frame/Navbar'
+import { BrowserRouter } from "react-router-dom";
 
-//login = localstorage sess or cookie
-ReactDOM.render((
-    <BrowserRouter>
-        <Navbar login={true} />
-        <div className='d-flex'>
-            {renderRoutes(routes)}
-        </div>
-    </BrowserRouter>
-), document.getElementById('root'));
+// import App from './Components/App'
+import NavBar from "./Components/NavBar";
+import Footer from "./Components/Footer";
 
+ReactDOM.render(
+  <BrowserRouter>
+      <NavBar />
+      {renderRoutes(routes)}
+      <Footer />
+  </BrowserRouter>,
+  document.getElementById("root")
+);
 
 // ReactDOM.render(<Main />, document.getElementById('root'));
