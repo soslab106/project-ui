@@ -4,8 +4,9 @@ class Welcome extends Component {
   render() {
     return (
       <div className="container d-flex">
-        <div className="col col-sm-6 col-lg-8">
+        <div className="col col-sm-6 col-lg-8 d-flex flex-column justify-content-center">
           <h1
+            className="my-0"
             style={{
               lineHeight: "56px",
               fontSize: "48px",
@@ -15,16 +16,16 @@ class Welcome extends Component {
           >
             好AI實驗室，讓你愛上AI
           </h1>
-          <p>
+          <p className="my-4">
             ContentalotofcontentContentalotofcontentContentalotofcontentContentalotofcontent
             Contentalotofcontent Contentalotofcontent Contentalotofcontent
             Contentalotofcontent Contentalotofcontent Contentalotofcontent
             Contentalotofcontent Contentalotofcontent Contentalotofcontent
             Contentalotofcontent
           </p>
-          <div>
+          <div className="d-flex align-items-center">
             <button
-              className="btn"
+              className="btn btn-lg"
               style={{
                 borderRradius: "80px",
                 border: "solid 1.25px #50eaff",
@@ -34,7 +35,7 @@ class Welcome extends Component {
               進入教學
             </button>
             <button
-              className="btn"
+              className="btn btn-lg ml-5"
               style={{
                 borderRradius: "80px",
                 border: "solid 1.25px #50eaff",
