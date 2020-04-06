@@ -71,12 +71,12 @@ class Intro extends Component {
             />
           </div>
           <div className="d-flex justify-content-center">
-            <button className="btn btn-main mt-4">神經網路概述</button>
+          <a href='/nn-intro'><button className="btn btn-main mt-4">神經網路概述</button></a>
           </div>
         </FullWidthBlock>
         <div className="container d-flex flex-column align-items-center justify-content-center py-5">
           <h1 className="title">功能選擇</h1>
-          <button className="btn btn-model mt-4">圖像處理 CNN</button>
+          <a href='/cnn'><button className="btn btn-model mt-4">圖像處理 CNN</button></a>
           <button className="btn btn-model mt-4">時序資料 RNN</button>
           <button className="btn btn-model mt-4">影像轉換 GAN</button>
           <button className="btn btn-model mt-4">模型攻擊 Adversarial</button>

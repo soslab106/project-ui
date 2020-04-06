@@ -5,11 +5,11 @@ class NavBar extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bgc p-2 mb-5">
-        <img
+        <a href='/'><img
           alt="123"
           src="/images/howAI icon2.svg"
           style={{ width: "50px" }}
-        />
+        /></a>
         <button
           className="navbar-toggler"
           type="button"

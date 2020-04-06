@@ -40,7 +40,7 @@ class NeuralNetworkIntro extends Component {
             textWidth="9"
             imgWidth="3"
             textList={this.state.nn_content_1}
-            imgPath="../../public/images/howAI-icon.png"
+            imgPath="/images/howAI icon2.svg"
             imgPos="right"
           />
           <TextAndImg
@@ -48,13 +48,13 @@ class NeuralNetworkIntro extends Component {
             textWidth="6"
             imgWidth="6"
             textList={this.state.nn_content_2}
-            imgPath="../../public/images/howAI-icon.png"
+            imgPath="/images/howAI icon2.svg"
             imgPos="right"
           />
           <div className="col-12">
             {this.mapTextList(this.state.nn_content_3)}
           </div>
-          <img className="col-6" src="../../public/images/howAI-icon.png" />
+          <img className="col-6 mt-2 mb-5" src="/images/howAI icon2.svg" />
         </div>
         <FullWidthBlock py='4' my='4'>
           <h2 className="title col-12">激勵函數 Activation Function</h2>
@@ -63,12 +63,12 @@ class NeuralNetworkIntro extends Component {
             textWidth="8"
             imgWidth="4"
             textList={this.state.af_content}
-            imgPath="../../public/images/howAI-icon.png"
+            imgPath="/images/howAI icon2.svg"
             imgPos="right"
           />
         </FullWidthBlock>
         <div className="d-flex justify-content-center mt-5">
-            <button className="btn btn-previous">回到人工智慧簡介</button>
+        <a href='/intro'><button className="btn btn-previous">回到人工智慧簡介</button></a>
         </div>
       </React.Fragment>
     );
