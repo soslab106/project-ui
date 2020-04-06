@@ -1,5 +1,6 @@
 import NeuralNetworkIntro from "./Container/NeuralNetworkIntro";
 import Welcome from "./Container/Welcome";
+import CNNIntro from "./Container/CNNIntro";
 
 export const routes = [
   {
@@ -11,5 +12,6 @@ export const routes = [
     path: "/",
     component: Welcome,
     exact: true
-  }
+  },
+  { path: "/CNN", component: CNNIntro, exact: false }
 ];

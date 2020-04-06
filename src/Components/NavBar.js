@@ -42,7 +42,7 @@ class NavBar extends Component {
 
             <li className="nav-item mr-3">
               <button
-                className="btn btn-personal nav-link"
+                className="btn btn-main nav-link"
                 href="# "
                 tabIndex="-1"
                 aria-disabled="true"
