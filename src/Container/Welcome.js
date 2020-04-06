@@ -16,19 +16,19 @@ class Welcome extends Component {
           >
             好AI實驗室，讓你愛上AI
           </h1>
-          <p className="my-4">
+          <div className="my-4">
             ContentalotofcontentContentalotofcontentContentalotofcontentContentalotofcontent
             Contentalotofcontent Contentalotofcontent Contentalotofcontent
             Contentalotofcontent Contentalotofcontent Contentalotofcontent
             Contentalotofcontent Contentalotofcontent Contentalotofcontent
             Contentalotofcontent
-          </p>
+          </div>
           <div className="d-flex align-items-center">
             <a href='/intro'><button className="btn btn-lg btn-main">進入教學</button></a>
             <button className="btn btn-lg ml-5 btn-main">進入訓練</button>
           </div>
         </div>
-        <div className="col col-sm-6 col-lg-4">
+        <div className="col col-sm-6 col-lg-4 overflow-hidden">
           <img
             src="https://miro.medium.com/max/676/1*XEgA1TTwXa5AvAdw40GFow.png"
             style={{ width: "500px", height: "500px" }}
