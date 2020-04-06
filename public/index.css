@@ -1,6 +1,17 @@
+body{
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
 .bgc {
   color: #ffffff;
   background-color: #111822;
+}
+
+.main-title{
+  line-height:56px;
+  font-size: 48px;
+  color: #00FFA3;
+  text-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .title {
@@ -19,12 +30,23 @@
 
 .btn-main {
   border-radius: 80px;
-  border: solid 1.25px #50eaff;
-  color: #50eaff;
+  border: solid 1.25px #00FFA3;
+  color: #00FFA3; /*50eaff*/
   width: 125px;
 }
 
 .btn-main:hover {
+  background-color: #00FFA3;
+}
+
+.btn-model{
+  border-radius: 80px;
+  border: solid 1.25px #50eaff;
+  color: #50eaff;
+  height: 40px;
+}
+
+.btn-model:hover {
   background-color: #50eaff;
 }
 
@@ -51,4 +73,15 @@
   box-sizing: border-box;
   box-shadow: 0px 0px 10px #961dcf;
   border-radius: 13px;
+}
+
+.thumbnail{
+  background-color: rgba(255, 255, 255 ,0.1);
+  border-radius:13px;
+  width: 300px !important;
+}
+
+#dl-intro{
+  margin-left: 15rem !important;
+  margin-right: 15rem !important;
 }

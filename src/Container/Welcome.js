@@ -24,7 +24,7 @@ class Welcome extends Component {
             Contentalotofcontent
           </p>
           <div className="d-flex align-items-center">
-            <button className="btn btn-lg btn-main">進入教學</button>
+            <a href='/intro'><button className="btn btn-lg btn-main">進入教學</button></a>
             <button className="btn btn-lg ml-5 btn-main">進入訓練</button>
           </div>
         </div>

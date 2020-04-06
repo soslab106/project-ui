@@ -36,18 +36,20 @@ class NeuralNetworkIntro extends Component {
           <h1 className="title col-12">類神經網路</h1>
           <h2 className="title col-12">Artificial Neural Network</h2>
           <TextAndImg
-            mx="5"
+            my="5"
             textWidth="9"
             imgWidth="3"
             textList={this.state.nn_content_1}
             imgPath="../../public/images/howAI-icon.png"
+            imgPos="right"
           />
           <TextAndImg
-            mx="5"
+            my="5"
             textWidth="6"
             imgWidth="6"
             textList={this.state.nn_content_2}
             imgPath="../../public/images/howAI-icon.png"
+            imgPos="right"
           />
           <div className="col-12">
             {this.mapTextList(this.state.nn_content_3)}
@@ -57,14 +59,15 @@ class NeuralNetworkIntro extends Component {
         <FullWidthBlock py='4' my='4'>
           <h2 className="title col-12">激勵函數 Activation Function</h2>
           <TextAndImg
-            mx="4"
+            my="4"
             textWidth="8"
             imgWidth="4"
             textList={this.state.af_content}
             imgPath="../../public/images/howAI-icon.png"
+            imgPos="right"
           />
         </FullWidthBlock>
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-center mt-5">
             <button className="btn btn-previous">回到人工智慧簡介</button>
         </div>
       </React.Fragment>
