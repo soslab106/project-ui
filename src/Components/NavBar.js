@@ -30,7 +30,7 @@ class NavBar extends Component {
               </a>
             </li>
             <li className="nav-item mr-3">
-              <a className="nav-link" href="# ">
+              <a className="nav-link" href="/intro">
                 Tutorials
               </a>
             </li>
@@ -42,10 +42,8 @@ class NavBar extends Component {
 
             <li className="nav-item mr-3">
               <button
-                className="btn btn-main nav-link"
+                className="btn btn-personal"
                 href="# "
-                tabIndex="-1"
-                aria-disabled="true"
               >
                 Personal Info
               </button>

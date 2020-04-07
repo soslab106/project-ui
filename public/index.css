@@ -28,6 +28,16 @@ body{
   padding: 3px 10px !important;
 }
 
+.btn-personal, .btn-model{
+  border-radius: 80px;
+  border: solid 1.25px #50eaff;
+  color: #50eaff; /*50eaff*/
+}
+
+.btn-personal{
+  width: 125px;
+}
+
 .btn-main {
   border-radius: 80px;
   border: solid 1.25px #00FFA3;
@@ -40,13 +50,10 @@ body{
 }
 
 .btn-model{
-  border-radius: 80px;
-  border: solid 1.25px #50eaff;
-  color: #50eaff;
   height: 40px;
 }
 
-.btn-model:hover {
+.btn-personal:hover, .btn-model:hover {
   background-color: #50eaff;
 }
 
