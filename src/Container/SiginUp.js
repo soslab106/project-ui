@@ -37,7 +37,7 @@ class SiginUp extends Component {
                     
                 </form>
                 <div className="my-4">
-                    <button className="btn btn-main" style={{width:'150px', color:'#FF8C00'}}><FontAwesomeIcon className="mr-2" icon={faGoogle} />Google 登入</button>
+                    <button className="btn btn-main" style={{width:'150px'}}><FontAwesomeIcon className="mr-2" icon={faGoogle} />Google 登入</button>
                 </div>
             </div>
         );

@@ -7,23 +7,26 @@ import Yolov3 from "./Container/Yolov3";
 import FaceNet from "./Container/FaceNet";
 import Login from "./Container/Login";
 import SiginUp from "./Container/SiginUp";
+import PlayGround from "./Container/PlayGround";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React, { Component }  from 'react';
 
-export const routes = [
-  {
-    path: "/nn-intro",
-    component: NeuralNetworkIntro,
-    exact: true,
-  },
-  {
-    path: "/",
-    component: Welcome,
-    exact: true,
-  },
-  { path: "/CNN", component: CNNIntro, exact: false },
-  { path: "/intro", component: Intro, exact: false },
-  { path: "/img-classify", component: ImgClassification, exact: false },
-  { path: "/YOLOV3", component: Yolov3, exact: false },
-  { path: "/FaceNet", component: FaceNet, exact: false },
-  { path: "/login", component: Login, exact: false },
-  { path: "/signup", component: SiginUp, exact: false },
-];
+export function route() {
+  return (
+    <Router>
+        <Switch>
+          <Route exact path="/nn-intro" component={NeuralNetworkIntro} />
+          <Route exact path="/" component={Welcome} />
+          <Route path="/CNN" component={CNNIntro} />
+          <Route path="/intro" component={Intro} />
+          <Route path="/img-classify" component={ImgClassification} />
+          <Route path="/YOLOV3" component={Yolov3} />
+          <Route path="/FaceNet" component={FaceNet} />
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={SiginUp} />
+          <Route path="/:model" component={PlayGround} />
+
+        </Switch>
+    </Router>
+  );
+}

@@ -1,19 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { routes } from "./route";
-import { renderRoutes } from 'react-router-config'
-import { BrowserRouter } from "react-router-dom";
+import { route } from "./route";
 
 // import App from './Components/App'
 import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
 
+const routes = route();
+
 ReactDOM.render(
-  <BrowserRouter>
-      <NavBar />
-      {renderRoutes(routes)}
-      <Footer />
-  </BrowserRouter>,
+  <React.Fragment>
+    <NavBar />
+    {routes}
+    <Footer />
+  </React.Fragment>,
   document.getElementById("root")
 );
 
