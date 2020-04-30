@@ -31,7 +31,7 @@ class Intro extends Component {
             textWidth="9"
             imgWidth="3"
             textList={this.state.intro_2}
-            imgPath="/images/howAI icon2.svg"
+            imgPath="/images/Bw9hheb.png"
             imgPos="left"
           />
         </div>
