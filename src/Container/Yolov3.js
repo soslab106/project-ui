@@ -32,7 +32,7 @@ class Yolov3 extends Component {
           </div>
 
           <div>
-            <a href="/intro" className="mx-2">
+            <a href="/cnn" className="mx-2">
               <button className="btn btn-previous">回到圖像分類介紹</button>
             </a>
             <a href="/yolov3-playground" className="mx-2">

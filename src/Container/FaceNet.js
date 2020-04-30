@@ -41,7 +41,7 @@ class FaceNet extends Component {
             />
           </FullWidthBlock>
           <div className="mt-4">
-            <a href="/intro" className="mx-2">
+            <a href="/cnn" className="mx-2">
               <button className="btn btn-previous">回到圖像分類介紹</button>
             </a>
             <a href="/#" className="mx-2">

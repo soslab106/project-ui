@@ -31,6 +31,24 @@ class PlayGround extends Component {
           api: "jowijrtig/apiwowo",
         });
         break;
+      case "vgg-playground":
+        this.setState({
+          modelName: "VGG",
+          description: "VGGGGGGGGGGGG",
+          input: "iiiiiiiiiiinnnnnnnnnpppuuuttt",
+          output: "output",
+          api: "jowijrtig/apiwowo",
+        });
+        break;
+        case "resnet-playground":
+          this.setState({
+            modelName: "ResNet",
+            description: "RRRRRRRRRREEEEEEEEESSSSSSSSNNNN",
+            input: "iiiiiiiiiiinnnnnnnnnpppuuuttt",
+            output: "output",
+            api: "jowijrtig/apiwowo",
+          });
+          break;
       default:
         this.setState({ modelName: "" });
     }

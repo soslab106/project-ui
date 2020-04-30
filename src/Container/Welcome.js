@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 class Welcome extends Component {
   render() {
+   
+    console.log()
     return (
       <div className="container d-flex expand-full">
         <div className="col col-sm-6 col-lg-8 d-flex flex-column justify-content-center">
@@ -28,6 +30,8 @@ class Welcome extends Component {
           ></img>
         </div>
       </div>
+
+      
     );
   }
 }

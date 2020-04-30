@@ -30,6 +30,11 @@ class ImgClassification extends Component {
                         </div>
                         <div className='d-flex justify-content-center align-items-center'><h2>ResNet101</h2></div>
                     </ModelSelect>
+                    <div className="my-5">
+                        <a href="/cnn" className="mx-2">
+                            <button className="btn btn-previous">回到圖像分類介紹</button>
+                        </a>
+                    </div>
                 </div>
         );
     }

@@ -52,6 +52,7 @@ class Intro extends Component {
               imgPath="/images/howAI icon2.svg"
               content="Facebook 將使用者自動標記在照片中的「人臉辨識」、停車場的「車牌辨識」、「自動駕駛車」"
             />
+            
             <ThumbNail
               title="自然語言處理"
               imgPath="/images/howAI icon2.svg"

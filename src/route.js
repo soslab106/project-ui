@@ -11,6 +11,7 @@ import PlayGround from "./Container/PlayGround";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React, { Component }  from 'react';
 import Vgg from "./Container/Vgg";
+import ResNet from "./Container/ResNet";
 
 export function route() {
   return (
@@ -26,6 +27,7 @@ export function route() {
           <Route path="/login" component={Login} />
           <Route path="/signup" component={SiginUp} />
           <Route path="/vgg" component={Vgg} />
+          <Route path="/resnet" component={ResNet} />
 
           
           <Route path="/:model" component={PlayGround} />
