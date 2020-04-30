@@ -68,7 +68,7 @@ class NeuralNetworkIntro extends Component {
           />
         </FullWidthBlock>
         <div className="d-flex justify-content-center mt-5">
-        <a href='/intro'><button className="btn btn-previous">回到人工智慧簡介</button></a>
+        <a href='/intro'><button className="btn btn-previous mb-5">回到人工智慧簡介</button></a>
         </div>
       </React.Fragment>
     );

@@ -80,7 +80,7 @@ class Intro extends Component {
           <button className="btn btn-model mt-4">時序資料 RNN</button>
           <button className="btn btn-model mt-4">影像轉換 GAN</button>
           <button className="btn btn-model mt-4">模型攻擊 Adversarial</button>
-          <button className="btn btn-previous mt-5" style={{width:'100px'}}>回到首頁</button>
+          <a href="/"><button className="btn btn-previous mt-5" style={{width:'100px'}}>回到首頁</button></a>
         </div>
       </React.Fragment>
     );

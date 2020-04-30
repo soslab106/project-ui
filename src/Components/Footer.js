@@ -4,7 +4,7 @@ import "./Footer.css";
 class Footer extends Component {
   render() {
     return (
-      <footer className="footer-bottom footer navbar-fixed-bottom">
+      <footer className="footer border_solid ">
         <div className="container">
           <img
             src="/images/howAI icon2.svg"
