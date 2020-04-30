@@ -12,7 +12,7 @@ class TextAndImg extends Component {
       <div className={"d-flex align-items-center justify-content-center my-"+this.props.my}>
         
         {this.props.imgPos=='left' ? (<div className={"col-" + this.props.imgWidth}>
-          <img alt=" " src={this.props.imgPath} />
+          <img alt=" " src={this.props.imgPath}  width={this.props.imgWidth} height={this.props.imgHeight}/>
         </div>):''}
 
         <div className={"col-" + this.props.textWidth}>
@@ -20,7 +20,7 @@ class TextAndImg extends Component {
         </div>
         
         {this.props.imgPos=='right' ? (<div className={"col-" + this.props.imgWidth}>
-          <img alt=" " src={this.props.imgPath} />
+          <img alt=" " src={this.props.imgPath}  width={this.props.imgWidth} height={this.props.imgHeight}/>
         </div>):''}
         
       </div>
