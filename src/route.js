@@ -3,6 +3,8 @@ import Welcome from "./Container/Welcome";
 import CNNIntro from "./Container/CNNIntro";
 import Intro from "./Container/Intro";
 import ImgClassification from "./Container/ImgClassification";
+import ResnetPage from "./Container/ResnetPage";
+import VggPage from "./Container/VggPage";
 
 export const routes = [
   {
@@ -18,4 +20,6 @@ export const routes = [
   { path: "/CNN", component: CNNIntro, exact: false },
   { path: "/intro", component: Intro, exact: false },
   { path: "/img-classify", component: ImgClassification, exact: false },
+  { path: "/ResNet101", component: ResnetPage, exact: false },
+  { path: "/VGG16", component: VggPage, exact: false },
 ];
