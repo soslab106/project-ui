@@ -5,7 +5,7 @@ class ThumbNail extends Component {
         return (
             <div className='thumbnail p-4 m-3 w-50'>
                 <h4 className="title">{this.props.title}</h4>
-                <img className='my-4' src={this.props.imgPath}/>
+                <img className='my-4' src={this.props.imgPath} width={this.props.imgWidth} height={this.props.imgHeight}/>
                 <div>{this.props.content}</div>
             </div>
         );
