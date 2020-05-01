@@ -1,5 +1,5 @@
-body{
-  font-family: 'Noto Sans TC', sans-serif;
+body {
+  font-family: "Noto Sans TC", sans-serif;
 }
 
 .bgc {
@@ -7,11 +7,11 @@ body{
   background-color: #111822;
 }
 
-.main-title{
-  line-height:56px;
+.main-title {
+  line-height: 56px;
   font-size: 48px;
-  color: #00FFA3;
-  text-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #00ffa3;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .title {
@@ -28,32 +28,34 @@ body{
   padding: 3px 10px !important;
 }
 
-.btn-personal, .btn-model{
+.btn-personal,
+.btn-model {
   border-radius: 80px;
   border: solid 1.25px #50eaff;
   color: #50eaff; /*50eaff*/
 }
 
-.btn-personal{
+.btn-personal {
   width: 125px;
 }
 
 .btn-main {
   border-radius: 80px;
-  border: solid 1.25px #00FFA3;
-  color: #00FFA3; /*50eaff*/
+  border: solid 1.25px #00ffa3;
+  color: #00ffa3; /*50eaff*/
   width: 125px;
 }
 
 .btn-main:hover {
-  background-color: #00FFA3;
+  background-color: #00ffa3;
 }
 
-.btn-model{
+.btn-model {
   height: 40px;
 }
 
-.btn-personal:hover, .btn-model:hover {
+.btn-personal:hover,
+.btn-model:hover {
   background-color: #50eaff;
 }
 
@@ -82,14 +84,54 @@ body{
   border-radius: 13px;
 }
 
-.thumbnail{
-  background-color: rgba(255, 255, 255 ,0.1);
-  border-radius:13px;
+.thumbnail {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 13px;
   width: 300px !important;
 }
 
-
-#dl-intro{
+#dl-intro {
   margin-left: 15rem !important;
   margin-right: 15rem !important;
 }
+
+.io-box {
+  background-color: #ffffff21;
+  border-radius: 8px;
+  height: 15vh;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  word-break: break-all; /*必須*/
+}
+
+.description {
+  background-color: #02020250;
+  border-radius: 8px;
+  height: 15vh;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  word-break: break-all; /*必須*/
+}
+
+.file-label {
+  width: 40vw;
+  border: 1px solid #00ffa3;
+  border-radius: 80px !important;
+}
+
+.footer{
+  width: 100%;
+  height: 10vh;
+}
+
+.border_solid{
+  border: 1px solid #fff
+}
+
+.expand-full{
+  height:88vh !important;
+}
+
+

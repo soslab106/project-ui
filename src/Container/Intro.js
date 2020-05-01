@@ -53,6 +53,7 @@ class Intro extends Component {
               imgPath="/images/howAI icon2.svg"
               content="Facebook 將使用者自動標記在照片中的「人臉辨識」、停車場的「車牌辨識」、「自動駕駛車」"
             />
+            
             <ThumbNail
               title="自然語言處理"
               imgPath="/images/howAI icon2.svg"
@@ -78,6 +79,7 @@ class Intro extends Component {
           </div>
         </FullWidthBlock>
         <div className="container d-flex flex-column align-items-center justify-content-center py-5">
+<<<<<<< HEAD
           <h1 className="title"> 功能選擇 </h1>
           <a href="/cnn">
             
@@ -90,6 +92,14 @@ class Intro extends Component {
             
             回到首頁
           </button>
+=======
+          <h1 className="title">功能選擇</h1>
+          <a href='/cnn'><button className="btn btn-model mt-4">圖像處理 CNN</button></a>
+          <button className="btn btn-model mt-4">時序資料 RNN</button>
+          <button className="btn btn-model mt-4">影像轉換 GAN</button>
+          <button className="btn btn-model mt-4">模型攻擊 Adversarial</button>
+          <a href="/"><button className="btn btn-previous mt-5" style={{width:'100px'}}>回到首頁</button></a>
+>>>>>>> c2f30e1d0ceb66ac1fb8ad3635ec92a1284ea827
         </div>
       </React.Fragment>
     );

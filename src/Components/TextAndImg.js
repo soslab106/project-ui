@@ -9,7 +9,7 @@ class TextAndImg extends Component {
 
   render() {
     return (
-      <div className={"d-flex align-items-center my-"+this.props.my}>
+      <div className={"d-flex align-items-center justify-content-center my-"+this.props.my}>
         
         {this.props.imgPos=='left' ? (<div className={"col-" + this.props.imgWidth}>
           <img alt=" " src={this.props.imgPath} />
