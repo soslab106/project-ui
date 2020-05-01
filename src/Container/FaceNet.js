@@ -24,8 +24,8 @@ class FaceNet extends Component {
           <h1 className="title">FaceNet</h1>
           <TextAndImg
             my="5"
-            textWidth="9"
-            imgWidth="3"
+            textWidth="5"
+            imgWidth="700"
             textList={this.state.facenet_1}
             imgPath="/images/FN_1.png"
             imgPos="right"
@@ -33,8 +33,8 @@ class FaceNet extends Component {
           <FullWidthBlock py="4" my="4">
             <TextAndImg
               my="5"
-              textWidth="9"
-              imgWidth="3"
+              textWidth="5"
+              imgWidth="900"
               textList={this.state.facenet_2}
               imgPath="/images/FN_2.png"
               imgPos="left"

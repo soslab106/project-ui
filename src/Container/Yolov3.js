@@ -19,8 +19,8 @@ class Yolov3 extends Component {
           <div>
             <TextAndImg
               my="5"
-              textWidth="9"
-              imgWidth="3"
+              textWidth="5"
+              imgWidth="900"
               textList={this.state.yolov3_1}
               imgPath="/images/Yolo_1.png"
               imgPos="right"
