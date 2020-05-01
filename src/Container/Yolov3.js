@@ -22,7 +22,7 @@ class Yolov3 extends Component {
               textWidth="9"
               imgWidth="3"
               textList={this.state.yolov3_1}
-              imgPath="/images/howAI icon2.svg"
+              imgPath="/images/Yolo_1.png"
               imgPos="right"
             />
           </div>

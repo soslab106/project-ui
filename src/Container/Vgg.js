@@ -17,7 +17,7 @@ class Vgg extends Component {
                         </div>
                     </div>
                     <div className='col-4'>
-                        <img src='/images/howAI icon2.svg'/>
+                        <img src='/images/VGG_1.png'/>
                     </div>
                 </div>
                     <div className="d-flex align-items-center">

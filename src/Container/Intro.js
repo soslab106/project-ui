@@ -23,7 +23,7 @@ class Intro extends Component {
               <div className="my-5"> {this.state.intro_1} </div>
             </div>
             <div className="col-7" overflow="hidden">
-              <img alt=" " src="/images/howAI icon2.svg" height="500" />
+              <img alt=" " src="/images/intro_1.png" height="500" />
             </div>
           </div>
           <TextAndImg
@@ -31,7 +31,7 @@ class Intro extends Component {
             textWidth="9"
             imgWidth="3"
             textList={this.state.intro_2}
-            imgPath="/images/Bw9hheb.png"
+            imgPath="/images/intro_2.png"
             imgPos="left"
           />
         </div>
@@ -50,7 +50,7 @@ class Intro extends Component {
           <div className="d-flex mx-5 justify-content-center">
             <ThumbNail
               title="影像辨識"
-              imgPath="/images/howAI icon2.svg"
+              imgPath="/images/intro_3.png"
               content="Facebook 將使用者自動標記在照片中的「人臉辨識」、停車場的「車牌辨識」、「自動駕駛車」"
             />
             
@@ -79,27 +79,12 @@ class Intro extends Component {
           </div>
         </FullWidthBlock>
         <div className="container d-flex flex-column align-items-center justify-content-center py-5">
-<<<<<<< HEAD
-          <h1 className="title"> 功能選擇 </h1>
-          <a href="/cnn">
-            
-            <button className="btn btn-model mt-4"> 圖像處理 CNN </button>
-          </a>
-          <button className="btn btn-model mt-4"> 時序資料 RNN </button>
-          <button className="btn btn-model mt-4"> 影像轉換 GAN </button>
-          <button className="btn btn-model mt-4"> 模型攻擊 Adversarial </button>
-          <button className="btn btn-previous mt-5" style={{ width: "100px" }}>
-            
-            回到首頁
-          </button>
-=======
           <h1 className="title">功能選擇</h1>
           <a href='/cnn'><button className="btn btn-model mt-4">圖像處理 CNN</button></a>
           <button className="btn btn-model mt-4">時序資料 RNN</button>
           <button className="btn btn-model mt-4">影像轉換 GAN</button>
           <button className="btn btn-model mt-4">模型攻擊 Adversarial</button>
           <a href="/"><button className="btn btn-previous mt-5" style={{width:'100px'}}>回到首頁</button></a>
->>>>>>> c2f30e1d0ceb66ac1fb8ad3635ec92a1284ea827
         </div>
       </React.Fragment>
     );

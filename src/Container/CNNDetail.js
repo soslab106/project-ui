@@ -38,7 +38,7 @@ class CNNDetail extends Component {
                         textWidth="9"
                         imgWidth="3"
                         textList={this.state.img_struct}
-                        imgPath="/images/howAI icon2.svg"
+                        imgPath="/images/CNN_2.png"
                         imgPos="right"
                     />
                     </FullWidthBlock>
@@ -50,7 +50,7 @@ class CNNDetail extends Component {
                             3. 全連接層(Fully connected layer)</p>
                         <p>卷積層負責提取圖片中的局部特徵，池化層用來大幅降低餐數量及(降維)，全連接層用來輸出想要的結果。而一個典型的CNN模型，通常是多層結構，最後再配以一個全連接層輸出結果，以下是一個經典CNN模型LeNet-5的結構：</p>
                         <p>卷積層-池化層-卷積層-池化層-卷積層-全連接層-輸出層</p>
-                        <img src='/images/howAI icon2.svg'/>
+                        <img src='/images/CNN_2.png'/>
                     </div>
                     <div>
                         <h2 className="title">卷積層</h2>
@@ -59,55 +59,55 @@ class CNNDetail extends Component {
                             textWidth="9"
                             imgWidth="3"
                             textList={this.state.convolution}
-                            imgPath="/images/howAI icon2.svg"
+                            imgPath="/images/CNN_3.png"
                             imgPos="right"
                         />
                         <p>接下來，從原始圖片中取出與卷積核相同維度的矩陣進行運算乘積，可以得到</p>
-                        <img src='/images/howAI icon2.svg'/>
+                        <img src='/images/CNN_4.png'/>
                         <p>然後我們將矩陣中的值進行加總: (-6)+3+2+8+10+(-6)+1+(-3)+(-2)=7，此為原始影像經過第一次卷積運算後的結果。</p>
                         <p>接著向右平行一格，再進行一次卷積運算如下:</p>
-                        <img src='/images/howAI icon2.svg'/>
+                        <img src='/images/CNN_5.png'/>
                         <p>再做一次加總: (-2)+6+5+10+4+(-18)+3+(-2)+(-1)=5</p>
                         <p>以此類推，繼續往右平移做卷積運算，總共可以得到以下4個矩陣乘積及加總：</p>
-                        <img src='/images/howAI icon2.svg'/>
+                        <img src='/images/CNN_6.png'/>
                         <p>同理，垂直下移一行做卷積運算:</p>
-                        <img src='/images/howAI icon2.svg'/>
+                        <img src='/images/CNN_7.png'/>
                         <TextAndImg
                             my="5"
                             textWidth="9"
                             imgWidth="3"
                             textList={this.state.matrix}
-                            imgPath="/images/howAI icon2.svg"
+                            imgPath="/images/CNN_8.png"
                             imgPos="right"
                         />
                         <p>以上就是原始影像經過卷積層運算後的初步結果。</p>
                         <FullWidthBlock py='4' my='4'>
                             <h2 className="title">關於卷積核</h2>
                             <p>由前述可知，卷積核的作用除了能降低圖片維度之外，最重要的功能就是找出特徵，針對越是大量、越是複雜的圖片時，我們也能透過增加卷積核的數量(在此稱為「深度(Depth)」)來萃取出不同的特徵，讓訓練出來的模型更加準確。</p>
-                            <img src='/images/howAI icon2.svg'/>
+                            <img src='/images/CNN_9.png'/>
                             <p>卷積核的尺寸也能夠自行定義，例如一張8x8的圖片經過維度3x3的卷積核運算後，可以得到一個6x6的矩陣特徵圖;而經過3x3的卷積核運算後，可以得到7x7的特徵圖。由此可知，若選擇的卷積核維度較大(3x3)，可以降低運算的次數，速度較快，若選擇的卷積核維度較小(2x2)，雖然會增加運算次數，但可以提高特徵擷取的準確度。</p>
-                            <img src='/images/howAI icon2.svg'/>
+                            <img src='/images/CNN_10.png'/>
                             <p>除了可以控制卷積核的維度外，在進行運算的過程中，也可以設定每次卷積核移動的步伐(stride)。前述範例中的平移一格，就是以stride=除了可以控制卷積核的維度外，在進行運算的過程中，也可以設定每次卷積核移動的步伐(stride)。前述範例中的平移一格，就是以stride=1的概念運作，若是我們將stride設為2的話，就能減少卷積運算的數量使整體運算速度加快，但同樣，會降低特徵擷取的準確度。</p>                            
-                            <img src='/images/howAI icon2.svg'/>
+                            <img src='/images/CNN_11.png'/>
                             <TextAndImg
                                 my="4"
                                 textWidth="8"
                                 imgWidth="4"
                                 textList={this.state.features}
-                                imgPath="/images/howAI icon2.svg"
+                                imgPath="/images/CNN_12.png"
                                 imgPos="right"
                             />
                         </FullWidthBlock>
                         <div>
                             <h2 className="title">池化層</h2>
                             <p>經過卷積層後得到的結果就會進入池化層，池化層主要的目的是保留主要特徵與降維。池化有許多種做法，其中兩種分別是「平均值池化(Average pooling)」與「最大值池化(Max pooling)」。</p>
-                            <img src='/images/howAI icon2.svg'/>
+                            <img src='/images/CNN_13.png'/>
                             <TextAndImg
                                 my="5"
                                 textWidth="9"
                                 imgWidth="3"
                                 textList={this.state.pooling}
-                                imgPath="/images/howAI icon2.svg"
+                                imgPath="/images/CNN_14.png"
                                 imgPos="right"
                             />
                             <p>如此一來，我們就能在降低圖片維度大小的同時，又能保留圖片的特徵。</p>
@@ -115,7 +115,7 @@ class CNNDetail extends Component {
                         <div>
                             <h2 className="title">全連接層</h2>
                             <p>在經過了數層的卷積與池化後，接下來要把結果放入全連接層中運算。在CNN中，我們需要將先前得到的二維矩陣特徵圖攤平(Flatten)，變為一維的矩陣。假設我們得到3個維度為2x2的特徵圖，則可以進行以下操作:</p>
-                            <img src='/images/howAI icon2.svg'/>
+                            <img src='/images/CNN_15.png'/>
                             <p>最後將攤平的一維矩陣用來當成神經網路的輸入做訓練，就是整個CNN的運作過程</p>
                             <p>需要多少卷積層、池化層來進行組合，與在全連接層中應該使用多少層、每層多少神經元，都是訓練CNN模型需要考慮的問題。依照目標應用的不同，去進行調整和測試，最後的準確度越高，就是一個越好的CNN模型。</p>
                         </div>

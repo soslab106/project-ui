@@ -27,7 +27,7 @@ class FaceNet extends Component {
             textWidth="9"
             imgWidth="3"
             textList={this.state.facenet_1}
-            imgPath="/images/howAI icon2.svg"
+            imgPath="/images/FN_1.png"
             imgPos="right"
           />
           <FullWidthBlock py="4" my="4">
@@ -36,7 +36,7 @@ class FaceNet extends Component {
               textWidth="9"
               imgWidth="3"
               textList={this.state.facenet_2}
-              imgPath="/images/howAI icon2.svg"
+              imgPath="/images/FN_2.png"
               imgPos="left"
             />
           </FullWidthBlock>
