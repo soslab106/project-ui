@@ -40,11 +40,11 @@ class FaceNet extends Component {
               imgPos="left"
             />
           </FullWidthBlock>
-          <div className="mt-4">
+          <div className="my-4">
             <a href="/cnn" className="mx-2">
               <button className="btn btn-previous">回到圖像分類介紹</button>
             </a>
-            <a href="/#" className="mx-2">
+            <a href="/facenet-playground" className="mx-2">
               <button className="btn btn-main">前往FaceNet操作</button>
             </a>
           </div>

@@ -40,6 +40,23 @@ class Intro extends Component {
           my="5"
           className="d-flex flex-column justify-content-center align-items-center"
         >
+          <div className="container d-flex flex-column align-items-center justify-content-center py-3">
+            <h1 className="title">功能選擇</h1>
+            <div>
+              <a href="/cnn">
+                <button className="btn btn-model mt-4 mx-2">
+                  圖像處理 CNN
+                </button>
+              </a>
+              <button className="btn btn-model mt-4 mx-2">時序資料 RNN</button>
+              <button className="btn btn-model mt-4 mx-2">影像轉換 GAN</button>
+              <button className="btn btn-model mt-4 mx-2">
+                模型攻擊 Adversarial
+              </button>
+            </div>
+          </div>
+        </FullWidthBlock>
+        <div className="my-4">
           <h1 className="text-center title"> 深度學習 </h1>
           <h3 className="text-center title"> Deep Learning </h3>
           <div className="text-center my-5" id="dl-intro">
@@ -71,28 +88,19 @@ class Intro extends Component {
               content="人工智慧也常用在醫療照護的方面，協助醫生進行醫療數據分析、疾病診斷、病患數據即時監控、疾病諮詢等等。"
             />
           </div>
-          <div className="d-flex justify-content-center">
+          <div className="d-flex flex-column justify-content-center align-items-center">
             <a href="/nn-intro">
               <button className="btn btn-main mt-4"> 神經網路概述 </button>
             </a>
+            <a href="/">
+              <button
+                className="btn btn-previous mt-5"
+                style={{ width: "100px" }}
+              >
+                回到首頁
+              </button>
+            </a>
           </div>
-        </FullWidthBlock>
-        <div className="container d-flex flex-column align-items-center justify-content-center py-5">
-          <h1 className="title">功能選擇</h1>
-          <a href="/cnn">
-            <button className="btn btn-model mt-4">圖像處理 CNN</button>
-          </a>
-          <button className="btn btn-model mt-4">時序資料 RNN</button>
-          <button className="btn btn-model mt-4">影像轉換 GAN</button>
-          <button className="btn btn-model mt-4">模型攻擊 Adversarial</button>
-          <a href="/">
-            <button
-              className="btn btn-previous mt-5"
-              style={{ width: "100px" }}
-            >
-              回到首頁
-            </button>
-          </a>
         </div>
       </React.Fragment>
     );
