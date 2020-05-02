@@ -106,7 +106,7 @@ class PlayGround extends Component {
             >
               <div>輸入</div>
               <div width="50%" height="35vh" overflow="auto">
-              <img src={this.state.file?URL.createObjectURL(this.state.file):''} alt='no pic' style={{ marginTop: "10px", height: "35vh"}} />
+              <img src={this.state.file?URL.createObjectURL(this.state.file):'/images/nopic.png'} alt='no pic' style={{ marginTop: "10px", height: "35vh"}} />
               </div>
               <div>結果</div>
 
