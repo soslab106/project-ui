@@ -18,20 +18,20 @@ class Intro extends Component {
         <div className="container">
           <div className="d-flex align-items-center my-4">
             <div className="col-5">
-              <h1 className="title">人工智慧</h1>
-              <h3 className="title">Artificial Intelligence</h3>
-              <div className="my-5">{this.state.intro_1}</div>
+              <h1 className="title"> 人工智慧 </h1>
+              <h3 className="title"> Artificial Intelligence </h3>
+              <div className="my-5"> {this.state.intro_1} </div>
             </div>
             <div className="col-7" overflow="hidden">
-              <img alt=" " src="logo192.png" height="500" />
+              <img alt=" " src="/images/intro_1.png" />
             </div>
           </div>
           <TextAndImg
             my="5"
-            textWidth="9"
-            imgWidth="3"
+            textWidth="5"
+            imgWidth="1200"
             textList={this.state.intro_2}
-            imgPath="/images/howAI icon2.svg"
+            imgPath="/images/intro_2.png"
             imgPos="left"
           />
         </div>
@@ -40,26 +40,26 @@ class Intro extends Component {
           my="5"
           className="d-flex flex-column justify-content-center align-items-center"
         >
-          <h1 className="text-center title">深度學習</h1>
-          <h3 className="text-center title">Deep Learning</h3>
+          <h1 className="text-center title"> 深度學習 </h1>
+          <h3 className="text-center title"> Deep Learning </h3>
           <div className="text-center my-5" id="dl-intro">
-            人工智慧有了近年來的蓬勃發展，深度學習功不可沒。深度學習經由模仿人類大腦自我學習的類神經網路得出預測結果。深度學習是目前最被廣泛使用的AI技術之一。常見的應用如下
+            人工智慧有了近年來的蓬勃發展， 深度學習功不可沒。
+            深度學習經由模仿人類大腦自我學習的類神經網路得出預測結果。
+            深度學習是目前最被廣泛使用的AI技術之一。 常見的應用如下
           </div>
-
           <div className="d-flex mx-5 justify-content-center">
             <ThumbNail
               title="影像辨識"
-              imgPath="/images/howAI icon2.svg"
+              imgPath="/images/intro_3.png"
               content="Facebook 將使用者自動標記在照片中的「人臉辨識」、停車場的「車牌辨識」、「自動駕駛車」"
             />
-            
+
             <ThumbNail
               title="自然語言處理"
               imgPath="/images/howAI icon2.svg"
               content="自然語言處理就是讓電腦能理解人類語言，分析詞意以及詞句間的關係，常應用的方面像是機器翻譯、詐騙郵件偵測、google的搜尋建議更正，或是分析社群媒體、娛樂產業、網路活動輿情分析等等。"
             />
-          {/* </div>
-          <div className="d-flex mx-5 justify-content-center"> */}
+
             <ThumbNail
               title="語音辨識"
               imgPath="/images/howAI icon2.svg"
@@ -72,16 +72,27 @@ class Intro extends Component {
             />
           </div>
           <div className="d-flex justify-content-center">
-          <a href='/nn-intro'><button className="btn btn-main mt-4">神經網路概述</button></a>
+            <a href="/nn-intro">
+              <button className="btn btn-main mt-4"> 神經網路概述 </button>
+            </a>
           </div>
         </FullWidthBlock>
         <div className="container d-flex flex-column align-items-center justify-content-center py-5">
           <h1 className="title">功能選擇</h1>
-          <a href='/cnn'><button className="btn btn-model mt-4">圖像處理 CNN</button></a>
+          <a href="/cnn">
+            <button className="btn btn-model mt-4">圖像處理 CNN</button>
+          </a>
           <button className="btn btn-model mt-4">時序資料 RNN</button>
           <button className="btn btn-model mt-4">影像轉換 GAN</button>
           <button className="btn btn-model mt-4">模型攻擊 Adversarial</button>
-          <a href="/"><button className="btn btn-previous mt-5" style={{width:'100px'}}>回到首頁</button></a>
+          <a href="/">
+            <button
+              className="btn btn-previous mt-5"
+              style={{ width: "100px" }}
+            >
+              回到首頁
+            </button>
+          </a>
         </div>
       </React.Fragment>
     );

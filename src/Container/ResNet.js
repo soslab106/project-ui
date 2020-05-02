@@ -11,7 +11,7 @@ class ResNet extends Component {
                             <p>經過之前VGG的結果，科學家們開始思考深度學習是不是越深就能產生越好的結果呢? 因此他們做了一個測試，卻發現56層的網路錯誤率卻比20層的還要高!</p>
                         </div>
                         <div className="my-3">
-                            <img src='/images/howAI icon2.svg'/>
+                            <img src='/images/RN_1.png'/>
                             <p>圖片來源:https://arxiv.org/pdf/1512.03385.pdf</p>
                         </div>
                         <div className='my-3'>
@@ -21,7 +21,7 @@ class ResNet extends Component {
                             <p>ResNet全稱Residual Nerual Network 殘差神經網路，而ResNet的主要突破就是一個稱為Residual Block的架構:</p>
                         </div>
                         <div className="my-3">
-                            <img src='/images/howAI icon2.svg'/>
+                            <img src='/images/RN_2.png'/>
                             <p>圖片來源:圖片來源:https://arxiv.org/pdf/1512.03385.pdf</p>
                         </div>
                         <div className='my-3'>
@@ -30,12 +30,10 @@ class ResNet extends Component {
                             <p>下圖是各種深度的ResNet的結構圖，之後很多的深度學習模型都是建立在ResNet50和ResNet101的基礎上完成的，因此我們選擇提供ResNet101作為範例。</p>
                         </div>
                         <div className="my-3">
-                            <img src='/images/howAI icon2.svg'/>
+                            <img src='/images/RN_3.png'/>
                             <p>圖片來源:圖片來源:https://arxiv.org/pdf/1512.03385.pdf</p>
                         </div>
-                        <div className="my-3">
-                            <img src='/images/howAI icon2.svg'/>
-                        </div>
+                    
 
                     </div>
                 </div>

@@ -7,7 +7,7 @@ class CNNIntro extends Component {
     return (
       <div className="container d-flex expand-full">
         <div className="col col-8 d-flex flex-column align-items-center">
-          <img alt=" " src="logo192.png" height="300" />
+          <img alt=" " src="images/deep-learning.png" height="300" />
           <p className="title">Convolution Neural Network 卷積神經網路</p>
           <p className="bgc">卷積神經網路(以下稱CNN)是目前深度學習技術中極具代表性的一種類神經網路結構之一，CNN擅長處理圖片，而影片是圖片的疊加，所以CNN同樣擅長處理影片內容。常見的應用有:圖片分類、檢索，目標定位檢測，目標分割，人臉辨識。</p>
           <div className="d-flex align-items-center">
