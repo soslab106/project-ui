@@ -14,7 +14,7 @@ class Yolov3 extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="container d-flex flex-column align-items-center expand-full">
+        <div className="container d-flex flex-column align-items-center">
           <h1 className="title mb-3">YOLOV3模型介紹</h1>
           <div>
             <TextAndImg
@@ -31,7 +31,7 @@ class Yolov3 extends Component {
             <p className="bgc">{this.state.yolov3_2}</p>
           </div>
 
-          <div>
+          <div className="my-4">
             <a href="/cnn" className="mx-2">
               <button className="btn btn-previous">回到圖像分類介紹</button>
             </a>
