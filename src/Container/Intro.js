@@ -40,7 +40,7 @@ class Intro extends Component {
           className="d-flex flex-column justify-content-center align-items-center selectFunc"
         >
           <div className="container d-flex flex-column align-items-center justify-content-center py-3">
-            <h1 className="title">功能選擇</h1>
+            <h1 className="title">模型選擇</h1>
             <div>
               <a href="/cnn">
                 <button className="btn btn-model mt-4 mx-2">
@@ -87,7 +87,8 @@ class Intro extends Component {
               content="人工智慧也常用在醫療照護的方面，協助醫生進行醫療數據分析、疾病診斷、病患數據即時監控、疾病諮詢等等。"
             />
           </div>
-          <div className="d-flex flex-column justify-content-center align-items-center">
+          <div className="d-flex flex-column justify-content-center align-items-center mt-3">
+            <div>在初步了解人工智慧的應用，接下來我們了解AI背後的構造吧！</div>
             <a href="/nn-intro">
               <button className="btn btn-main mt-4"> 神經網路概述 </button>
             </a>
