@@ -13,6 +13,7 @@ import React, { Component }  from 'react';
 import Vgg from "./Container/Vgg";
 import ResNet from "./Container/ResNet";
 import CNNDetail from "./Container/CNNDetail";
+import PlayGroundList from "./Container/PlayGroundList";
 
 export function route() {
   return (
@@ -30,6 +31,7 @@ export function route() {
           <Route path="/vgg" component={Vgg} />
           <Route path="/resnet" component={ResNet} />
           <Route path="/cnn-detail" component={CNNDetail} />
+          <Route path="/playground-list" component={PlayGroundList} />
 
           
           <Route path="/:model" component={PlayGround} />

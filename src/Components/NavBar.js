@@ -51,7 +51,7 @@ class NavBar extends Component {
 
             <li className="nav-item mr-3">
               <a className="nav-link" href="# ">
-                好AI實驗室
+                HOW AI Lab
               </a>
             </li>
 

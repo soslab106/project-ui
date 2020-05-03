@@ -16,7 +16,7 @@ class Welcome extends Component {
             <a href="/intro">
               <button className="btn btn-lg btn-main">進入教學</button>
             </a>
-            <button className="btn btn-lg ml-5 btn-main">進入訓練</button>
+            <a href="/playground-list"><button className="btn btn-lg ml-5 btn-main">進入訓練</button></a>
           </div>
         </div>
         <div className="col col-sm-6 col-lg-4 mt-5">
