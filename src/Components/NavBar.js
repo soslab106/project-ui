@@ -4,7 +4,7 @@ import "./NavBar.css";
 class NavBar extends Component {
   render() {
     return (
-      <nav className="navbar container navbar-expand-lg navbar-light bgc p-2 mb-5">
+      <nav className="navbar container navbar-expand-lg navbar-light p-2 mb-5">
         <a href='/'><img
           alt="123"
           src="/images/howAI icon2.svg"

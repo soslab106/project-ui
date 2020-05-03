@@ -30,6 +30,7 @@ class Welcome extends Component {
       style={{ width: "500px", height: "500px" }}
       id='home-img'
     ></img>
+    <img id='home-bg' src='/images/bg.png'/>
       </React.Fragment>
 
     );
