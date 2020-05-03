@@ -198,7 +198,6 @@ img {
     height: 150vh !important;
 }
 
-<<<<<<< HEAD
 .btn-ms{
   border-radius: 80px;
   border: solid 1.25px #00ffdd;
@@ -206,8 +205,4 @@ img {
 }
 .btn-ms:hover{
   background-color: #00ffdd
-=======
-textarea:focus, input:focus{
-  outline: none;
->>>>>>> 38366cac566ecab0cda54b9724c01aa3225e586e
 }
