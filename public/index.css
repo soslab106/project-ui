@@ -180,11 +180,19 @@ img {
 }
 
 #home-img{
-  position: absolute;;
-  top: -5vh;
-  height: 100vh !important;
+  position: absolute;
+  top: 2vh;
+  height: 680px !important;
   z-index: -10;
   left: 50vw;
-  width: 38vw !important;
+  width: 500px !important;
 }
 
+#home-bg{
+    position: absolute;
+    z-index: -999;
+    top: -100px;
+    right: 0px;
+    width: 150vh;
+    height: 150vh !important;
+}
