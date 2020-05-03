@@ -137,7 +137,7 @@ class FaceNetPlayground extends Component {
                       </div>
                     </div>
       
-                    <div className="mt-5">
+                    <div className="mt-5 d-flex justify-content-center">
                       <a href="/img-classify">
                         <button className="btn btn-previous">回到模型分類</button>
                       </a>
@@ -148,8 +148,8 @@ class FaceNetPlayground extends Component {
                     <div className="d-flex justify-content-between my-2">
                         <table  width="1000">
                             <tr>
-                                <td><label>訓練圖片: </label></td>
-                                <td><input
+                                <td height="50px"><label>訓練圖片: </label></td>
+                                <td height="50px"><input
                                         type="file"
                                         className="file-label"
                                         name="input"
@@ -159,8 +159,8 @@ class FaceNetPlayground extends Component {
                                 </td>
                             </tr>
                             <tr>
-                                <td><label>欲辨識圖片: </label></td>
-                                <td><input
+                                <td height="50px"><label>欲辨識圖片: </label></td>
+                                <td height="50px"><input
                                         type="file"
                                         className="file-label"
                                         name="input"
@@ -170,8 +170,8 @@ class FaceNetPlayground extends Component {
                             </td>
                             </tr>
                             <tr>
-                                <td><label>名字: </label></td>
-                                <td>
+                                <td height="50px"><label>名字: </label></td>
+                                <td height="50px">
                                 <input
                                     type="text-area"
                                     className="file-label"

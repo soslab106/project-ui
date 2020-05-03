@@ -199,7 +199,7 @@ class PlayGround extends Component {
                 </div>
               </div>
 
-              <div className="mt-5">
+              <div className="mt-5 d-flex justify-content-center">
                 <a href="/img-classify">
                   <button className="btn btn-previous">回到模型分類</button>
                 </a>
