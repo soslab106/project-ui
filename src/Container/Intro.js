@@ -40,7 +40,7 @@ class Intro extends Component {
           className="d-flex flex-column justify-content-center align-items-center selectFunc"
         >
           <div className="container d-flex flex-column align-items-center justify-content-center py-3">
-            <h1 className="title">功能選擇</h1>
+            <h1 className="title">模型選擇</h1>
             <div>
               <a href="/cnn">
                 <button className="btn btn-model mt-4 mx-2">
@@ -72,22 +72,23 @@ class Intro extends Component {
 
             <ThumbNail
               title="自然語言處理"
-              imgPath="/images/howAI icon2.svg"
+              imgPath="/images/intro_4.jpg"
               content="自然語言處理就是讓電腦能理解人類語言，分析詞意以及詞句間的關係，常應用的方面像是機器翻譯、詐騙郵件偵測、google的搜尋建議更正，或是分析社群媒體、娛樂產業、網路活動輿情分析等等。"
             />
 
             <ThumbNail
               title="語音辨識"
-              imgPath="/images/howAI icon2.svg"
+              imgPath="/images/intro_5.jpg"
               content="語音辨識技術省下我們常要動手的麻煩，最典型的應用像是手機語音助理(Siri)可協助我們撥號、行程安排、問答等等。"
             />
             <ThumbNail
               title="醫療照護"
-              imgPath="/images/howAI icon2.svg"
+              imgPath="/images/intro_6.jpg"
               content="人工智慧也常用在醫療照護的方面，協助醫生進行醫療數據分析、疾病診斷、病患數據即時監控、疾病諮詢等等。"
             />
           </div>
-          <div className="d-flex flex-column justify-content-center align-items-center">
+          <div className="d-flex flex-column justify-content-center align-items-center mt-3">
+            <div>在初步了解人工智慧的應用，接下來我們了解AI背後的構造吧！</div>
             <a href="/nn-intro">
               <button className="btn btn-main mt-4"> 神經網路概述 </button>
             </a>

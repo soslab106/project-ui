@@ -40,7 +40,7 @@ class NeuralNetworkIntro extends Component {
             textWidth="9"
             imgWidth="300"
             textList={this.state.nn_content_1}
-            imgPath="/images/howAI icon2.svg"
+            imgPath="/images/NN_1.png"
             imgPos="right"
           />
           <TextAndImg
@@ -48,13 +48,13 @@ class NeuralNetworkIntro extends Component {
             textWidth="6"
             imgWidth="600"
             textList={this.state.nn_content_2}
-            imgPath="/images/howAI icon2.svg"
+            imgPath="/images/NN_2.png"
             imgPos="right"
           />
           <div className="col-12">
             {this.mapTextList(this.state.nn_content_3)}
           </div>
-          <img className="col-6 mt-2 mb-5" src="/images/howAI icon2.svg" />
+          <img className="col-6 mt-2 mb-5" src="/images/NN_3.png" />
         </div>
         <FullWidthBlock py="4" my="4">
           <h2 className="title col-12">激勵函數 Activation Function</h2>
@@ -63,11 +63,12 @@ class NeuralNetworkIntro extends Component {
             textWidth="8"
             imgWidth="400"
             textList={this.state.af_content}
-            imgPath="/images/howAI icon2.svg"
+            imgPath="/images/NN_4.png"
             imgPos="right"
           />
         </FullWidthBlock>
-        <div className="d-flex justify-content-center mt-5">
+        <div className="d-flex flex-column align-items-center justify-content-center mt-5">
+          <div className='mb-3'>在了解完類神經網路的構造後，就讓我們開始體驗吧！</div>
           <a href="/intro">
             <button className="btn btn-previous mb-5">回到人工智慧簡介</button>
           </a>
