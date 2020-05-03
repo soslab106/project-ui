@@ -144,21 +144,57 @@ class FaceNetPlayground extends Component {
                     </div>
                   </div>
                   <div className="col-8 mt-3">
-                    <div className="d-flex justify-content-between">
-                      <input
-                        type="file"
-                        className="file-label"
-                        name="input"
-                        onChange={this.handleFileChange}
-                      />
-                      <button
-                        type="button"
-                        className="btn btn-main ml-2"
-                        onClick={this.getAPI}
-                      >
-                        執行
-                      </button>
+                      
+                    <div className="d-flex justify-content-between my-2">
+                        <table  width="1000">
+                            <tr>
+                                <td><label>訓練圖片: </label></td>
+                                <td><input
+                                        type="file"
+                                        className="file-label"
+                                        name="input"
+                                        onChange={this.handleFileChange}
+                                        style={{width: "350px"}}
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>欲辨識圖片: </label></td>
+                                <td><input
+                                        type="file"
+                                        className="file-label"
+                                        name="input"
+                                        onChange={this.handleFileChange}
+                                        style={{width: "350px"}}
+                                    />
+                            </td>
+                            </tr>
+                            <tr>
+                                <td><label>名字: </label></td>
+                                <td>
+                                <input
+                                    type="text-area"
+                                    className="file-label"
+                                    name="input"
+                                    style={{width: "350px"}}
+                                />
+                                </td>
+                                <td>
+                                <button
+                                    type="button"
+                                    className="btn btn-main ml-2"
+                                    onClick={this.getAPI}
+                                    style={{left:"350px"}}
+                                >
+                                    執行
+                                </button>
+                            </td>
+                            </tr>
+                            
+                        </table>  
+                        
                     </div>
+                        
                     <div
                       className="d-flex flex-column io-box mb-5 align-items-center p-3"
                       style={{ marginTop: "20px", height: "90vh" }}

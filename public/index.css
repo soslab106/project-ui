@@ -196,3 +196,7 @@ img {
     width: 150vh;
     height: 150vh !important;
 }
+
+textarea:focus, input:focus{
+  outline: none;
+}
