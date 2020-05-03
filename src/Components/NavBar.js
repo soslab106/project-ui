@@ -4,7 +4,7 @@ import "./NavBar.css";
 class NavBar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bgc p-2 mb-5">
+      <nav className="navbar container navbar-expand-lg navbar-light bgc p-2 mb-5">
         <a href='/'><img
           alt="123"
           src="/images/howAI icon2.svg"
@@ -24,7 +24,7 @@ class NavBar extends Component {
 
         <div className="collapse navbar-collapse " id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto align-items-center">
-            <li className="nav-item mr-3">
+            {/* <li className="nav-item mr-3">
               <a className="nav-link" href="# ">
                 Service
               </a>
@@ -47,7 +47,14 @@ class NavBar extends Component {
               >
                 Personal Info
               </button>
+            </li> */}
+
+            <li className="nav-item mr-3">
+              <a className="nav-link" href="# ">
+                好AI實驗室
+              </a>
             </li>
+
           </ul>
         </div>
       </nav>

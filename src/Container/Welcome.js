@@ -4,15 +4,13 @@ class Welcome extends Component {
   render() {
     console.log();
     return (
+      <React.Fragment>
       <div className="container d-flex expand-full">
         <div className="col col-sm-6 col-lg-8 d-flex flex-column justify-content-center">
           <h1 className="my-0 main-title">好AI實驗室，讓你愛上AI</h1>
           <p className="my-4">
-            ContentalotofcontentContentalotofcontentContentalotofcontentContentalotofcontent
-            Contentalotofcontent Contentalotofcontent Contentalotofcontent
-            Contentalotofcontent Contentalotofcontent Contentalotofcontent
-            Contentalotofcontent Contentalotofcontent Contentalotofcontent
-            Contentalotofcontent
+            歡迎來到好AI實驗室！<br/>
+            好AI實驗室為旨在提供作AI模型的教育平台，不須接觸到艱澀難懂的程式碼，<br/>即可獲得操作人工智慧模型的體驗！
           </p>
           <div className="d-flex align-items-center">
             <a href="/intro">
@@ -22,13 +20,18 @@ class Welcome extends Component {
           </div>
         </div>
         <div className="col col-sm-6 col-lg-4 mt-5">
-          <img
-            className="mt-5"
-            src="https://miro.medium.com/max/676/1*XEgA1TTwXa5AvAdw40GFow.png"
-            style={{ width: "500px", height: "500px" }}
-          ></img>
+          
         </div>
+        
       </div>
+      <img
+      className="mt-5"
+      src="/images/home.png"
+      style={{ width: "500px", height: "500px" }}
+      id='home-img'
+    ></img>
+      </React.Fragment>
+
     );
   }
 }

@@ -234,7 +234,7 @@ class PlayGround extends Component {
                 >
                   <img
                     src={file ? URL.createObjectURL(file) : "/images/nopic.png"}
-                    alt="no pic"
+                    alt="無法顯示圖片"
                     style={{ height: "35vh" }}
                   />
                 </div>
@@ -245,7 +245,7 @@ class PlayGround extends Component {
                   ) : (
                     <img
                       src="/images/nopic.png"
-                      alt="no pic"
+                      alt="無法顯示圖片"
                       style={{ height: "35vh" }}
                     />
                   )}

@@ -15,7 +15,7 @@ class Intro extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="container">
+        <div className="container" style={{marginBottom: '200px'}}>
           <div className="d-flex align-items-center my-4">
             <div className="col-5">
               <h1 className="title"> 人工智慧 </h1>
@@ -36,9 +36,8 @@ class Intro extends Component {
           />
         </div>
         <FullWidthBlock
-          py="5"
           my="5"
-          className="d-flex flex-column justify-content-center align-items-center"
+          className="d-flex flex-column justify-content-center align-items-center selectFunc"
         >
           <div className="container d-flex flex-column align-items-center justify-content-center py-3">
             <h1 className="title">功能選擇</h1>
@@ -56,7 +55,7 @@ class Intro extends Component {
             </div>
           </div>
         </FullWidthBlock>
-        <div className="my-4">
+        <div className="my-5" style={{paddingTop:'150px !important'}}>
           <h1 className="text-center title"> 深度學習 </h1>
           <h3 className="text-center title"> Deep Learning </h3>
           <div className="text-center my-5" id="dl-intro">
