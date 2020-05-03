@@ -68,7 +68,7 @@ class NeuralNetworkIntro extends Component {
           />
         </FullWidthBlock>
         <div className="d-flex flex-column align-items-center justify-content-center mt-5">
-          <div className='mb-3'>在了解完類神經網路的構造後，就讓我們開始體驗吧！</div>
+          <div className='mb-3'>還不夠了解人工智慧嗎？回到主頁試著操作模型看看吧！</div>
           <a href="/intro">
             <button className="btn btn-previous mb-5">回到人工智慧簡介</button>
           </a>

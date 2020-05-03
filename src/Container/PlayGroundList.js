@@ -14,20 +14,20 @@ class PlayGroundList extends Component {
                                 <div className="my-4">
                                     <h3 className="title">影像辨識</h3>
                                     <div className="d-flex flex-column">
-                                        <a href="/vgg-playground"><div className="col-1">VGG16</div></a>
-                                        <a href="/resnet-playground"><div className="col-1">ResNet101</div></a>
+                                        <a href="/vgg-playground"><button className="btn btn-ms my-2">VGG16</button></a>
+                                        <a href="/resnet-playground"><button className="btn btn-ms my-2">ResNet101</button></a>
                                     </div>
                                 </div>
                                 <div className="my-4">
                                     <h3 className="title">物體定位</h3>
                                     <div className="d-flex flex-column">
-                                        <a href="/yolov3-playground"><div className="col-1">Yolov3</div></a>
+                                        <a href="/yolov3-playground"><button className="btn btn-ms my-2">Yolov3</button></a>
                                     </div>
                                 </div>
                                 <div className="my-4">
                                     <h3 className="title">人臉辨識</h3>
                                     <div className="d-flex flex-column">
-                                        <a href="/facenet-playground"><div className="col-1">FaceNet</div></a>
+                                        <a href="/facenet-playground"><button className="btn btn-ms my-2">FaceNet</button></a>
                                     </div>
                                 </div>
                             </div>
