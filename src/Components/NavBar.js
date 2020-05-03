@@ -49,10 +49,8 @@ class NavBar extends Component {
               </button>
             </li> */}
 
-            <li className="nav-item mr-3">
-              <a className="nav-link" href="# ">
+            <li className="nav-item mr-3 nav-link">
                 HOW AI Lab
-              </a>
             </li>
 
           </ul>

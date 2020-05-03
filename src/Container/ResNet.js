@@ -38,8 +38,8 @@ class ResNet extends Component {
                     </div>
                 </div>
                     <div className="d-flex align-items-center">
-                        <a href="/resnet-playground"><button className="btn btn-model m-3">前往ResNet101操作</button></a>
                         <a href="/img-classify"><button className="btn btn-previous m-3">回到圖像分類介紹</button></a>
+                        <a href="/resnet-playground"><button className="btn btn-model m-3">前往ResNet101操作</button></a>
                     </div>
             </div>
         );
