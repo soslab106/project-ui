@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Vgg extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="container expand-full">
         <div className="d-flex">
           <div className="col-8">
             <h1 className="title my-5">VGG模型架構介紹</h1>
