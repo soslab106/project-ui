@@ -21,7 +21,7 @@ class FaceNet extends Component {
     return (
       <React.Fragment>
         <div className="container d-flex flex-column align-items-center">
-          <h1 className="title">FaceNet</h1>
+          <h1 className="title">Face Recognition</h1>
           <TextAndImg
             my="5"
             textWidth="5"
@@ -45,7 +45,7 @@ class FaceNet extends Component {
               <button className="btn btn-previous">回到圖像分類介紹</button>
             </a>
             <a href="/facenet-playground" className="mx-2">
-              <button className="btn btn-main">前往FaceNet操作</button>
+              <button className="btn btn-main">前往Face Recognition操作</button>
             </a>
           </div>
         </div>

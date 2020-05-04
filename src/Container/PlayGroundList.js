@@ -27,7 +27,7 @@ class PlayGroundList extends Component {
                                 <div className="my-4">
                                     <h3 className="title">人臉辨識</h3>
                                     <div className="d-flex flex-column">
-                                        <a href="/facenet-playground"><button className="btn btn-ms my-2">FaceNet</button></a>
+                                        <a href="/facenet-playground"><button className="btn btn-ms my-2">Face Recognition</button></a>
                                     </div>
                                 </div>
                             </div>

@@ -33,7 +33,9 @@ class CNNDetail extends Component {
           </div>
           <div>
             <p>
-              卷積神經網路(以下稱CNN)是目前深度學習技術中極具代表性的一種類神經網路結構之一，CNN擅長處理圖片，而影片是圖片的疊加，所以CNN同樣擅長處理影片內容。常見的應用有:圖片分類、檢索,目標定位檢測,目標分割,人臉辨識。
+              卷積神經網路(以下稱CNN)是目前深度學習技術中極具代表性的一種類神經網路結構之一
+              ，CNN擅長處理圖片，而CNN也能將影片切割成多幀照片進行辨識。常見的應用
+              有:圖片分類、檢索,目標定位檢測,目標分割,人臉辨識。
             </p>
           </div>
           <FullWidthBlock py="4" my="4">
@@ -166,7 +168,7 @@ class CNNDetail extends Component {
                 </a>
                 <a href="/cnn">
                   <button className="btn btn-model mt-4 mx-3">
-                    人臉辨識 FaceNet
+                    人臉辨識 Face Recognition
                   </button>
                 </a>
               </div>

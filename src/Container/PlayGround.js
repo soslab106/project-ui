@@ -26,7 +26,7 @@ class PlayGround extends Component {
           input: "一張含有多個物體的圖片",
           output: "框出所有物體位置的圖片",
           file: undefined,
-          api: "http://127.0.0.1:8000/upload/",
+          api: "http://140.119.19.99:8000/upload/",
           labels: yoloLabel,
           previousURL:'/yolov3/'
         });
@@ -39,7 +39,7 @@ class PlayGround extends Component {
           input: "一張含有特定物體的圖片",
           output: "可能性前五高的類別，及其機率",
           file: undefined,
-          api: "http://127.0.0.1:8000/upload/",
+          api: "http://140.119.19.99:8000/upload/",
           labels:imageNetLabel,
           previousURL:'/img-classify'
         });
@@ -52,7 +52,7 @@ class PlayGround extends Component {
           input: "一張含有特定物體的圖片",
           output: "可能性前五高的類別，及其機率",
           file: undefined,
-          api: "http://127.0.0.1:8000/upload/",
+          api: "http://140.119.19.99:8000/upload/",
           labels: imageNetLabel,
           previousURL:'/img-classify'
 
