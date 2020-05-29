@@ -5,11 +5,13 @@ class NavBar extends Component {
   render() {
     return (
       <nav className="navbar container navbar-expand-lg navbar-light p-2 mb-5">
-        <a href='/'><img
-          alt="123"
-          src="/images/howAI icon2.svg"
-          style={{ width: "50px" }}
-        /></a>
+        <a href="/">
+          <img
+            alt="123"
+            src="/images/howAI icon2.svg"
+            style={{ width: "50px" }}
+          />
+        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -39,18 +41,14 @@ class NavBar extends Component {
                 About Us
               </a>
             </li>
-
+*/}
             <li className="nav-item mr-3">
-              <button
-                className="btn btn-personal"
-                href="# "
-              >
+              HowAI Lab
+              {/*this.props.login?<a href="/login"><button className="btn btn-personal" href="# ">
                 Personal Info
-              </button>
-            </li> */}
-
-            <li className="nav-item mr-3 nav-link">
-                HOW AI Lab
+              </button></a>:<a href="/login"><button className="btn btn-personal" href="# ">
+                Log In
+              </button></a>*/}
             </li>
 
           </ul>

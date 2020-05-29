@@ -11,8 +11,12 @@ class PlayGround extends Component {
     result: "",
     api: "",
     showModal: false,
+    showPic:false,
     labels: [],
     loading: false,
+    adversarial_description: "攻擊模型圖片",
+    without_adversarail:"",
+    with_adversarail:"",
   };
 
   componentDidMount() {
@@ -28,7 +32,9 @@ class PlayGround extends Component {
           file: undefined,
           api: "http://140.119.19.99:8000/upload/",
           labels: yoloLabel,
-          previousURL:'/yolov3/'
+          previousURL:'/yolov3/',
+          without_adversarail:"",
+          with_adversarail:"",
         });
         break;
       case "vgg-playground":
@@ -41,7 +47,9 @@ class PlayGround extends Component {
           file: undefined,
           api: "http://140.119.19.99:8000/upload/",
           labels:imageNetLabel,
-          previousURL:'/img-classify'
+          previousURL:'/img-classify',
+          without_adversarail:"/images/without_adversarail.png",
+          with_adversarail:"/images/with_adversarail.png",
         });
         break;
       case "resnet-playground":
@@ -54,7 +62,9 @@ class PlayGround extends Component {
           file: undefined,
           api: "http://140.119.19.99:8000/upload/",
           labels: imageNetLabel,
-          previousURL:'/img-classify'
+          previousURL:'/img-classify',
+          without_adversarail:"/images/without_adversarail.png",
+          with_adversarail:"/images/with_adversarail.png",
 
         });
         break;
@@ -139,6 +149,10 @@ class PlayGround extends Component {
       showModal,
       labels,
       loading,
+      showPic,
+      adversarial_description,
+      without_adversarail,
+      with_adversarail,
     } = this.state;
     const popupLabels = (
       <div className="label-modal">
@@ -158,6 +172,25 @@ class PlayGround extends Component {
         </div>
       </div>
     );
+    const popupPics = (
+      <div className="label-modal">
+        <div className="d-flex justify-content-between">
+        <h4>圖片們</h4>
+          <h4
+            className="close-modal"
+            onClick={() => this.setState({ showPic: false })}
+          >
+            &times;
+          </h4>
+        </div>
+        <div style={{ height: "90%", overflow: "auto" }}>
+        <h4>原始圖片</h4>
+            <img src={without_adversarail}></img>
+          <h4>Adversarial圖片</h4>
+            <img src={with_adversarail}></img>
+        </div>
+      </div>
+    );
     const loadingPage = (
       <div className="loading d-flex flex-column align-items-center justify-content-center">
         <img src="/images/Loading_2.gif" width="50" />
@@ -174,6 +207,7 @@ class PlayGround extends Component {
         {loading ? loadingPage : ""}
         <div className="d-flex flex-column align-items-center">
           {showModal ? popupLabels : ""}
+          {showPic ? popupPics : ""}
           <h1 className="title">{modelName}</h1>
           <div className="container d-flex mt-5">
             <div className="col-4">
@@ -198,7 +232,19 @@ class PlayGround extends Component {
                   {output}
                 </div>
               </div>
-
+              <div>
+                <div className="description d-flex flex-column justify-content-around align-items-center">
+                  <div>{adversarial_description}</div>
+                  <button
+                    className="btn btn-recoglist"
+                    onClick={() =>
+                      this.setState({ showPic: true }, console.log(showPic))
+                    }
+                  >
+                    Adversarial
+                  </button>
+                </div>
+              </div>
               <div className="mt-5 d-flex justify-content-center">
                 <a href="/img-classify">
                   <button className="btn btn-previous">回到模型分類</button>
@@ -251,6 +297,7 @@ class PlayGround extends Component {
                   )}
                 </div>
               </div>
+              
             </div>
           </div>
         </div>

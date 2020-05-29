@@ -17,8 +17,8 @@ class FaceNetPlayground extends Component {
     this.setState({
       modelName: "FaceNet",
       description: "F",
-      input: "F",
-      output: "F",
+      input: "於訓練圖片中上傳人臉的照片，並於下一欄依序輸入各照片的名字，以','做分隔，在欲辨識圖片中上傳你要辨識的照片(含多人)",
+      output: "辨識照片中的人臉，框出位置，並標上使用者輸入的名字",
       train: undefined,
       name: undefined,
       test: undefined,
@@ -45,10 +45,17 @@ class FaceNetPlayground extends Component {
 
       let { api, train, name, test } = this.state;
       let formData = new FormData();
-      formData.append("train", train);
+      console.log(train)
+      for(const key of Object.keys(train)){
+        formData.append('train', train[key])
+      }
+      // for(let k in train){
+      //   formData.append("train", train[k]);
+      // }
+      // formData.append("train", train);
       formData.append("name", name);
       formData.append("test", test);
-
+      console.log(test)
       for (var pair of formData.entries()) {
         console.log(pair[0] + ", " + pair[1]);
       }
@@ -75,15 +82,12 @@ class FaceNetPlayground extends Component {
   };
 
   renderSelected = () => {
-    let train = this.state.train.map((file) => {
-      return <img src={URL.createObjectURL(file)} style={{ height: "35vh" }} />;
-    });
-    return <React.Fragment>{train}</React.Fragment>;
+    return <img src={URL.createObjectURL(this.state.test)} style={{ height: "35vh" }} />
   };
 
   renderResult = (modelName) => {
     switch (modelName) {
-      case "YOLOv3":
+      case "FaceNet":
         return (
           <React.Fragment>
             <img
@@ -116,7 +120,8 @@ class FaceNetPlayground extends Component {
       description,
       input,
       output,
-      train,
+      test,
+
       result,
       showModal,
       loading,
@@ -182,7 +187,7 @@ class FaceNetPlayground extends Component {
                   </tr>
                   <tr>
                     <td height="50px">
-                      <label>名字: </label>
+                      <label>名字(限英數字): </label>
                     </td>
                     <td height="50px">
                       <input
@@ -232,8 +237,8 @@ class FaceNetPlayground extends Component {
                   height="35vh"
                   overflow="auto"
                 >
-                  {train ? (
-                    this.renderSelected
+                  {test ? (
+                    this.renderSelected()
                   ) : (
                     <img src="/images/nopic.png" style={{ height: "35vh" }} />
                   )}
