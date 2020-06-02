@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import {yoloLabel, imageNetLabel} from "./labels"
+import { yoloLabel, imageNetLabel } from "./labels";
 
 class PlayGround extends Component {
   state = {
@@ -11,12 +11,12 @@ class PlayGround extends Component {
     result: "",
     api: "",
     showModal: false,
-    showPic:false,
+    showPic: false,
     labels: [],
     loading: false,
     adversarial_description: "攻擊模型圖片",
-    without_adversarail:"",
-    with_adversarail:"",
+    adv: [],
+    adv_origin: [],
   };
 
   componentDidMount() {
@@ -32,9 +32,9 @@ class PlayGround extends Component {
           file: undefined,
           api: "http://140.119.19.99:8000/upload/",
           labels: yoloLabel,
-          previousURL:'/yolov3/',
-          without_adversarail:"",
-          with_adversarail:"",
+          previousURL: "/yolov3/",
+          adv: [], 
+          adv_origin: [],
         });
         break;
       case "vgg-playground":
@@ -46,10 +46,10 @@ class PlayGround extends Component {
           output: "可能性前五高的類別，及其機率",
           file: undefined,
           api: "http://140.119.19.99:8000/upload/",
-          labels:imageNetLabel,
-          previousURL:'/img-classify',
-          without_adversarail:"/images/without_adversarail.png",
-          with_adversarail:"/images/with_adversarail.png",
+          labels: imageNetLabel,
+          previousURL: "/img-classify",
+          adv: ['/adv/vgg/adv_vgg_1.jpg', '/adv/vgg/adv_vgg_2.jpg'],
+          adv_origin: ['/adv/vgg/vgg_1.jpg', '/adv/vgg/vgg_2.jpg'],
         });
         break;
       case "resnet-playground":
@@ -62,10 +62,9 @@ class PlayGround extends Component {
           file: undefined,
           api: "http://140.119.19.99:8000/upload/",
           labels: imageNetLabel,
-          previousURL:'/img-classify',
-          without_adversarail:"/images/without_adversarail.png",
-          with_adversarail:"/images/with_adversarail.png",
-
+          previousURL: "/img-classify",
+          adv: ['/adv/res/adv_res_1.jpg', '/adv/res/adv_res_2.jpg', '/adv/res/adv_res_3.jpg'],
+          adv_origin: ['/adv/res/res_1.jpg', '/adv/res/res_2.jpg', '/adv/res/res_3.png'],
         });
         break;
       default:
@@ -78,14 +77,14 @@ class PlayGround extends Component {
   };
 
   getAPI = () => {
-    if(this.state.file){
+    if (this.state.file) {
       this.setState({ loading: true });
 
       let { api, modelName, file } = this.state;
       let formData = new FormData();
       formData.append("modelName", modelName);
       formData.append("file", file);
-  
+
       axios
         .post(api, formData, {
           headers: {
@@ -103,10 +102,9 @@ class PlayGround extends Component {
         .catch((error) => {
           console.error(error);
         });
-    }else{
-      alert('請先選擇照片!')
+    } else {
+      alert("請先選擇照片!");
     }
-    
   };
 
   renderResult = (modelName) => {
@@ -151,8 +149,7 @@ class PlayGround extends Component {
       loading,
       showPic,
       adversarial_description,
-      without_adversarail,
-      with_adversarail,
+      adv, adv_origin
     } = this.state;
     const popupLabels = (
       <div className="label-modal">
@@ -172,10 +169,15 @@ class PlayGround extends Component {
         </div>
       </div>
     );
+    console.log(adv)
+
+    const adv_map = adv.map((e, i)=>(<div>{i+1}.<br/><img src={e}/></div>))
+    const adv_origin_map = adv_origin.map((e, i)=>(<div>{i+1}.<br/><img src={e}/></div>))
     const popupPics = (
-      <div className="label-modal">
+      <div className="adv-modal">
         <div className="d-flex justify-content-between">
-        <h4>圖片們</h4>
+          <h4>攻擊模型圖片</h4>
+          
           <h4
             className="close-modal"
             onClick={() => this.setState({ showPic: false })}
@@ -184,10 +186,10 @@ class PlayGround extends Component {
           </h4>
         </div>
         <div style={{ height: "90%", overflow: "auto" }}>
-        <h4>原始圖片</h4>
-            <img src={without_adversarail}></img>
+          <h4>原始圖片</h4>
+          <div>{adv_origin_map}</div>
           <h4>Adversarial圖片</h4>
-            <img src={with_adversarail}></img>
+          <div>{adv_map}</div>
         </div>
       </div>
     );
@@ -297,7 +299,6 @@ class PlayGround extends Component {
                   )}
                 </div>
               </div>
-              
             </div>
           </div>
         </div>

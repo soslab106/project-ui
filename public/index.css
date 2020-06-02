@@ -150,7 +150,7 @@ img {
   color: #dbe1e2;
 }
 
-.label-modal {
+.label-modal, .adv-modal {
   background-color: #1f2e41;
   top: 20vh;
   position: fixed;
@@ -160,6 +160,12 @@ img {
   border-radius: 10px;
   padding: 30px;
   box-shadow: 0 0 500px #000000;
+}
+
+.adv-modal{
+  top:10vh;
+  width: 50%;
+  height: 80%;
 }
 
 .close-modal:hover {
