@@ -33,7 +33,7 @@ class PlayGround extends Component {
           api: "http://140.119.19.99:8000/upload/",
           labels: yoloLabel,
           previousURL: "/yolov3/",
-          adv: [], 
+          adv: [],
           adv_origin: [],
         });
         break;
@@ -48,13 +48,13 @@ class PlayGround extends Component {
           api: "http://140.119.19.99:8000/upload/",
           labels: imageNetLabel,
           previousURL: "/img-classify",
-          adv: ['/adv/vgg/adv_vgg_1.jpg', '/adv/vgg/adv_vgg_2.jpg'],
-          adv_origin: ['/adv/vgg/vgg_1.jpg', '/adv/vgg/vgg_2.jpg'],
+          adv: ["/adv/vgg/adv_vgg_1.jpg", "/adv/vgg/adv_vgg_2.jpg"],
+          adv_origin: ["/adv/vgg/vgg_1.jpg", "/adv/vgg/vgg_2.jpg"],
         });
         break;
       case "resnet-playground":
         this.setState({
-          modelName: "ResNet101",
+          modelName: "ResNet50",
           description:
             "此模型使用ImageNet Dataset訓練，可以辨識一千種物體，詳細類別請查看以下連結",
           input: "一張含有特定物體的圖片",
@@ -63,8 +63,16 @@ class PlayGround extends Component {
           api: "http://140.119.19.99:8000/upload/",
           labels: imageNetLabel,
           previousURL: "/img-classify",
-          adv: ['/adv/res/adv_res_1.jpg', '/adv/res/adv_res_2.jpg', '/adv/res/adv_res_3.jpg'],
-          adv_origin: ['/adv/res/res_1.jpg', '/adv/res/res_2.jpg', '/adv/res/res_3.png'],
+          adv: [
+            "/adv/res/adv_res_1.jpg",
+            "/adv/res/adv_res_2.jpg",
+            "/adv/res/adv_res_3.jpg",
+          ],
+          adv_origin: [
+            "/adv/res/res_1.jpg",
+            "/adv/res/res_2.jpg",
+            "/adv/res/res_3.png",
+          ],
         });
         break;
       default:
@@ -91,7 +99,9 @@ class PlayGround extends Component {
             "content-type": "multipart/form-data",
           },
         })
+
         .then((res) => {
+          console.log(res.status);
           let { data } = res;
           console.log(data);
           this.setState({ result: data.result });
@@ -101,6 +111,8 @@ class PlayGround extends Component {
         })
         .catch((error) => {
           console.error(error);
+          alert("連線逾時或檔名有誤，即將重整頁面");
+          window.location.reload();
         });
     } else {
       alert("請先選擇照片!");
@@ -149,7 +161,8 @@ class PlayGround extends Component {
       loading,
       showPic,
       adversarial_description,
-      adv, adv_origin
+      adv,
+      adv_origin,
     } = this.state;
     const popupLabels = (
       <div className="label-modal">
@@ -169,15 +182,25 @@ class PlayGround extends Component {
         </div>
       </div>
     );
-    console.log(adv)
+    console.log(adv);
 
-    const adv_map = adv.map((e, i)=>(<div>{i+1}.<br/><img src={e}/></div>))
-    const adv_origin_map = adv_origin.map((e, i)=>(<div>{i+1}.<br/><img src={e}/></div>))
+    const adv_map = adv.map((e, i) => (
+      <div>
+        {i + 1}.<br />
+        <img src={e} />
+      </div>
+    ));
+    const adv_origin_map = adv_origin.map((e, i) => (
+      <div>
+        {i + 1}.<br />
+        <img src={e} />
+      </div>
+    ));
     const popupPics = (
       <div className="adv-modal">
         <div className="d-flex justify-content-between">
           <h4>攻擊模型圖片</h4>
-          
+
           <h4
             className="close-modal"
             onClick={() => this.setState({ showPic: false })}
@@ -228,6 +251,7 @@ class PlayGround extends Component {
                 <div className="io-box">
                   <h5>輸入格式</h5>
                   {input}
+                  <p style={{color: '#FF7575'}}>**檔名須為英文**</p>
                 </div>
                 <div className="io-box">
                   <h5>輸出格式</h5>

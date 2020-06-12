@@ -1,4 +1,10 @@
 import React, { Component } from "react";
+import GoogleLogin from 'react-google-login';
+import ReactDOM from 'react-dom';
+
+const responseGoogle = (response) => {
+  console.log(response);
+}
 
 class Login extends Component {
   render() {
@@ -36,7 +42,17 @@ class Login extends Component {
           </button>
         </form>
         <div className="my-4">
-          <button className="btn btn-main">Google 登入</button>
+          {/* <button className="btn btn-main">Google 登入</button> */}
+          <GoogleLogin
+            clientId="840585485839-tmkn6oo6t5bimjtjqjtm1eg4tb8vgo6u.apps.googleusercontent.com"
+            render={renderProps => (
+              <button onClick={renderProps.onClick} disabled={renderProps.disabled}>This is my custom Google button</button>
+            )}
+            buttonText="Login"
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
+            cookiePolicy={'single_host_origin'}
+          />
         </div>
         <div className="my-1">
           <a href="/signup">

@@ -16,7 +16,7 @@ class FaceNetPlayground extends Component {
   componentDidMount() {
     this.setState({
       modelName: "FaceNet",
-      description: "F",
+      description: "可辨識出已經過訓練學習的人臉並標上名字",
       input: "於訓練圖片中上傳人臉的照片，並於下一欄依序輸入各照片的名字，以','做分隔，在欲辨識圖片中上傳你要辨識的照片(含多人)",
       output: "辨識照片中的人臉，框出位置，並標上使用者輸入的名字",
       train: undefined,

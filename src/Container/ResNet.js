@@ -27,7 +27,7 @@ class ResNet extends Component {
                         <div className='my-3'>
                             <p>除了原本的主架構，另外還多了一個捷徑，當我們的模型學習到一個比較飽和的準確率時，我們透過這個捷徑，來讓該層的輸入值近似於輸出值，這樣就能保持後面的層數比較不會造成準確率下降的情況。</p>
                             <p>如此一來，我們就能加深網路的層數，且不會產生準確率反而下降的情況。</p>
-                            <p>下圖是各種深度的ResNet的結構圖，之後很多的深度學習模型都是建立在ResNet50和ResNet101的基礎上完成的，因此我們選擇提供ResNet101作為範例。</p>
+                            <p>下圖是各種深度的ResNet的結構圖，之後很多的深度學習模型都是建立在ResNet50和ResNet101的基礎上完成的，因此我們選擇提供ResNet50作為範例。</p>
                         </div>
                         <div className="my-3 d-flex flex-column align-items-center">
                             <img src='/images/RN_3.png' style={{width:"500px"}}/>

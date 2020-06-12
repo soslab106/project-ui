@@ -11,7 +11,13 @@ class Footer extends Component {
             alt=" "
             style={{ width: "50px" }}
           />
-          <a href="https://www.freepik.com/free-photos-vectors/banner" className="ml-5" style={{color: "#686868"}}>Banner vector created by fullvector - www.freepik.com</a>
+          <a
+            href="https://www.freepik.com/free-photos-vectors/banner"
+            className="ml-5"
+            style={{ color: "#686868" }}
+          >
+            Banner vector created by fullvector - www.freepik.com
+          </a>
         </div>
       </footer>
     );
