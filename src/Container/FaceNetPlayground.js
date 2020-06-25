@@ -17,10 +17,9 @@ class FaceNetPlayground extends Component {
     this.setState({
       modelName: "FaceNet",
       description: "可辨識出已經過訓練學習的人臉並標上名字",
-      input: "於訓練圖片中上傳人臉的照片，並於下一欄依序輸入各照片的名字，以','做分隔，在欲辨識圖片中上傳你要辨識的照片(含多人)",
-      output: "辨識照片中的人臉，框出位置，並標上使用者輸入的名字",
+      input: "於訓練圖片中上傳人臉的照片(請更改檔名)，在欲辨識圖片中上傳你要辨識的照片(含多人)",
+      output: "辨識照片中的人臉，框出位置，並標上圖片檔名",
       train: undefined,
-      name: undefined,
       test: undefined,
       api: "http://140.119.19.99:8000/upload/multi/",
       previousURL: "/facenet/",
@@ -35,15 +34,15 @@ class FaceNetPlayground extends Component {
     this.setState({ test: e.target.files[0] });
   };
 
-  handleNameChange = (e) => {
-    this.setState({ name: e.target.value });
-  };
+  // handleNameChange = (e) => {
+  //   this.setState({ name: e.target.value });
+  // };
 
   getAPI = () => {
-    if (this.state.train && this.state.name && this.state.test) {
+    if (this.state.train && this.state.test) {
       this.setState({ loading: true });
 
-      let { api, train, name, test } = this.state;
+      let { api, train, test } = this.state;
       let formData = new FormData();
       console.log(train)
       for(const key of Object.keys(train)){
@@ -53,7 +52,7 @@ class FaceNetPlayground extends Component {
       //   formData.append("train", train[k]);
       // }
       // formData.append("train", train);
-      formData.append("name", name);
+      // formData.append("name", name);
       formData.append("test", test);
       console.log(test)
       for (var pair of formData.entries()) {
@@ -172,7 +171,7 @@ class FaceNetPlayground extends Component {
                 <table width="1000">
                   <tr>
                     <td height="50px">
-                      <label>訓練圖片: </label>
+                      <label>目標人臉圖片: </label>
                     </td>
                     <td height="50px">
                       <input
@@ -185,9 +184,9 @@ class FaceNetPlayground extends Component {
                       />
                     </td>
                   </tr>
-                  <tr>
+                  {/* <tr>
                     <td height="50px">
-                      <label>名字(限英數字): </label>
+                      <label>目標名字(限英數字): </label>
                     </td>
                     <td height="50px">
                       <input
@@ -198,7 +197,7 @@ class FaceNetPlayground extends Component {
                         onChange={this.handleNameChange}
                       />
                     </td>
-                  </tr>
+                  </tr> */}
                   <tr>
                     <td height="50px">
                       <label>欲辨識圖片: </label>

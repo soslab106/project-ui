@@ -45,12 +45,10 @@ class Login extends Component {
           {/* <button className="btn btn-main">Google 登入</button> */}
           <GoogleLogin
             clientId="840585485839-tmkn6oo6t5bimjtjqjtm1eg4tb8vgo6u.apps.googleusercontent.com"
-            render={renderProps => (
-              <button onClick={renderProps.onClick} disabled={renderProps.disabled}>This is my custom Google button</button>
-            )}
             buttonText="Login"
             onSuccess={responseGoogle}
             onFailure={responseGoogle}
+            isSignedIn={true}
             cookiePolicy={'single_host_origin'}
           />
         </div>
@@ -63,5 +61,6 @@ class Login extends Component {
     );
   }
 }
+
 
 export default Login;
