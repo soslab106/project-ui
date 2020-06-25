@@ -29,7 +29,7 @@ class Login extends Component {
               className="form-check-input"
             ></input>
             <label for="remember" className="form-check-label">
-              記住我{" "}
+              記住我
             </label>
           </div>
 
@@ -41,18 +41,7 @@ class Login extends Component {
             Submit
           </button>
         </form>
-        <div className="my-4">
-          {/* <button className="btn btn-main">Google 登入</button> */}
-          <GoogleLogin
-            clientId="840585485839-tmkn6oo6t5bimjtjqjtm1eg4tb8vgo6u.apps.googleusercontent.com"
-            buttonText="Login"
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
-            isSignedIn={true}
-            cookiePolicy={'single_host_origin'}
-          />
-        </div>
-        <div className="my-1">
+        <div className="my-3">
           <a href="/signup">
             <button className="btn btn-main">註冊</button>
           </a>
