@@ -3,7 +3,7 @@ import axios from "axios";
 
 class SiginUp extends Component {
     state = {
-        api: 'https://140.119.19.99:8000/auth/users',
+        api: 'http://140.119.19.99:8000/auth/users/',
         username: '',
         password: '',
         email: '',
@@ -38,14 +38,10 @@ class SiginUp extends Component {
                     },
                 })
                 .then((res) => {
+                    alert('success')
                     console.log(res.status);
                     let { data } = res;
                     console.log(data);
-                    // this.setState({})
-                })
-                .then(() => {
-                    this.setState({ loading: false });
-                    alert('success?')
                 })
                 .catch((error) => {
                     console.error(error);
