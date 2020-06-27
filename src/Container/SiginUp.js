@@ -43,10 +43,12 @@ class SiginUp extends Component {
                     let { data } = res;
                     console.log(data);
                 })
+                .then(() => { alert("sucess")})
                 .catch((error) => {
                     console.error(error);
                     alert("註冊失敗，請檢查填寫欄位！");
                 });
+           
         } else if (!username | !password | !email) {
             alert("請填寫完整欄位！");
         } else if (repassword != password) {
