@@ -2,13 +2,18 @@ import React, { Component } from 'react';
 import axios from "axios";
 
 class SiginUp extends Component {
-    state = {
-        api: 'http://140.119.19.99:8000/auth/users/',
-        username: '',
-        password: '',
-        email: '',
-        loading: false,
+    
+    constructor(props) {
+        super(props);
+        this.state = {
+            api: 'http://140.119.19.99:8000/auth/users/',
+            username: '',
+            password: '',
+            email: '',
+            loading: false,
+        }
     }
+    
 
     handleFieldChange = (e, field) => {
         this.setState({ [field]: e.target.value }, console.log('changed'));
@@ -18,7 +23,8 @@ class SiginUp extends Component {
         console.log('componentDidMount')
     }
 
-    signup = () => {
+    signup = (e) => {
+        e.preventDefault();
         let { api, username, password, email, repassword } = this.state;
         if(password.length<8){
             alert("密碼長度過短！")
@@ -43,10 +49,8 @@ class SiginUp extends Component {
                     let { data } = res;
                     console.log(data);
                 })
-                .then(() => { alert("sucess")})
                 .catch((error) => {
-                    console.error(error);
-                    alert("註冊失敗，請檢查填寫欄位！");
+                    alert(Object.values(error.response.data).join(' ').split(',').join(' '))
                 });
            
         } else if (!username | !password | !email) {
@@ -86,7 +90,7 @@ class SiginUp extends Component {
                         <label for="remember" className="form-check-label">記住我 </label>
                     </div> */}
                     <div className="mt-4">
-                        <button className="btn btn-main" type="submit" onClick={this.signup}>註冊</button>
+                        <button className="btn btn-main" type="submit" onClick={e=>this.signup(e)}>註冊</button>
                     </div>
 
                 </form>

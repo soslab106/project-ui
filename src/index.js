@@ -1,19 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { route } from "./route";
+// import { route } from "./route";
 
 // import App from './Components/App'
-import NavBar from "./Components/NavBar";
-import Footer from "./Components/Footer";
-
-const routes = route();
+// import NavBar from "./Components/NavBar";
+// import Footer from "./Components/Footer";
+import App from "./App"
+// const routes = route();
 
 ReactDOM.render(
-  <React.Fragment>
-    <NavBar />
-    {routes}
-    <Footer />
-  </React.Fragment>,
+  <App/>,
   document.getElementById("root")
 );
 

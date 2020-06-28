@@ -44,9 +44,13 @@ class NavBar extends Component {
 */}
             <li className="nav-item mr-3">
               {/* HowAI Lab */}
-              {this.props.login?<a href="/login"><button className="btn btn-personal" href="# ">
+              {this.props.logged_in?
+              /*<a href="/login"><button className="btn btn-personal" href="# ">
                 Personal Info
-              </button></a>:<a href="/login"><button className="btn btn-personal" href="# ">
+              </button></a>*/
+              `Hello! ${this.props.username}`
+              :
+              <a href="/login"><button className="btn btn-personal" href="# ">
                 Log In
               </button></a>}
             </li>

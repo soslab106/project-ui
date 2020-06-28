@@ -1,12 +1,50 @@
 import React, { Component } from "react";
-import GoogleLogin from 'react-google-login';
-import ReactDOM from 'react-dom';
-
-const responseGoogle = (response) => {
-  console.log(response);
-}
+import axios from "axios";
 
 class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        api: 'http://140.119.19.99:8000/api-token-auth/',
+        username: '',
+        password: '',
+        logged_in: localStorage.getItem('token') ? true : false,
+    }
+  }
+  handleFieldChange = (e, field) => {
+    this.setState({ [field]: e.target.value }, console.log('changed'));
+  };
+
+  login = (e) => {
+    e.preventDefault();
+    let { api, username, password } = this.state;
+    let formData = new FormData();
+    formData.append("username", username);
+    formData.append("password", password);
+
+    axios
+        .post(api, formData, {
+            headers: {
+                "content-type": "multipart/form-data",
+            },
+        })
+        .then((res) => {
+            let { data } = res;
+            console.log(data)
+            localStorage.setItem('token', data.token);
+            this.setState({
+              logged_in: true,
+              username: data.user.username
+            });
+            alert('登入成功!')
+            window.location.href = '/'
+        })
+        .catch((error) => {
+            console.error(error);
+            alert("登入失敗，請檢查填寫欄位！");
+        });
+  };
+
   render() {
     return (
       <div className="container d-flex flex-column align-items-center expand-full">
@@ -14,15 +52,15 @@ class Login extends Component {
         <form className="d-flex flex-column align-items-center">
           <div className="form-group">
             <label for="name">使用者名稱: </label>
-            <input type="text" id="name" className="form-control"></input>
+            <input type="text" id="name" className="form-control" onChange={e=>this.handleFieldChange(e, 'username')}></input>
           </div>
 
           <div className="form-group">
             <label for="password">密碼:</label>
-            <input type="text" id="password" className="form-control"></input>
+            <input type="password" id="password" className="form-control" onChange={e=>this.handleFieldChange(e, 'password')}></input>
           </div>
 
-          <div className="form-group form-check">
+          {/*<div className="form-group form-check">
             <input
               type="checkbox"
               id="remember"
@@ -31,14 +69,14 @@ class Login extends Component {
             <label for="remember" className="form-check-label">
               記住我
             </label>
-          </div>
+    </div>*/}
 
           <div className="form-group">
             <a href="/">忘記密碼?</a>
           </div>
 
-          <button className="btn btn-main" type="button">
-            Submit
+          <button className="btn btn-main" type="button" onClick={e=>this.login(e)}>
+            登入
           </button>
         </form>
         <div className="my-3">
