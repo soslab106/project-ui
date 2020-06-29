@@ -71,18 +71,17 @@ class Login extends Component {
             </label>
     </div>*/}
 
-          <div className="form-group">
-            <a href="/">忘記密碼?</a>
-          </div>
+          <small className="form-group">
+            <a href="/">忘記密碼</a>
+          </small>
 
           <button className="btn btn-main" type="button" onClick={e=>this.login(e)}>
             登入
           </button>
         </form>
         <div className="my-3">
-          <a href="/signup">
-            <button className="btn btn-main">註冊</button>
-          </a>
+          <small id="emailHelp" className="form-text text-muted">尚未創建帳號嗎？請<a href="/signup">註冊</a></small>
+
         </div>
       </div>
     );

@@ -4,7 +4,7 @@ import "./NavBar.css";
 class NavBar extends Component {
   render() {
     return (
-      <nav className="navbar container navbar-expand-lg navbar-light p-2 mb-5">
+      <nav className="navbar container sticky-top navbar-dark navbar-expand-lg navbar-light p-2 mb-5">
         <a href="/">
           <img
             alt="123"
@@ -26,9 +26,9 @@ class NavBar extends Component {
 
         <div className="collapse navbar-collapse " id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto align-items-center">
-            {/* <li className="nav-item mr-3">
-              <a className="nav-link" href="# ">
-                Service
+             <li className="nav-item mr-3">
+              <a className="nav-link" href="/playground-list">
+                PlayGround
               </a>
             </li>
             <li className="nav-item mr-3">
@@ -36,25 +36,27 @@ class NavBar extends Component {
                 Tutorials
               </a>
             </li>
-            <li className="nav-item mr-3">
-              <a className="nav-link" href="# ">
-                About Us
+            {this.props.logged_in?
+              <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Hello! {this.props.username}
               </a>
-            </li>
-*/}
-            <li className="nav-item mr-3">
-              {/* HowAI Lab */}
-              {this.props.logged_in?
-              /*<a href="/login"><button className="btn btn-personal" href="# ">
-                Personal Info
-              </button></a>*/
-              `Hello! ${this.props.username}`
-              :
-              <a href="/login"><button className="btn btn-personal" href="# ">
-                Log In
-              </button></a>}
-            </li>
-
+              <div class="dropdown-menu bg-dark text-white" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item text-white" href="/settings">個人設定</a>
+                <a class="dropdown-item text-white" onClick={this.props.logout}>登出</a>
+              </div>
+              </li>
+            :<React.Fragment><li className="nav-item mr-3">
+              <a className="nav-link" href="/login">
+                登入
+              </a>
+              </li>
+              <li className="nav-item mr-3">
+              <a className="nav-link" href="/signup">
+                註冊
+              </a>
+              </li></React.Fragment>
+            }
           </ul>
         </div>
       </nav>
@@ -63,3 +65,6 @@ class NavBar extends Component {
 }
 
 export default NavBar;
+/*<a href="/login"><button className="btn btn-personal" href="# ">
+                Personal Info
+              </button></a>*/

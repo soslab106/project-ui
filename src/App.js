@@ -17,6 +17,11 @@ class App extends Component {
         };
       }
     
+      logout = () => {
+        localStorage.removeItem('token');
+        this.setState({ logged_in: false, username: '' });
+      };    
+
       componentDidMount() {
         if (this.state.logged_in) {
           fetch('http://140.119.19.99:8000/current_user/', {
@@ -26,21 +31,23 @@ class App extends Component {
           })
             .then(res => res.json())
             .then(json => {
-              this.setState({ username: json.username });
+                console.log(json)
+                if(json.username){
+                    this.setState({ username: json.username });
+                }else{
+                    this.logout();
+                }
             });
         }
       }
       
-      /*handle_logout = () => {
-        localStorage.removeItem('token');
-        this.setState({ logged_in: false, username: '' });
-      };*/    
+      
     
 
     render() {
         return (
             <React.Fragment>
-                <NavBar logged_in={this.state.logged_in} username={this.state.username}/>
+                <NavBar logged_in={this.state.logged_in} username={this.state.username} logout={this.logout}/>
                 {routes}
                 <Footer />
             </React.Fragment>

@@ -15,6 +15,7 @@ import ResNet from "./Container/ResNet";
 import CNNDetail from "./Container/CNNDetail";
 import FaceNetPlayground from "./Container/FaceNetPlayground";
 import PlayGroundList from "./Container/PlayGroundList";
+import Settings from "./Container/Settings";
 
 export function route() {
   return (
@@ -34,6 +35,7 @@ export function route() {
           <Route path="/cnn-detail" component={CNNDetail} />
           <Route path="/facenet-playground" component={FaceNetPlayground} />
           <Route path="/playground-list" component={PlayGroundList} />
+          <Route path="/settings" component={Settings} />
 
           
           <Route path="/:model" component={PlayGround} />

@@ -6,7 +6,7 @@ class SiginUp extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            api: 'http://140.119.19.99:8000/auth/users/',
+            api: 'http://140.119.19.99:8000/users/',
             username: '',
             password: '',
             email: '',
@@ -44,10 +44,15 @@ class SiginUp extends Component {
                     },
                 })
                 .then((res) => {
-                    alert('success')
-                    console.log(res.status);
                     let { data } = res;
                     console.log(data);
+                    localStorage.setItem('token', data.token);
+                    this.setState({
+                        logged_in: true,
+                        username: data.username
+                    });
+                    alert('註冊成功!')
+                    window.location.href = '/'
                 })
                 .catch((error) => {
                     alert(Object.values(error.response.data).join(' ').split(',').join(' '))
@@ -69,7 +74,6 @@ class SiginUp extends Component {
                     <div className="form-group">
                         <label for="name">使用者名稱</label>
                         <input type="text" id="name" className="form-control" onChange={e=>this.handleFieldChange(e, 'username')}></input>
-                        <small id="emailHelp" className="form-text text-muted">已有帳號了嗎？請<a href="/login">登入</a></small>
                     </div>
                     <div className="form-group">
                         <label for="email">E-mail</label>
@@ -92,6 +96,7 @@ class SiginUp extends Component {
                     <div className="mt-4">
                         <button className="btn btn-main" type="submit" onClick={e=>this.signup(e)}>註冊</button>
                     </div>
+                    <small id="emailHelp" className="form-text text-muted my-3">已有帳號了嗎？請<a href="/login">登入</a></small>
 
                 </form>
             </div>
