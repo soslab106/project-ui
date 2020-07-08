@@ -11,7 +11,7 @@ class Settings extends Component {
     render() {
         return (
             <div className="container expand-full">
-               Hylobates
+               設定頁面目前尚未開放
             </div>
         );
     }

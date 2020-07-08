@@ -20,6 +20,10 @@ class PlayGround extends Component {
   };
 
   componentDidMount() {
+    if(!localStorage.getItem('token')){
+      alert('請先登入再進行測試呦!')
+      window.location.href = '/login'
+    }
     const modelParam = this.props.match.params.model;
     switch (modelParam) {
       case "yolov3-playground":
@@ -92,11 +96,15 @@ class PlayGround extends Component {
       let formData = new FormData();
       formData.append("modelName", modelName);
       formData.append("file", file);
+      formData.append("token", localStorage.getItem('token'));
+      // console.log(formData.toString());
 
+      formData.forEach(e=>console.log(e.toString()))
       axios
         .post(api, formData, {
           headers: {
             "content-type": "multipart/form-data",
+            "Authorization": `JWT ${localStorage.getItem('token').toString()}`,
           },
         })
 
@@ -110,7 +118,7 @@ class PlayGround extends Component {
           this.setState({ loading: false });
         })
         .catch((error) => {
-          console.error(error);
+          console.log(error.response.headers);
           alert("連線逾時或檔名有誤，即將重整頁面");
           window.location.reload();
         });
