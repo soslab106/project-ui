@@ -20,10 +20,10 @@ class PlayGround extends Component {
   };
 
   componentDidMount() {
-    if(!localStorage.getItem('token')){
-      alert('請先登入再進行測試呦!')
-      window.location.href = '/login'
-    }
+    // if(!localStorage.getItem('token')){
+    //   alert('請先登入再進行測試呦!')
+    //   window.location.href = '/login'
+    // }
     const modelParam = this.props.match.params.model;
     switch (modelParam) {
       case "yolov3-playground":

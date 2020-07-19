@@ -29,10 +29,10 @@ class FaceNetPlayground extends Component {
     //   previousURL: "/facenet/",
     // });
 
-    if (!localStorage.getItem("token")) {
-      alert("請先登入再進行測試呦!");
-      window.location.href = "/login";
-    }
+    // if (!localStorage.getItem("token")) {
+    //   alert("請先登入再進行測試呦!");
+    //   window.location.href = "/login";
+    // }
   }
 
   handleTrainChange = (e) => {
