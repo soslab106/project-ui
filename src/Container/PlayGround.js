@@ -20,10 +20,7 @@ class PlayGround extends Component {
   };
 
   componentDidMount() {
-    if(!localStorage.getItem('token')){
-      alert('請先登入再進行測試呦!')
-      window.location.href = '/login'
-    }
+    
     const modelParam = this.props.match.params.model;
     switch (modelParam) {
       case "yolov3-playground":
@@ -336,6 +333,11 @@ class PlayGround extends Component {
         </div>
       </React.Fragment>
     );
+    if(!localStorage.getItem('token')&&this.state.modelName){
+      alert('請先登入再進行測試呦!')
+      window.location.href = '/login'
+    }
+
     return modelName ? ModelExe : NoMatch;
   }
 }

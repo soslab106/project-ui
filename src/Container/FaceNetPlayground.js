@@ -16,25 +16,6 @@ class FaceNetPlayground extends Component {
     loading: false,
   };
 
-  componentDidMount() {
-    // this.setState({
-    //   modelName: "FaceNet",
-    //   description: "可辨識出已經過訓練學習的人臉並標上名字",
-    //   input:
-    //     "於訓練圖片中上傳人臉的照片(請更改檔名)，在欲辨識圖片中上傳你要辨識的照片(含多人)",
-    //   output: "辨識照片中的人臉，框出位置，並標上圖片檔名",
-    //   train: undefined,
-    //   test: undefined,
-    //   api: "http://140.119.19.99:8000/upload/multi/",
-    //   previousURL: "/facenet/",
-    // });
-
-    if (!localStorage.getItem("token")) {
-      alert("請先登入再進行測試呦!");
-      window.location.href = "/login";
-    }
-  }
-
   handleTrainChange = (e) => {
     this.setState({ train: e.target.files });
   };
@@ -42,10 +23,6 @@ class FaceNetPlayground extends Component {
   handleTestChange = (e) => {
     this.setState({ test: e.target.files[0] });
   };
-
-  // handleNameChange = (e) => {
-  //   this.setState({ name: e.target.value });
-  // };
 
   getAPI = () => {
     if (this.state.train && this.state.test) {
@@ -57,11 +34,7 @@ class FaceNetPlayground extends Component {
       for (const key of Object.keys(train)) {
         formData.append("train", train[key]);
       }
-      // for(let k in train){
-      //   formData.append("train", train[k]);
-      // }
-      // formData.append("train", train);
-      // formData.append("name", name);
+    
       formData.append("test", test);
       console.log(test);
       for (var pair of formData.entries()) {
@@ -198,20 +171,6 @@ class FaceNetPlayground extends Component {
                       />
                     </td>
                   </tr>
-                  {/* <tr>
-                    <td height="50px">
-                      <label>目標名字(限英數字): </label>
-                    </td>
-                    <td height="50px">
-                      <input
-                        type="text"
-                        className="file-label"
-                        name="name"
-                        style={{ width: "350px" }}
-                        onChange={this.handleNameChange}
-                      />
-                    </td>
-                  </tr> */}
                   <tr>
                     <td height="50px">
                       <label>欲辨識圖片: </label>
@@ -274,6 +233,10 @@ class FaceNetPlayground extends Component {
         </div>
       </React.Fragment>
     );
+    if(!localStorage.getItem('token')&&this.state.modelName){
+      alert('請先登入再進行測試呦!')
+      window.location.href = '/login'
+    }
 
     return modelName ? ModelExe : NoMatch;
   }
