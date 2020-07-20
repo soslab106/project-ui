@@ -17,6 +17,7 @@ import FaceNetPlayground from "./Container/FaceNetPlayground";
 import PlayGroundList from "./Container/PlayGroundList";
 import Settings from "./Container/Settings";
 import Practice from "./Container/Practice"
+import SignIn from "./Container/SignIn";
 
 export function route() {
   return (
@@ -38,7 +39,7 @@ export function route() {
           <Route path="/playground-list" component={PlayGroundList} />
           <Route path="/settings" component={Settings} />
           <Route path="/practice" component={Practice} />
-
+          <Route path="/SignIn" component={SignIn} />
           
           <Route path="/:model" component={PlayGround} />
 
