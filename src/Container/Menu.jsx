@@ -4,7 +4,8 @@ import Square from '../Components/Square';
 class Menu extends Component {
     render() {
         return (
-            <div>
+            <div class="container d-flex flex-column align-items-center p-3 mb-2">
+                <div class="d-flex">
                 <Square
                     link=''
                     buttonText='Testing'
@@ -13,15 +14,17 @@ class Menu extends Component {
                     link=''
                     buttonText='TL'
                 />
+                </div>
+                <div className='d-flex'>
                 <Square
                     link=''
                     buttonText='AIInfo'
                 />
-                <Square
+                <Square 
                     link=''
                     buttonText='個人資料'
                 />
-
+                </div>
             </div>
         );
     }
