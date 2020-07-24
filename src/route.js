@@ -18,6 +18,7 @@ import PlayGroundList from "./Container/PlayGroundList";
 import Settings from "./Container/Settings";
 import Practice from "./Container/Practice"
 import SignIn from "./Container/SignIn";
+import Menu from "./Container/Menu";
 
 export function route() {
   return (
@@ -40,9 +41,9 @@ export function route() {
           <Route path="/settings" component={Settings} />
           <Route path="/practice" component={Practice} />
           <Route path="/SignIn" component={SignIn} />
-          
-          <Route path="/:model" component={PlayGround} />
+          <Route path="/Menu" component={Menu} />
 
+          <Route path="/:model" component={PlayGround} />
         </Switch>
     </Router>
   );

@@ -54,7 +54,7 @@ class WelcomeCopy extends Component {
             <h3 class="" >
               跟著HOWA的~~開始我們的OOX之旅吧
                 </h3>
-            <a href="/SignUp">
+            <a href="/">
               <button className="btn btn-lg btn-main mt-3">網站功能選單</button>
             </a>
             <a href="/SignUp">
