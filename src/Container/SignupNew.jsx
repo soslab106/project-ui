@@ -67,15 +67,15 @@ class SignupNew extends Component {
   render() {
     return (
       <div className="container expand-full d-flex  justify-content-center align-items-center">
-        <div className="bg-secondary d-flex flex-column align-items-center justify-content-center p-5">
-          <h1 className="text-center"> 建立專屬於您的HowAILab帳戶 </h1>
-          <h2 className="text-center"> 可以用來記錄OOXX~~ </h2>
+        <div className="account-entry rounded bg-light-block d-flex flex-column align-items-center justify-content-center p-5">
+          <h1 className="text-center title"> 建立專屬於您的HowAILab帳戶 </h1>
+          <h5 className='text-center my-4' style={{color:"lightblue"}}> 可以用來記錄OOXX~~ </h5>
           <div className="form-group mt-3">
             <input
               className="form-control"
               type="text"
               placeholder="使用者名稱"
-              onChange={e=>this.handleFieldChange(e, 'username')}
+              onChange={(e) => this.handleFieldChange(e, "username")}
             />
           </div>
           <div className="form-group">
@@ -83,12 +83,16 @@ class SignupNew extends Component {
               className="form-control"
               type="email"
               placeholder="電子郵件"
-              onChange={e=>this.handleFieldChange(e, 'email')}
+              onChange={(e) => this.handleFieldChange(e, "email")}
             />
           </div>
           <div className="form-group">
-            <input className="form-control" type="password" placeholder="密碼"
-            onChange={e=>this.handleFieldChange(e, 'password')} />
+            <input
+              className="form-control"
+              type="password"
+              placeholder="密碼"
+              onChange={(e) => this.handleFieldChange(e, "password")}
+            />
             <little className="text-sm-left" style={{ color: "red" }}>
               需包含英文字母和數字
             </little>
@@ -98,11 +102,15 @@ class SignupNew extends Component {
               className="form-control"
               type="password"
               placeholder="密碼確認"
-              onChange={e=>this.handleFieldChange(e, 'repassword')}
+              onChange={(e) => this.handleFieldChange(e, "repassword")}
             />
           </div>
           <div className="form-group mt-4">
-            <button className="form-control" type="submit" onClick={e=>this.signup(e)}>
+            <button
+              className="form-control btn btn-personal"
+              type="submit"
+              onClick={(e) => this.signup(e)}
+            >
               註冊
             </button>
           </div>

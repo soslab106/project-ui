@@ -48,18 +48,18 @@ class SignIn extends Component {
         return (
             
             <div className='container expand-full d-flex  justify-content-center align-items-center'>
-            <div className='bg-secondary d-flex flex-column align-items-center justify-content-center p-5'>
-                <h1 className='text-center'>登入您的HowAILab帳戶</h1>
-                <h2 className='text-center'>可以用來記錄OOXX~~</h2>
+            <div className='account-entry rounded bg-light-block d-flex flex-column align-items-center justify-content-center p-5'>
+                <h1 className='text-center title'>登入您的HowAILab帳戶</h1>
+                <h5 className='text-center my-4' style={{color:"lightblue"}}>可以用來記錄OOXX~~</h5>
                 <div className='form-group mt-3'>
                  <input className='form-control' type='text' onChange={e=>this.handleFieldChange(e, 'username')} placeholder='使用者名稱' />
             
                 </div>
                 <div className='form-group' ><input className='form-control' type='password' placeholder='密碼' onChange={e=>this.handleFieldChange(e, 'password')}/>
                 </div>
-                <a href='/'> <little className='text-sm-left m-2' style={{color:"blue"}}>忘記密碼</little></a>
-                <div className='form-group m-2'><button className='form-control' type='submit' onClick={e=>this.login(e)}>登入</button></div>
-                <little className='text-sm-left m-0' >還沒註冊嗎? <a href='/SignupNew'> <little className='text-sm-left' style={{color:"blue"}}>註冊</little></a></little>
+                <a href='/'> <little className='text-sm-left m-2' style={{color:"lightblue"}}>忘記密碼</little></a>
+                <div className='form-group m-2'><button className='form-control btn btn-personal my-3' type='submit' onClick={e=>this.login(e)}>登入</button></div>
+                <little className='text-sm-left m-0' >還沒註冊嗎? <a href='/SignupNew'> <little className='text-sm-left' style={{color:"lightblue"}}>註冊</little></a></little>
             </div>
         </div>
       
