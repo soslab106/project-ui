@@ -235,7 +235,7 @@ class FaceNetPlayground extends Component {
     );
     if(!localStorage.getItem('token')&&this.state.modelName){
       alert('請先登入再進行測試呦!')
-      window.location.href = '/login'
+      window.location.href = '/signin'
     }
 
     return modelName ? ModelExe : NoMatch;
