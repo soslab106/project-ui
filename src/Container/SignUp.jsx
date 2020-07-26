@@ -66,13 +66,9 @@ class SignUp extends Component {
     };
 
     render() {
-        let rectangle =(<div id='rect'>
-            aaa
-        </div>)
 
         return (
             <div className="container d-flex flex-column align-items-center expand-full">
-                {rectangle}
                 <h1 className="mb-5 title">註冊</h1>
                 <form className="d-flex flex-column align-items-center">
                     <div className="form-group">
