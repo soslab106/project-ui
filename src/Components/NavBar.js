@@ -47,12 +47,12 @@ class NavBar extends Component {
               </div>
               </li>
             :<React.Fragment><li className="nav-item mr-3">
-              <a className="nav-link" href="/login">
+              <a className="nav-link" href="/signin">
                 登入
               </a>
               </li>
               <li className="nav-item mr-3">
-              <a className="nav-link" href="/signup">
+              <a className="nav-link" href="/signupnew">
                 註冊
               </a>
               </li></React.Fragment>

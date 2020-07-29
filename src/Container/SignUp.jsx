@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
 
-class SiginUp extends Component {
+class SignUp extends Component {
     
     constructor(props) {
         super(props);
@@ -65,8 +65,8 @@ class SiginUp extends Component {
         }
     };
 
-
     render() {
+
         return (
             <div className="container d-flex flex-column align-items-center expand-full">
                 <h1 className="mb-5 title">註冊</h1>
@@ -104,4 +104,4 @@ class SiginUp extends Component {
     }
 }
 
-export default SiginUp;
+export default SignUp;

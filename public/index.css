@@ -19,7 +19,7 @@ body {
 }
 
 .bg-light-block {
-  background-color: rgba(18, 86, 123, 0.13);
+  background-color: rgba(18, 86, 123, 0.26);
 }
 
 .btn {
@@ -28,7 +28,8 @@ body {
   padding: 3px 10px !important;
 }
 
-.btn-personal, .btn-model {
+.btn-personal,
+.btn-model {
   border-radius: 80px;
   border: solid 1.25px #50eaff;
   color: #50eaff;
@@ -55,7 +56,8 @@ body {
   height: 40px;
 }
 
-.btn-personal:hover, .btn-model:hover {
+.btn-personal:hover,
+.btn-model:hover {
   background-color: #50eaff;
 }
 
@@ -66,7 +68,8 @@ body {
   color: #50eaff;
 }
 
-.btn-previous:hover, .btn-recoglist:hover {
+.btn-previous:hover,
+.btn-recoglist:hover {
   background-color: #fff;
 }
 
@@ -152,7 +155,8 @@ img {
   color: #dbe1e2;
 }
 
-.label-modal, .adv-modal {
+.label-modal,
+.adv-modal {
   background-color: #1f2e41;
   top: 20vh;
   position: fixed;
@@ -205,7 +209,7 @@ img {
 }
 
 .btn-ms:hover {
-  background-color: #00ffdd
+  background-color: #00ffdd;
 }
 
 a.dropdown-item:hover {
@@ -219,6 +223,11 @@ a.dropdown-item:hover {
   justify-content: space-around;
 }
 
+.rounded {
+  border-radius: 2rem !important;
+}
+
+
 @media only screen and (max-width: 767px) {
   #welcome-container {
     flex-direction: column;
@@ -230,18 +239,18 @@ a.dropdown-item:hover {
     top:inherit;
     height: 50% !important;
     width: 50% !important; */
-    display:none;
+    display: none;
   }
   #home-img-div {
     margin: 0 auto;
     position: absolute;
-    background-image: url('/images/home.png')!important;
+    background-image: url("/images/home.png") !important;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 50% !important;
     width: 100% !important;
-    top:10%;
+    top: 10%;
     z-index: -100;
   }
   #welcome-btns {
