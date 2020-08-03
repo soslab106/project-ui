@@ -20,47 +20,42 @@ class WelcomeCopy extends Component {
               <a href="/Login"><button className="btn btn-lg ml-5 btn-main">登入</button></a>
             </div>
           </div>
-          <div className="col col-sm-6 col-lg-4 mt-5">
-          </div>
         </div>
 
         <hr color='#50eaff' className='m-5' />
 
-        <div className='container d-flex flex-column my-5 py-5'>
+        <div className='container d-flex flex-column mb-5 my-5 py-5'>
           <div className='d-flex justify-content-around'>
             <HomePageIcon
               imgpath='/logo192.png'
-              icontitle='Title'
-              iconsubtitle='Subtitle' />
+              icontitle='Testing'
+              iconsubtitle='按照指示使用即可使用模型' />
 
             <HomePageIcon
               imgpath='/logo192.png'
-              icontitle='Title'
-              iconsubtitle='Subtitle' />
+              icontitle='TL'
+              iconsubtitle='根據資料訓練屬於你的模型' />
 
             <HomePageIcon
               imgpath='/logo192.png'
-              icontitle='Title'
-              iconsubtitle='Subtitle' />
+              icontitle='人工智慧'
+              iconsubtitle='人工智慧知識與產業應用' />
 
             <HomePageIcon
               imgpath='/logo192.png'
-              icontitle='Title'
-              iconsubtitle='Subtitle' />
+              icontitle='個人資料'
+              iconsubtitle='記錄你的人工智慧進度' />
           </div>
-          <div className=' border border-primary w-100 text-center p-5 my-3' style={{ width: "300px", height: "200px" }}>
+          <div className=' border border-primary w-100 text-center p-5 my-3 mt-5' style={{ width: "300px", height: "200px" }}>
 
 
             <h3 class="" >
               跟著HOWA的~~開始我們的OOX之旅吧
                 </h3>
-            <a href="/">
+            <a href="/Menu">
               <button className="btn btn-lg btn-main mt-3">網站功能選單</button>
             </a>
-            <a href="/SignUp">
-              <button className="btn btn-lg btn-main mt-3">人工智慧教學</button>
-            </a>
-          </div>
+            </div>
 
         </div>
 

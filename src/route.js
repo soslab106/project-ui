@@ -19,6 +19,7 @@ import Settings from "./Container/Settings";
 import Practice from "./Container/Practice"
 import SignIn from "./Container/SignIn";
 import Menu from "./Container/Menu";
+import TestingMenu from "./Container/TestingMenu";
 
 export function route() {
   return (
@@ -42,7 +43,7 @@ export function route() {
           <Route path="/practice" component={Practice} />
           <Route path="/SignIn" component={SignIn} />
           <Route path="/Menu" component={Menu} />
-
+          <Route path="/TestingMenu" component={TestingMenu} />
           <Route path="/:model" component={PlayGround} />
         </Switch>
     </Router>
