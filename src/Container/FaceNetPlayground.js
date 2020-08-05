@@ -10,7 +10,7 @@ class FaceNetPlayground extends Component {
     output: "辨識照片中的人臉，框出位置，並標上圖片檔名",
     train: undefined,
     test: undefined,
-    api: "http://140.119.19.99:8000/upload/multi/",
+    api: "http://127.0.0.1:8000/upload/multi/",
     previousURL: "/facenet/",
     showModal: false,
     loading: false,
@@ -44,9 +44,11 @@ class FaceNetPlayground extends Component {
         .post(api, formData, {
           headers: {
             "content-type": "multipart/form-data",
+            "Authorization": `JWT ${localStorage.getItem('token').toString()}`,
           },
         })
         .then((res) => {
+          console.log(res.status);
           let { data } = res;
           console.log(data);
           this.setState({ result: data.result });
@@ -55,7 +57,9 @@ class FaceNetPlayground extends Component {
           this.setState({ loading: false });
         })
         .catch((error) => {
-          console.error(error);
+          console.log(error.response.headers);
+          alert("連線逾時或檔名有誤，即將重整頁面");
+          window.location.reload();
         });
     } else {
       alert("請先選擇照片!");
@@ -235,7 +239,7 @@ class FaceNetPlayground extends Component {
     );
     if(!localStorage.getItem('token')&&this.state.modelName){
       alert('請先登入再進行測試呦!')
-      window.location.href = '/login'
+      window.location.href = '/signin'
     }
 
     return modelName ? ModelExe : NoMatch;

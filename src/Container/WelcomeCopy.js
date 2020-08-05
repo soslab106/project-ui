@@ -14,10 +14,10 @@ class WelcomeCopy extends Component {
             ，<br />即可獲得操作人工智慧模型的體驗！
           </p>
             <div className="d-flex align-items-center">
-              <a href="/SignUp">
+              <a href="/SignUpnew">
                 <button className="btn btn-lg btn-main">註冊</button>
               </a>
-              <a href="/Login"><button className="btn btn-lg ml-5 btn-main">登入</button></a>
+              <a href="/signin"><button className="btn btn-lg ml-5 btn-main">登入</button></a>
             </div>
           </div>
         </div>

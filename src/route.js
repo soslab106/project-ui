@@ -16,7 +16,7 @@ import CNNDetail from "./Container/CNNDetail";
 import FaceNetPlayground from "./Container/FaceNetPlayground";
 import PlayGroundList from "./Container/PlayGroundList";
 import Settings from "./Container/Settings";
-import Practice from "./Container/Practice"
+import SignupNew from "./Container/SignupNew"
 import SignIn from "./Container/SignIn";
 import Menu from "./Container/Menu";
 import TestingMenu from "./Container/TestingMenu";
@@ -40,7 +40,7 @@ export function route() {
           <Route path="/facenet-playground" component={FaceNetPlayground} />
           <Route path="/playground-list" component={PlayGroundList} />
           <Route path="/settings" component={Settings} />
-          <Route path="/practice" component={Practice} />
+          <Route path="/SignupNew" component={SignupNew} />
           <Route path="/SignIn" component={SignIn} />
           <Route path="/Menu" component={Menu} />
           <Route path="/TestingMenu" component={TestingMenu} />
