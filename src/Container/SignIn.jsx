@@ -5,7 +5,7 @@ class SignIn extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            api: 'http://140.119.19.99:8000/api-token-auth/',
+            api: 'http://127.0.0.1:8000/api-token-auth/',
             username: '',
             password: '',
             logged_in: localStorage.getItem('token') ? true : false,

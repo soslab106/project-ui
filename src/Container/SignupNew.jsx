@@ -5,7 +5,7 @@ class SignupNew extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      api: "http://140.119.19.99:8000/users/",
+      api: "http://127.0.0.1:8000/users/",
       username: "",
       password: "",
       email: "",
