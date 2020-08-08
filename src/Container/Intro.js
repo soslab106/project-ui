@@ -35,7 +35,7 @@ class Intro extends Component {
             imgPos="left"
           />
         </div>
-        <FullWidthBlock
+        {/* <FullWidthBlock
           className="d-flex flex-column justify-content-center align-items-center selectFunc"
         >
           <div className="container d-flex flex-column align-items-center justify-content-center py-3">
@@ -53,7 +53,7 @@ class Intro extends Component {
               </button>
             </div>
           </div>
-        </FullWidthBlock>
+        </FullWidthBlock> */}
         <div className="" style={{paddingTop:'0px !important'}}>
           <h1 className="text-center title"> 深度學習 </h1>
           <h3 className="text-center title"> Deep Learning </h3>
@@ -87,9 +87,9 @@ class Intro extends Component {
             />
           </div>
           <div className="d-flex flex-column justify-content-center align-items-center mt-3">
-            <div>在初步了解人工智慧的應用，接下來我們了解AI背後的構造吧！</div>
+            <div className='my-3'>在初步了解人工智慧的應用，接下來我們了解AI背後的構造吧！</div>
             <a href="/nn-intro">
-              <button className="btn btn-main mt-4"> 神經網路概述 </button>
+              <button className="btn btn-main mt-5"> 神經網路概述 </button>
             </a>
             <a href="/">
               <button

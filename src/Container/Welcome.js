@@ -26,7 +26,7 @@ class Welcome extends Component {
       </div>
       <img
       className="mt-5"
-      src="/images/home.png"
+      src="/images/home.svg"
       style={{ width: "500px", height: "500px" }}
       id='home-img'
     ></img>
