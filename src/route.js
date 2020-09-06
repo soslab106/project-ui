@@ -5,8 +5,6 @@ import Intro from "./Container/Intro";
 import ImgClassification from "./Container/ImgClassification";
 import Yolov3 from "./Container/Yolov3";
 import FaceNet from "./Container/FaceNet";
-import Login from "./Container/Login";
-import SignUp from "./Container/SignUp";
 import PlayGround from "./Container/PlayGround";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React, { Component }  from 'react';
@@ -31,15 +29,13 @@ export function route() {
           <Route path="/img-classify" component={ImgClassification} />
           <Route path="/YOLOV3" component={Yolov3} />
           <Route path="/FaceNet" component={FaceNet} />
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={SignUp} />
           <Route path="/vgg" component={Vgg} />
           <Route path="/resnet" component={ResNet} />
           <Route path="/cnn-detail" component={CNNDetail} />
           <Route path="/facenet-playground" component={FaceNetPlayground} />
           <Route path="/playground-list" component={PlayGroundList} />
           <Route path="/settings" component={Settings} />
-          <Route path="/SignupNew" component={SignupNew} />
+          <Route path="/Signup" component={SignupNew} />
           <Route path="/SignIn" component={SignIn} />
           <Route path="/Menu" component={Menu} />
 

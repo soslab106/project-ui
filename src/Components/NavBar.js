@@ -52,7 +52,7 @@ class NavBar extends Component {
               </a>
               </li>
               <li className="nav-item mr-3">
-              <a className="nav-link" href="/signupnew">
+              <a className="nav-link" href="/signup">
                 註冊
               </a>
               </li></React.Fragment>
