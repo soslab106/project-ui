@@ -75,11 +75,6 @@ class NavBar extends Component {
           <a class="dropdown-item" href="#"></a>
         </div>
       </li>
-            <li className="nav-item mr-3">
-              <a className="nav-link" href="/"> {/*還未加*/}
-                個人頁面
-              </a>
-            </li>
 
             {this.props.logged_in ?
               <li class="nav-item dropdown">
