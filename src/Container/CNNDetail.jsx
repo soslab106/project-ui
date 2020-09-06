@@ -63,6 +63,7 @@ class CNNDetail extends Component {
             <img src="/images/CNN_2.png" />
           </div>
           <div>
+          <FullWidthBlock py="4" my="4">
             <h2 className="title">卷積層</h2>
             <TextAndImg
               my="5"
@@ -71,7 +72,9 @@ class CNNDetail extends Component {
               textList={this.state.convolution}
               imgPath="/images/CNN_3.png"
               imgPos="right"
+              
             />
+            </FullWidthBlock>
             <p>
               接下來，從原始圖片中取出與卷積核相同維度的矩陣進行運算乘積，可以得到
             </p>
@@ -141,6 +144,7 @@ class CNNDetail extends Component {
               </p>
             </div>
             <div>
+            <FullWidthBlock>
               <h2 className="title">全連接層</h2>
               <p>
                 在經過了數層的卷積與池化後，接下來要把結果放入全連接層中運算。在CNN中，我們需要將先前得到的二維矩陣特徵圖攤平(Flatten)，變為一維的矩陣。假設我們得到3個維度為2x2的特徵圖，則可以進行以下操作:
@@ -152,8 +156,9 @@ class CNNDetail extends Component {
               <p>
                 需要多少卷積層、池化層來進行組合，與在全連接層中應該使用多少層、每層多少神經元，都是訓練CNN模型需要考慮的問題。依照目標應用的不同，去進行調整和測試，最後的準確度越高，就是一個越好的CNN模型。
               </p>
+              </FullWidthBlock>
             </div>
-            <div className="container d-flex flex-column align-items-center border-neon my-5">
+            {/* <div className="container d-flex flex-column align-items-center border-neon my-5">
               <h2 className="title my-2">模型選擇</h2>
               <div className="d-flex justify-content-center">
                 <a href="/cnn">
@@ -175,7 +180,7 @@ class CNNDetail extends Component {
               <a href="/CNN">
                 <button className="btn btn-previous my-4">回到CNN簡介</button>
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </React.Fragment>

@@ -8,47 +8,43 @@ class Menu extends Component {
 
                 <MenuImg
                     imgpath='/logo192.png'
-                    icontitle='Testing'
-                    iconsubtitle='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-                    iconsubtitle1='AAAAAA'
+                    icontitle='執行模型'
+                    iconsubtitle='使用模型
+                    想知道當代模型具有那些功能，並且有哪些結果嗎，快來體驗看看吧！'
                     
-                ><a href="/SignUp">
+                ><a href="/TestingMenu">
                 <button className="btn btn-lg btn-main">GO</button>
               </a></MenuImg>
               <MenuImg
                     imgpath='/logo192.png'
-                    icontitle='TL'
+                    icontitle='客製化訓練模型'
                     iconsubtitle='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-                    iconsubtitle1='AAAAAA'
                     
                 ><a href="/SignUp">
                 <button className="btn btn-lg btn-main">GO</button>
               </a></MenuImg> 
               <MenuImg
                     imgpath='/logo192.png'
-                    icontitle='人工智慧'
+                    icontitle='人工智慧基礎知識'
                     iconsubtitle='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-                    iconsubtitle1='AAAAAA'
-                    
+                  
                 ><a href="/SignUp">
-                <button className="btn btn-lg btn-main">GO</button>
+               <div> <button className="btn btn-lg btn-main">GO</button></div>
               </a></MenuImg> 
               <MenuImg
                     imgpath='/logo192.png'
-                    icontitle='應用新知'
+                    icontitle='人工智慧應用新知'
                     iconsubtitle='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-                    iconsubtitle1='AAAAAA'
-                    
+                  
                 ><a href="/SignUp">
                 <button className="btn btn-lg btn-main">GO</button>
               </a></MenuImg>
 
               <MenuImg
                     imgpath='/logo192.png'
-                    icontitle='模型詳細資訊(?)'
+                    icontitle='個人資訊'
                     iconsubtitle='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-                    iconsubtitle1='AAAAAA'
-                    
+                               
                 ><a href="/SignUp">
                 <button className="btn btn-lg btn-main">GO</button>
               </a></MenuImg>

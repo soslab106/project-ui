@@ -20,6 +20,9 @@ import SignupNew from "./Container/SignupNew"
 import SignIn from "./Container/SignIn";
 import Menu from "./Container/Menu";
 import TestingMenu from "./Container/TestingMenu";
+import NewsPage from "./Container/NewsPage";
+import ModelInfoList from "./Container/ModelInfoList";
+import Profile from "./Container/Profile";
 
 export function route() {
   return (
@@ -44,6 +47,9 @@ export function route() {
           <Route path="/SignIn" component={SignIn} />
           <Route path="/Menu" component={Menu} />
           <Route path="/TestingMenu" component={TestingMenu} />
+          <Route path="/NewsPage" component={NewsPage} />
+          <Route path="/ModelInfoList" component={ModelInfoList} />
+          <Route path="/Profile" component={Profile} />
           <Route path="/:model" component={PlayGround} />
         </Switch>
     </Router>

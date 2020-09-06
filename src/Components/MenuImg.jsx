@@ -8,7 +8,7 @@ class MenuImg extends Component {
                     <img src={this.props.imgpath} />
 
                 </div>
-                <div className='ml-5'>
+                <div className='ml-5 w-100'>
                     <h3 className='text-center' style={{ color: "#50eaff" }}>{this.props.icontitle}</h3>
                     <div className='text-start'>{this.props.iconsubtitle}</div>
                     <div className='text-start'>{this.props.iconsubtitle1}</div>

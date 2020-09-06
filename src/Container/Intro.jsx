@@ -35,10 +35,10 @@ class Intro extends Component {
             imgPos="left"
           />
         </div>
-        <FullWidthBlock
+        {/* <FullWidthBlock
           className="d-flex flex-column justify-content-center align-items-center selectFunc"
         >
-          <div className="container d-flex flex-column align-items-center justify-content-center py-3">
+          {<div className="container d-flex flex-column align-items-center justify-content-center py-3">
             <h1 className="title">模型選擇</h1>
             <div>
               <a href="/cnn">
@@ -51,9 +51,9 @@ class Intro extends Component {
               <button className="btn btn-model mt-4 mx-2">
                 模型攻擊 Adversarial
               </button>
-            </div>
-          </div>
-        </FullWidthBlock>
+            </div> 
+          </div> 
+        </FullWidthBlock> */}
         <div className="" style={{paddingTop:'0px !important'}}>
           <h1 className="text-center title"> 深度學習 </h1>
           <h3 className="text-center title"> Deep Learning </h3>

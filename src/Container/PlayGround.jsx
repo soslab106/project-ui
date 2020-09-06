@@ -16,11 +16,11 @@ class PlayGround extends Component {
     loading: false,
     adversarial_description: "攻擊模型圖片",
     adv: [],
-    adv_origin: [],
+    adv_origin: []
   };
 
   componentDidMount() {
-    
+
     const modelParam = this.props.match.params.model;
     switch (modelParam) {
       case "yolov3-playground":
@@ -96,7 +96,7 @@ class PlayGround extends Component {
       formData.append("token", localStorage.getItem('token'));
       // console.log(formData.toString());
 
-      formData.forEach(e=>console.log(e.toString()))
+      formData.forEach(e => console.log(e.toString()))
       axios
         .post(api, formData, {
           headers: {
@@ -256,7 +256,7 @@ class PlayGround extends Component {
                 <div className="io-box">
                   <h5>輸入格式</h5>
                   {input}
-                  <p style={{color: '#FF7575'}}>**檔名須為英文**</p>
+                  <p style={{ color: '#FF7575' }}>**檔名須為英文**</p>
                 </div>
                 <div className="io-box">
                   <h5>輸出格式</h5>
@@ -320,12 +320,12 @@ class PlayGround extends Component {
                   {this.state.result ? (
                     this.renderResult(modelName)
                   ) : (
-                    <img
-                      src="/images/nopic.png"
-                      alt="無法顯示圖片"
-                      style={{ height: "35vh" }}
-                    />
-                  )}
+                      <img
+                        src="/images/nopic.png"
+                        alt="無法顯示圖片"
+                        style={{ height: "35vh" }}
+                      />
+                    )}
                 </div>
               </div>
             </div>
@@ -333,10 +333,10 @@ class PlayGround extends Component {
         </div>
       </React.Fragment>
     );
-    if(!localStorage.getItem('token')&&this.state.modelName){
-      alert('請先登入再進行測試呦!')
-      window.location.href = '/signin'
-    }
+    // if (!localStorage.getItem('token') && this.state.modelName) {
+    //   alert('請先登入再進行測試呦!')
+    //   window.location.href = '/signin'
+    // }
 
     return modelName ? ModelExe : NoMatch;
   }
