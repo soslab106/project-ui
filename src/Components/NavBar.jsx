@@ -69,7 +69,7 @@ class NavBar extends Component {
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/Intro">人工智慧</a>
-          <a class="dropdown-item" href="#">模型架構</a>
+          <a class="dropdown-item" href="/ModelInfoList">模型架構</a>
           <a class="dropdown-item" href="NewsPage">產業應用新知</a>
           <a class="dropdown-item" href="CNN">專有名詞</a>
           <a class="dropdown-item" href="#"></a>
