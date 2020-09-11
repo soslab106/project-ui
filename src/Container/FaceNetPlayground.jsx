@@ -237,10 +237,10 @@ class FaceNetPlayground extends Component {
         </div>
       </React.Fragment>
     );
-    if(!localStorage.getItem('token')&&this.state.modelName){
-      alert('請先登入再進行測試呦!')
-      window.location.href = '/signin'
-    }
+    // if(!localStorage.getItem('token')&&this.state.modelName){
+    //   alert('請先登入再進行測試呦!')
+    //   window.location.href = '/signin'
+    // }
 
     return modelName ? ModelExe : NoMatch;
   }
