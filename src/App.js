@@ -25,10 +25,10 @@ class App extends Component {
     componentDidMount() {
         if (this.state.logged_in) {
             fetch('http://140.119.19.99:8000/current_user/', {
-                    headers: {
-                        Authorization: `JWT ${localStorage.getItem('token')}`
-                    }
-                })
+                headers: {
+                    Authorization: `JWT ${localStorage.getItem('token')}`
+                }
+            })
                 .then(res => res.json())
                 .then(json => {
                     console.log(json)
@@ -45,16 +45,12 @@ class App extends Component {
 
 
     render() {
-        return ( <
-            React.Fragment >
-            <
-            NavBar logged_in = { this.state.logged_in }
-            username = { this.state.username }
-            logout = { this.logout }
-            /> { routes } <
-            Footer / >
-            <
-            /React.Fragment>
+        return (<React.Fragment>
+            <NavBar logged_in={this.state.logged_in}
+                username={this.state.username}
+                logout={this.logout}
+            /> {routes} <Footer />
+            </React.Fragment>
         );
     }
 }

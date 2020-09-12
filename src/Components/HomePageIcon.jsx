@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class HomePageIcon extends Component {
-    render() {
-        return (
-            <div>
-                <img src={this.props.imgpath}/>
-                <h4 className='text-center' style={{color:"#50eaff"}}>{this.props.icontitle}</h4>
-                <h6 className='text-center'>{this.props.iconsubtitle}</h6>
-            </div>
-        );
-    }
+  render() {
+    const { imgpath, icontitle, iconsubtitle } = this.props;
+    return (
+      <div className="home__function">
+        <img src={imgpath} />
+        <span>{icontitle}</span>
+        <span>{iconsubtitle}</span>
+        <button className="home__functionbutton">了解更多</button>
+      </div>
+    );
+  }
 }
 
 export default HomePageIcon;

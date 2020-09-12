@@ -1,7 +1,8 @@
 .navbar {
-  /* border: 1px solid #50EAFF; */
+  background-color: black;
+  position: sticky;
 }
 
 .nav-link {
-  color: #50eaff !important;
+  color: #5f7171 !important;
 }

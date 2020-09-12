@@ -1,4 +1,4 @@
-import React, { Component } from "../../node_modules/react";
+import React, { Component } from "react";
 import TextAndImg from "../Components/TextAndImg";
 import FullWidthBlock from "../Components/FullWidthBlock";
 
@@ -68,10 +68,20 @@ class NeuralNetworkIntro extends Component {
           />
         </FullWidthBlock>
         <div className="d-flex flex-column align-items-center justify-content-center mt-5">
-          <div className='mb-3'>還不夠了解人工智慧嗎？回到主頁試著操作模型看看吧！</div>
-          <a href="/intro">
-            <button className="btn btn-previous mb-5">回到人工智慧簡介</button>
+          <div className='mb-3'>還不夠了解人工智慧嗎？試著操作模型看看吧！</div>
+          <div className="d-flex flex-column justify-content-around align-items-center" style={{height: '100px'}}>
+          <a href="/TestingMenu">
+            <button className="btn btn-previous">模型操作主選單</button>
           </a>
+           <div className='mb-3'>還不夠了解人工智慧嗎？試著操作模型看看吧！</div>
+          <a href="/">
+              <button
+                className="btn btn-previous"
+                style={{ width: "100px" }}
+              >
+                回到首頁
+              </button>
+            </a></div>
         </div>
       </React.Fragment>
     );

@@ -10,7 +10,7 @@ class FaceNetPlayground extends Component {
     output: "辨識照片中的人臉，框出位置，並標上圖片檔名",
     train: undefined,
     test: undefined,
-    api: "http://127.0.0.1:8000/upload/multi/",
+    api: "http://140.119.19.99:8000/upload/multi/",
     previousURL: "/facenet/",
     showModal: false,
     loading: false,
@@ -237,10 +237,10 @@ class FaceNetPlayground extends Component {
         </div>
       </React.Fragment>
     );
-    if(!localStorage.getItem('token')&&this.state.modelName){
-      alert('請先登入再進行測試呦!')
-      window.location.href = '/signin'
-    }
+    // if(!localStorage.getItem('token')&&this.state.modelName){
+    //   alert('請先登入再進行測試呦!')
+    //   window.location.href = '/signin'
+    // }
 
     return modelName ? ModelExe : NoMatch;
   }

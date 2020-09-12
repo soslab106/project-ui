@@ -59,7 +59,7 @@ class SignIn extends Component {
                 </div>
                 <a href='/'> <little className='text-sm-left m-2' style={{color:"lightblue"}}>忘記密碼</little></a>
                 <div className='form-group m-2'><button className='form-control btn btn-personal my-3' type='submit' onClick={e=>this.login(e)}>登入</button></div>
-                <little className='text-sm-left m-0' >還沒註冊嗎? <a href='/SignupNew'> <little className='text-sm-left' style={{color:"lightblue"}}>註冊</little></a></little>
+                <little className='text-sm-left m-0' >還沒註冊嗎? <a href='/Signup'> <little className='text-sm-left' style={{color:"lightblue"}}>註冊</little></a></little>
             </div>
         </div>
       
