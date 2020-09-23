@@ -16,11 +16,10 @@ class PlayGround extends Component {
     loading: false,
     adversarial_description: "攻擊模型圖片",
     adv: [],
-    adv_origin: []
+    adv_origin: [],
   };
 
   componentDidMount() {
-
     const modelParam = this.props.match.params.model;
     switch (modelParam) {
       case "yolov3-playground":
@@ -76,11 +75,10 @@ class PlayGround extends Component {
           ],
         });
         break;
-      case 'cyclegan-playground':
+      case "cyclegan-playground":
         this.setState({
           modelName: "CycleGAN",
-          description:
-            "風格轉換模型",
+          description: "風格轉換模型",
           input: "一張含有人臉圖片",
           output: "原圖轉為辛普森風格的圖片",
           file: undefined,
@@ -116,15 +114,15 @@ class PlayGround extends Component {
       let formData = new FormData();
       formData.append("modelName", modelName);
       formData.append("file", file);
-      formData.append("token", localStorage.getItem('token'));
+      formData.append("token", localStorage.getItem("token"));
       // console.log(formData.toString());
 
-      formData.forEach(e => console.log(e.toString()))
+      formData.forEach((e) => console.log(e.toString()));
       axios
         .post(api, formData, {
           headers: {
             "content-type": "multipart/form-data",
-            "Authorization": `JWT ${localStorage.getItem('token').toString()}`,
+            Authorization: `JWT ${localStorage.getItem("token").toString()}`,
           },
         })
 
@@ -148,31 +146,29 @@ class PlayGround extends Component {
   };
 
   renderResult = (modelName) => {
-    switch (modelName) {
-      case "YOLOv3":
-        return (
-          <React.Fragment>
-            <img
-              src={this.state.result}
-              alt="no pic"
-              style={{ height: "35vh" }}
-            />
-          </React.Fragment>
-        );
-        break;
-      default:
-        return (
-          <table>
-            {this.state.result.map((each) => {
-              return (
-                <tr>
-                  <td>{each[0]}</td>
-                  <td>{each[1]}</td>
-                </tr>
-              );
-            })}
-          </table>
-        );
+    if (modelName === "YOLOv3" || modelName === "CycleGAN") {
+      return (
+        <React.Fragment>
+          <img
+            src={this.state.result}
+            alt="no pic"
+            style={{ height: "35vh" }}
+          />
+        </React.Fragment>
+      );
+    } else {
+      return (
+        <table>
+          {this.state.result.map((each) => {
+            return (
+              <tr>
+                <td>{each[0]}</td>
+                <td>{each[1]}</td>
+              </tr>
+            );
+          })}
+        </table>
+      );
     }
   };
 
@@ -279,7 +275,7 @@ class PlayGround extends Component {
                 <div className="io-box">
                   <h5>輸入格式</h5>
                   {input}
-                  <p style={{ color: '#FF7575' }}>**檔名須為英文**</p>
+                  <p style={{ color: "#FF7575" }}>**檔名須為英文**</p>
                 </div>
                 <div className="io-box">
                   <h5>輸出格式</h5>
@@ -343,12 +339,12 @@ class PlayGround extends Component {
                   {this.state.result ? (
                     this.renderResult(modelName)
                   ) : (
-                      <img
-                        src="/images/nopic.png"
-                        alt="無法顯示圖片"
-                        style={{ height: "35vh" }}
-                      />
-                    )}
+                    <img
+                      src="/images/nopic.png"
+                      alt="無法顯示圖片"
+                      style={{ height: "35vh" }}
+                    />
+                  )}
                 </div>
               </div>
             </div>
