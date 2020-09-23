@@ -51,7 +51,7 @@ export function route() {
         <Route path="/ModelInfoList" component={ModelInfoList} />
         <Route path="/Profile" component={Profile} />
         <Route path="/custom" component={CustomHome} />
-        <Route path="/personal-model" component={PersonalModelView} />
+        <Route path="/personal-model-list" component={PersonalModelView} />
         <Route path="/knowledge" component={KnowledgeHome} />
         <Route path="/forum" component={ForumHome} />
         <Route path="/:model" component={PlayGround} />

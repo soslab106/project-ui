@@ -5,7 +5,6 @@ class CustomHome extends Component {
   render() {
     return (
       <>
-
         <HomeInstances
           title="客製化模型"
           description={
@@ -18,11 +17,23 @@ class CustomHome extends Component {
           }
           imgPath="/images/custom/custom.png"
           btn={
-            <a href="personal-model">
-              <button className="btn btn-main mt-3" style={{ width: "204px" }}>
-                前往個人模型庫
-              </button>
-            </a>
+            <>
+              <a href="personal-model-list">
+                <button
+                  className="btn btn-main mt-3"
+                  style={{ width: "180px" }}
+                >
+                  前往個人模型庫
+                </button>
+              </a>
+              <a href="new-model" className="ml-3">
+                <button
+                  className="btn btn-main mt-3"
+                >
+                  創建新模型
+                </button>
+              </a>
+            </>
           }
         />
 

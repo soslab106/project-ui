@@ -34,47 +34,35 @@ class NavBar extends Component {
           {/* 未完成，調整classname */}
           <div className="collapse navbar-collapse nav-item dropdown" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto align-items-center">
-
-              {/* <li className="nav-item mr-3">
-              <a className="nav-link nav-item dropdown" href="/playground-list">
-                執行模型選單
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li> */}
-
               <li class="nav-item dropdown mr-3">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   執行模型
         </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="vgg-playground">物體辨識 (VGG16)</a>
-                  <a class="dropdown-item" href="yolov3-playground">物體定位 (YOLOV3)</a>
-                  <a class="dropdown-item" href="facenet-playground">臉部辨識 (FaceNet)</a>
-                  <a class="dropdown-item" href="#">風格轉換 (CycleGAN)</a>
+                  <a class="dropdown-item" href="/vgg-playground">物體辨識 (VGG16)</a>
+                  <a class="dropdown-item" href="/yolov3-playground">物體定位 (YOLOV3)</a>
+                  <a class="dropdown-item" href="/facenet-playground">臉部辨識 (FaceNet)</a>
+                  <a class="dropdown-item" href="/cyclegan-playground">風格轉換 (CycleGAN)</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">操作教學</a>
+                  <a class="dropdown-item" href="/ModelInfoList">操作教學</a>
                 </div>
               </li>
               <li class="nav-item dropdown mr-3">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link" href="/custom" role="button">
                   客製化訓練模型
         </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {/* <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="#">物體辨識 (VGG16)</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#">操作教學</a>
-                </div>
+                </div> */}
               </li>
               <li class="nav-item dropdown mr-3">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="/knowledge" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   知識補充站
               </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/knowledge">知識補充站首頁</a>
                   <a class="dropdown-item" href="/Intro">人工智慧</a>
                   <a class="dropdown-item" href="/ModelInfoList">模型架構</a>
                   <a class="dropdown-item" href="NewsPage">產業應用新知</a>
@@ -84,7 +72,7 @@ class NavBar extends Component {
               </li>
 
               <li class="nav-item dropdown mr-3">
-                <a class="nav-link" href="#" role="button">
+                <a class="nav-link" href="/forum" role="button">
                   HowAI 論壇
               </a>
               </li>

@@ -76,6 +76,29 @@ class PlayGround extends Component {
           ],
         });
         break;
+      case 'cyclegan-playground':
+        this.setState({
+          modelName: "CycleGAN",
+          description:
+            "風格轉換模型",
+          input: "一張含有人臉圖片",
+          output: "原圖轉為辛普森風格的圖片",
+          file: undefined,
+          api: "http://127.0.0.1:8000/upload/",
+          labels: imageNetLabel,
+          previousURL: "/img-classify",
+          adv: [
+            "/adv/res/adv_res_1.jpg",
+            "/adv/res/adv_res_2.jpg",
+            "/adv/res/adv_res_3.jpg",
+          ],
+          adv_origin: [
+            "/adv/res/res_1.jpg",
+            "/adv/res/res_2.jpg",
+            "/adv/res/res_3.png",
+          ],
+        });
+        break;
       default:
         this.setState({ modelName: "" });
     }
