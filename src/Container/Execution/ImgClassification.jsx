@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ModelSelect from '../Components/ModelSelect'
+import ModelSelect from '../../Components/ModelSelect'
 
 class ImgClassification extends Component {
     render() {

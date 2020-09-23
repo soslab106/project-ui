@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import HomePageIcon from "../Components/HomePageIcon";
+import CardSelect from "../Components/CardSelect";
 
 class WelcomeCopy extends Component {
   render() {
@@ -38,26 +38,31 @@ class WelcomeCopy extends Component {
             <br />
             了解人工智慧不同面向！
           </div>
-          <div className="d-flex justify-content-between align-items-center mt-5">
-            <HomePageIcon
-              imgpath="/images/welcome/books.png"
-              icontitle="知識補充站"
-              iconsubtitle="當你對人工智慧技術知識和專有名詞感到頭痛的時候，快探索網頁來緩解你的痛"
-            />
-            <HomePageIcon
+          <div className="d-flex justify-content-between align-items-center my-5">
+            
+            <CardSelect
               imgpath="/images/welcome/execute.png"
               icontitle="執行模型"
               iconsubtitle="想知道當代模型具有那些功能，並且有哪些結果嗎，快來體驗看看吧！"
+              url='/ModelInfoList'
             />
-            <HomePageIcon
+            <CardSelect
               imgpath="/images/welcome/custom.png"
               icontitle="客製化模型"
               iconsubtitle="還在苦惱訓練模型困難重重嗎？只要準備好資料集，就可以輕鬆訓練自己的模型！"
+              url='/custom'
             />
-            <HomePageIcon
+            <CardSelect
+              imgpath="/images/welcome/books.png"
+              icontitle="知識補充站"
+              iconsubtitle="當你對人工智慧技術知識和專有名詞感到頭痛的時候，快探索網頁來緩解你的痛"
+              url='/knowledge'
+            />
+            <CardSelect
               imgpath="/images/welcome/forum.png"
-              icontitle="產業應用新知"
-              iconsubtitle="想知道人工智慧的入門知識和各種有趣的應用場域和新知嗎？"
+              icontitle="HowAI 論壇"
+              iconsubtitle="人工智慧知識交流問答區，快來與各方高手互相切磋討論吧！"
+              url='forum'
             />
           </div>
         </div>

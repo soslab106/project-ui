@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import OtherBlock from '../Components/OtherBlock';
+import CardSelect from '../Components/CardSelect';
 
 // note:缺圖片
 class TestingMenu extends Component {
@@ -12,31 +12,31 @@ class TestingMenu extends Component {
                     </h3>
                 </div>
                 <div className="d-flex  justify-content-center mt-5">
-                    <OtherBlock
+                    <CardSelect
                         imgpath='/images/retina.png'
                         card_text='使用2014年ImageNet競賽圖像分類亞軍：VGGNet'
                         btnName='詳細資訊'
                         url='/vgg-playground'
-                    ></OtherBlock>
+                    ></CardSelect>
                    
-                    <OtherBlock
+                    <CardSelect
                         imgpath='/images/yolo.png'
                         card_text='採用目前最被廣泛應用的
                         物件偵測演算：YOLOV3'
                         btnName='詳細資訊'
-                        url='/yolov3-playground'></OtherBlock>
+                        url='/yolov3-playground'></CardSelect>
                    
-                    <OtherBlock
+                    <CardSelect
                         imgpath='/images/face.png'
                         card_text='使用Google 2015年提出的人臉辨識系統：Facenet'
                         btnName='詳細資訊'
-                        url='/facenet-playground'></OtherBlock>
+                        url='/facenet-playground'></CardSelect>
                   
-                    <OtherBlock
+                    <CardSelect
                         imgpath='/images/cycleGan.png'
                         card_text='採用無需成對示例的非監督訓練模型：CycleGAN'
                         btnName='詳細資訊'
-                        url='/'></OtherBlock>
+                        url='/'></CardSelect>
                 </div>
             </div>
             // <div className='expand-full'>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import TextAndImg from "../Components/TextAndImg";
-import FullWidthBlock from "../Components/FullWidthBlock";
-import ThumbNail from "../Components/ThumbNail";
+import TextAndImg from "../../Components/TextAndImg";
+import FullWidthBlock from "../../Components/FullWidthBlock";
+import ThumbNail from "../../Components/ThumbNail";
 
 class Intro extends Component {
   state = {

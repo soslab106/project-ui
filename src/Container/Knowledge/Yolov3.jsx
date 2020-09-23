@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TextAndImg from "../Components/TextAndImg";
+import TextAndImg from "../../Components/TextAndImg";
 
 class Yolov3 extends Component {
   state = {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import TextAndImg from "../Components/TextAndImg";
-import FullWidthBlock from "../Components/FullWidthBlock";
+import TextAndImg from "../../Components/TextAndImg";
+import FullWidthBlock from "../../Components/FullWidthBlock";
 
 class NeuralNetworkIntro extends Component {
   state = {
