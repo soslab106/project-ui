@@ -18,7 +18,7 @@ body {
 }
 
 .bg-light-block {
-    background-color: rgba(18, 86, 123, 0.26);
+    background-color: #F6F8F8;
 }
 
 .btn {
@@ -51,7 +51,7 @@ body {
 }
 
 .btn-main:hover {
-    background-color: #5ED7DF;
+    background-color: #29B4BE;
     color: #fff
 }
 
@@ -289,4 +289,31 @@ a:hover {
     background: #fff;
     border-radius: 20px;
     filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.16));
+}
+
+.footer{
+    background-color: #A3B9BA;
+}
+
+.warning-color{
+    color:#FDBA4E;
+}
+
+#model-list{
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
+    background: #fff;
+    width:100%;
+    height: 612px;
+}
+
+#model-list > div:nth-child(1){
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background: rgba(94, 215, 223, 0.5);
+}
+
+.article-card-img{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }

@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import FullWidthBlock from "../Components/FullWidthBlock";
-import ModelSelect from "../Components/ModelSelect";
 
 class CNNIntro extends Component {
   render() {

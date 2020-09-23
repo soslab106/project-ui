@@ -1,26 +1,30 @@
-import NeuralNetworkIntro from "./Container/NeuralNetworkIntro";
+import NeuralNetworkIntro from "./Container/Knowledge/NeuralNetworkIntro";
 import Welcome from "./Container/WelcomeCopy";
-import CNNIntro from "./Container/CNNIntro";
-import Intro from "./Container/Intro";
-import ImgClassification from "./Container/ImgClassification";
-import Yolov3 from "./Container/Yolov3";
-import FaceNet from "./Container/FaceNet";
-import PlayGround from "./Container/PlayGround";
+import CNNIntro from "./Container/Knowledge/CNNIntro";
+import Intro from "./Container/Knowledge/Intro";
+import ImgClassification from "./Container/Execution/ImgClassification";
+import Yolov3 from "./Container/Knowledge/Yolov3";
+import FaceNet from "./Container/Knowledge/FaceNet";
+import PlayGround from "./Container/Execution/PlayGround";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React, { Component } from "react";
-import Vgg from "./Container/Vgg";
-import ResNet from "./Container/ResNet";
-import CNNDetail from "./Container/CNNDetail";
-import FaceNetPlayground from "./Container/FaceNetPlayground";
-import PlayGroundList from "./Container/PlayGroundList";
+import Vgg from "./Container/Knowledge/Vgg";
+import ResNet from "./Container/Knowledge/ResNet";
+import CNNDetail from "./Container/Knowledge/CNNDetail";
+import FaceNetPlayground from "./Container/Execution/FaceNetPlayground";
+import PlayGroundList from "./Container/Execution/PlayGroundList";
 import Settings from "./Container/Settings";
 import SignupNew from "./Container/SignupNew";
 import SignIn from "./Container/SignIn";
-import Menu from "./Container/Menu";
+import Menu from "./Container/Knowledge/Menu";
 import TestingMenu from "./Container/TestingMenu";
-import NewsPage from "./Container/NewsPage";
-import ModelInfoList from "./Container/ModelInfoList";
+import NewsPage from "./Container/Knowledge/NewsPage";
+import ModelInfoList from "./Container/Execution/ModelInfoList";
 import Profile from "./Container/Profile";
+import CustomHome from "./Container/CustomModel/CustomHome";
+import PersonalModelView from "./Container/CustomModel/PersonalModelView";
+import KnowledgeHome from "./Container/Knowledge/KnowledgeHome";
+import ForumHome from "./Container/Forum/ForumHome";
 
 export function route() {
   return (
@@ -46,6 +50,10 @@ export function route() {
         <Route path="/NewsPage" component={NewsPage} />
         <Route path="/ModelInfoList" component={ModelInfoList} />
         <Route path="/Profile" component={Profile} />
+        <Route path="/custom" component={CustomHome} />
+        <Route path="/personal-model" component={PersonalModelView} />
+        <Route path="/knowledge" component={KnowledgeHome} />
+        <Route path="/forum" component={ForumHome} />
         <Route path="/:model" component={PlayGround} />
       </Switch>
     </Router>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FullWidthBlock from "../Components/FullWidthBlock"
+import FullWidthBlock from "../../Components/FullWidthBlock"
 
 class PlayGroundList extends Component {
     render() {

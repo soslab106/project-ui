@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NewsBlock from '../Components/NewsBlock';
+import NewsBlock from '../../Components/NewsBlock';
 class NewsPage extends Component {
     render() {
         return (

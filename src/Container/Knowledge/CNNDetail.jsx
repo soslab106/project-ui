@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import FullWidthBlock from "../Components/FullWidthBlock";
-import TextAndImg from "../Components/TextAndImg";
+import FullWidthBlock from "../../Components/FullWidthBlock";
+import TextAndImg from "../../Components/TextAndImg";
 
 class CNNDetail extends Component {
   state = {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Square from '../Components/Square';
-import MenuImg from '../Components/MenuImg';
+import MenuImg from '../../Components/MenuImg';
 class Menu extends Component {
     render() {
         return (

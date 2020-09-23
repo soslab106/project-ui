@@ -4,7 +4,7 @@ import "./Footer.css";
 class Footer extends Component {
   render() {
     return (
-      <footer className="footer py-1">
+      <footer className="footer py-1 h-100">
         <div className="container my-3">
           <img
             src="/images/howAI icon2.svg"
@@ -18,6 +18,10 @@ class Footer extends Component {
           >
             Banner vector created by fullvector - www.freepik.com
           </a>
+
+
+          <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
         </div>
       </footer>
     );
