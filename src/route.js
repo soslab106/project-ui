@@ -20,6 +20,7 @@ import Menu from "./Container/Knowledge/Menu";
 import TestingMenu from "./Container/TestingMenu";
 import NewsPage from "./Container/Knowledge/NewsPage";
 import ModelInfoList from "./Container/Execution/ModelInfoList";
+import CycleganPlayground from "./Container/Execution/CycleganPlayground";
 import Profile from "./Container/Profile";
 import CustomHome from "./Container/CustomModel/CustomHome";
 import PersonalModelView from "./Container/CustomModel/PersonalModelView";
@@ -54,6 +55,7 @@ export function route() {
         <Route path="/personal-model-list" component={PersonalModelView} />
         <Route path="/knowledge" component={KnowledgeHome} />
         <Route path="/forum" component={ForumHome} />
+        <Route path="/cyclegan-playground" component={CycleganPlayground} />
         <Route path="/:model" component={PlayGround} />
       </Switch>
     </Router>
