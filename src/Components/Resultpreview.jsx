@@ -5,7 +5,7 @@ class Resultpreview extends Component {
     const { img, tag1, tag2, tag3 } = this.props;
     return (
       <div className="d-flex result-preview align-items-center justify-content-center my-3">
-        <img src={img} />
+        <img src={img}/>
         <div className="content-color mx-5">
           <table className="result-preview-text">
             <tr>

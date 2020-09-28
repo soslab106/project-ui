@@ -4,9 +4,9 @@ import Resultpreview from "../../Components/Resultpreview";
 class Finish extends Component {
   render() {
     return (
-      <div className="expand-full">
-        <div className="container">
-          <div className="py-3">
+      <div className="panel">
+        <div className="container py-5">
+          <div className="pb-3">
             <div className="secondary-title mb-3">訓練完成</div>
             <span className="trainning-progress-bar">
               &#x25BA; 建立客製化模型
@@ -20,7 +20,7 @@ class Finish extends Component {
             </span>
           </div>
 
-          <div className="white-space d-flex flex-column justify-content-center align-items-center box py-3">
+          <div className="d-flex flex-column justify-content-center align-items-center box py-3">
             <div className="my-3">
               <Resultpreview
                 img="/images/CNN_1.png"

@@ -344,16 +344,14 @@ a:hover {
 
 .result-preview {
   height: 100%;
-  max-height: 25vh;
+  /* max-height: 25vh; */
 }
 
 .result-preview img {
   width: 40%;
 }
 
-.white-space {
-  background-color: #fff;
-}
+
 
 .result-preview-text {
   border-collapse: collapse;
