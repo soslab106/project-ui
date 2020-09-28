@@ -26,6 +26,7 @@ import CustomHome from "./Container/CustomModel/CustomHome";
 import PersonalModelView from "./Container/CustomModel/PersonalModelView";
 import KnowledgeHome from "./Container/Knowledge/KnowledgeHome";
 import ForumHome from "./Container/Forum/ForumHome";
+import Finish from "./Container/CustomModel/Finish";
 
 export function route() {
   return (
@@ -56,6 +57,7 @@ export function route() {
         <Route path="/knowledge" component={KnowledgeHome} />
         <Route path="/forum" component={ForumHome} />
         <Route path="/cyclegan-playground" component={CycleganPlayground} />
+        <Route path="/finish" component={Finish} />
         <Route path="/:model" component={PlayGround} />
       </Switch>
     </Router>
