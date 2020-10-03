@@ -52,7 +52,7 @@ class ModelInfoList extends Component {
               imgpath="/images/execute/cycleGan.png"
               iconsubtitle="採用無需成對示例的非監督訓練模型：CycleGAN"
               icontitle="風格轉換"
-              url="/"
+              url="/cyclegan-playground"
               btnName="開始！"
             />
           </div>
