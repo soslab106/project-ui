@@ -27,6 +27,8 @@ import PersonalModelView from "./Container/CustomModel/PersonalModelView";
 import KnowledgeHome from "./Container/Knowledge/KnowledgeHome";
 import ForumHome from "./Container/Forum/ForumHome";
 import Finish from "./Container/CustomModel/Finish";
+import Trainning from "./Container/CustomModel/Trainning";
+import LabelandImage from "./Container/CustomModel/LabelandImage";
 
 export function route() {
   return (
@@ -58,6 +60,8 @@ export function route() {
         <Route path="/forum" component={ForumHome} />
         <Route path="/cyclegan-playground" component={CycleganPlayground} />
         <Route path="/finish" component={Finish} />
+        <Route path="/trainning" component={Trainning} />
+        <Route path="/labelandImage" component={LabelandImage} />
         <Route path="/:model" component={PlayGround} />
       </Switch>
     </Router>
