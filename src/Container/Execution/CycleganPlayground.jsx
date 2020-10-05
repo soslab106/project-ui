@@ -5,7 +5,7 @@ import { Tabs, Tab } from "react-bootstrap";
 class CycleganPlayground extends Component {
   state = {
     file: "",
-    currentModel: "CycleGAN",
+    currentModel: "VGG",
     modelList: ["VGG", "YOLO", "CycleGAN", "FaceNet"], //get from api
   };
 
