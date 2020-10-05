@@ -1,22 +1,12 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect } from "react";
 import Image from "../../Components/Image";
 
 function LabelandImage() {
   const [label, setlabel] = useState("");
-  const [labelList, setlabelList] = useState([]);
+  const [labelList, setlabelList] = useState(["aaa"]);
 
   const newlabel = (label) => {
     setlabelList((oldlabelList) => [...oldlabelList, label]);
-  };
-
-  const renderLabel = () => {
-    // if (labelList) {
-    //   console.log("目前尚無標籤");
-    // } else {
-    //   console.log("hihihi");
-    // }
-    //useEffect
-    console.log(labelList);
   };
 
   function handleAddButtonClick() {
@@ -46,14 +36,26 @@ function LabelandImage() {
           <span className="trainning-progress-bar">&#x25BA; 開始訓練</span>
         </div>
         <div className="d-flex flex-wrap">
-          <div className="col-12 col-md-3">
-            <div className="d-flex flex-column justify-content-center align-items-start box p-3">
-              <div className="third-title">標籤</div>
+          <div className="col-12 col-md-3" id="labelandimage-left">
+            <div className="d-flex flex-column justify-content-start align-items-start box p-3">
+              <div className="third-title mb-3">標籤</div>
               <div id="label-config">
-                <div id="labellist">{renderLabel()}</div>
-                <div className="d-flex">
+                <div id="labellist">
+                  {labelList === null ? (
+                    <div>空</div>
+                  ) : (
+                    labelList.map((label) => (
+                      <div className="d-flex justify-content-between labellist-label">
+                        <div>{label}</div>
+                        <input id="file" type="file" />
+                        <label for="file">上傳圖片</label>
+                      </div>
+                    ))
+                  )}
+                </div>
+                <div className="d-flex mt-1">
                   <input
-                    className="mt-20"
+                    className="mt-10"
                     type="text"
                     onInput={handlelable}
                     value={label}
@@ -64,8 +66,20 @@ function LabelandImage() {
             </div>
             <button className="btn-main my-4">上一步</button>
           </div>
-          <div className="col-12 col-md-9 d-flex flex-column justify-content-center align-items-end">
-            <div className="d-flex flex-wrap box p-3">
+          <div
+            className="col-12 col-md-9 d-flex flex-column justify-content-center align-items-end"
+            id="labelandimage-right"
+          >
+            <div className="d-flex flex-wrap align-items-start box p-3">
+              <Image />
+              <Image />
+              <Image />
+              <Image />
+              <Image />
+              <Image />
+              <Image />
+              <Image />
+              <Image />
               <Image />
               <Image />
               <Image />

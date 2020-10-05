@@ -464,3 +464,37 @@ label {
   display: inline-block;
   box-sizing: content-box;
 }
+
+.labellist-label {
+  padding: 10px;
+}
+
+.labellist-label:hover {
+  background-color: #29b4be;
+  color: #ffffff;
+  transition: all 0.25s;
+  border-radius: 10px;
+  border: transparent;
+}
+
+.labellist-label input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.labellist-label label:hover {
+  cursor: pointer;
+}
+
+#labelandimage-left > div {
+  height: 60vh;
+  overflow: scroll;
+}
+#labelandimage-right > div {
+  height: 60vh;
+  overflow: scroll;
+}
