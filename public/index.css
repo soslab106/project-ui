@@ -388,15 +388,16 @@ a:hover {
     cursor: pointer;
     color: #5F7171;
     margin-top: 20px!important;
+    cursor: pointer;
 }
 
 label {
-    margin: 0!important;
+    margin: 0 !important;
     transition: all 0.25s;
 }
 
 .toggleClicked {
-    background-color: #5F7171;
+    background-color: #5f7171;
     color: #f6f6f8;
 }
 
@@ -412,14 +413,9 @@ label {
     transform: rotate(45deg);
 }
 
-.nav-tabs {
-    /* border-bottom: none!important; */
-    /* margin-right: 20px; */
-}
-
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-    color: #ffffff!important;
-    background-color: #5F7171;
+    color: #ffffff !important;
+    background-color: #5f7171;
     border-color: transparent;
     /* border-radius: 10px!important; */
 }
@@ -430,40 +426,43 @@ label {
 }
 
 .mt-20 {
-    margin-top: 20px!important;
+    margin-top: 20px !important;
 }
 
 .mt-10 {
     margin-top: 10px!important;
 }
 
-.ml-10{
+.ml-10 {
     margin-left: 10px;
 }
 
-.ml-20{
+.ml-20 {
     margin-left: 20px;
 }
-.mr-10{
+
+.mr-10 {
     margin-right: 10px;
 }
 
 .p-20 {
     padding: 20px!important;
 }
+
 .p-10 {
     padding: 10px!important;
 }
+
 .disable-model {
     color: #A3B9BA!important;
     cursor: default!important;
 }
 
-.newmodel-param-icons{
+.newmodel-param-icons {
     width: 64px!important;
 }
 
-.btn-param{
+.btn-param {
     width: auto!important;
     padding-left: 10px;
     padding-right: 10px;
@@ -471,7 +470,33 @@ label {
     /* padding-bottom: 10px; */
 }
 
-.summary{
+.summary {
     width: 100%!important;
     height: auto!important;
+}
+
+margin-top: 10px !important;
+}
+
+.p-20 {
+    padding: 20px !important;
+}
+
+#label-config input {
+    border: none;
+    border-bottom: 1px solid #5f7171;
+    width: 100%;
+    box-sizing: content-box;
+}
+
+#label-config button {
+    background-color: #fff;
+    border: none;
+    color: #5f7171;
+    font-size: 22px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-decoration: none;
+    display: inline-block;
+    box-sizing: content-box;
 }
