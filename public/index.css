@@ -368,6 +368,7 @@ a:hover {
 .trainning-progress-bar {
     margin-left: 10px;
     margin-right: 10px;
+    color: #5f7171;
 }
 
 .trainning-progress-bar-active {
@@ -385,6 +386,8 @@ a:hover {
     border-radius: 10px;
     background: #fff;
     cursor: pointer;
+    color: #5F7171;
+    margin-top: 20px!important;
 }
 
 label {
@@ -412,7 +415,6 @@ label {
 .nav-tabs {
     /* border-bottom: none!important; */
     /* margin-right: 20px; */
-
 }
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
@@ -427,14 +429,49 @@ label {
     /* border-radius: 10px!important; */
 }
 
-.mt-20{
+.mt-20 {
     margin-top: 20px!important;
 }
 
-.mt-10{
+.mt-10 {
     margin-top: 10px!important;
 }
 
-.p-20{
-    padding:20px!important;
+.ml-10{
+    margin-left: 10px;
+}
+
+.ml-20{
+    margin-left: 20px;
+}
+.mr-10{
+    margin-right: 10px;
+}
+
+.p-20 {
+    padding: 20px!important;
+}
+.p-10 {
+    padding: 10px!important;
+}
+.disable-model {
+    color: #A3B9BA!important;
+    cursor: default!important;
+}
+
+.newmodel-param-icons{
+    width: 64px!important;
+}
+
+.btn-param{
+    width: auto!important;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* padding-top: 10px; */
+    /* padding-bottom: 10px; */
+}
+
+.summary{
+    width: 100%!important;
+    height: auto!important;
 }
