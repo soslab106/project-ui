@@ -27,12 +27,9 @@ import PersonalModelView from "./Container/CustomModel/PersonalModelView";
 import KnowledgeHome from "./Container/Knowledge/KnowledgeHome";
 import ForumHome from "./Container/Forum/ForumHome";
 import Finish from "./Container/CustomModel/Finish";
-<<<<<<< HEAD
 import NewModel from "./Container/CustomModel/NewModel"
-=======
 import Trainning from "./Container/CustomModel/Trainning";
 import LabelandImage from "./Container/CustomModel/LabelandImage";
->>>>>>> c5112a110ad0bd29215d84e2fea2c7960ad2e29d
 
 export function route() {
   return (
