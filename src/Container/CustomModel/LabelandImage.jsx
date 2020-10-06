@@ -4,6 +4,7 @@ import Image from "../../Components/Image";
 function LabelandImage() {
   const [label, setlabel] = useState("");
   const [labelList, setlabelList] = useState(["aaa"]);
+  const [imageList, setimageList] = useState({});
 
   const newlabel = (label) => {
     setlabelList((oldlabelList) => [...oldlabelList, label]);
@@ -20,6 +21,16 @@ function LabelandImage() {
   function handlelable(e) {
     setlabel(e.target.value);
   }
+
+  function handleFileChange(e) {
+    setimageList(e.target.files);
+    // console.log(imageList);
+    // console.log(e.target.files);
+  }
+
+  useEffect(() => {
+    console.log(imageList);
+  }, [imageList]);
 
   return (
     <div className="panel">
@@ -41,16 +52,20 @@ function LabelandImage() {
               <div className="third-title mb-3">標籤</div>
               <div id="label-config">
                 <div id="labellist">
-                  {labelList === null ? (
-                    <div>空</div>
-                  ) : (
+                  {labelList ? (
                     labelList.map((label) => (
                       <div className="d-flex justify-content-between labellist-label">
                         <div>{label}</div>
-                        <input id="file" type="file" />
+                        <input
+                          id="file"
+                          type="file"
+                          onChange={handleFileChange}
+                        />
                         <label for="file">上傳圖片</label>
                       </div>
                     ))
+                  ) : (
+                    <div>空</div>
                   )}
                 </div>
                 <div className="d-flex mt-1">
