@@ -1,7 +1,11 @@
 import React, { Component, useState, useEffect } from "react";
 import Image from "../../Components/Image";
+import { Link, useLocation } from "react-router-dom";
 
 function LabelandImage() {
+  let location = useLocation();
+  console.log(location);
+
   const [label, setlabel] = useState("");
   const [labelList, setlabelList] = useState(["aaa"]);
 

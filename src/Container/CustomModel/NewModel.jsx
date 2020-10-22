@@ -1,12 +1,26 @@
 import React, { Component } from "react";
 import ModelCheckboxExclusive from "../../Components/ModelCheckboxExclusive";
+import {Link} from 'react-router-dom'
 
 class NewModel extends Component {
   state = {
     file: "",
     currentModel: "VGG",
     modelList: ["VGG", "YOLO", "CycleGAN", "FaceNet"], //get from api
+    pjName: "",
+    learningRate:'',
+    epoch: '',
   };
+
+  handleChange = (e) => {
+    let targetState=e.target.name
+    let value=e.target.value
+    this.setState({[targetState]:value})
+  }
+
+  handleNext = (e)=> {
+    console.log(this.state)
+  }
 
   handleModels = (e) => {
     const { modelList } = this.state;
@@ -26,7 +40,7 @@ class NewModel extends Component {
     }
   };
   render() {
-    const { file, currentModel } = this.state;
+    const { file, currentModel, pjName, epoch, learningRate } = this.state;
 
     return (
       <div className="panel">
@@ -37,15 +51,46 @@ class NewModel extends Component {
               <span className="trainning-progress-bar">
                 &#x25BA; 建立客製化模型
               </span>
-              <span className="trainning-progress-bar-active">&#x25BA; 模型設定</span>
+              <span className="trainning-progress-bar-active">
+                &#x25BA; 模型設定
+              </span>
               <span className="trainning-progress-bar">
                 &#x25BA; 設定標籤及上傳圖片
               </span>
-              <span className="trainning-progress-bar">
-                &#x25BA; 開始訓練
-              </span>
+              <span className="trainning-progress-bar">&#x25BA; 開始訓練</span>
             </div>
             <div className="d-flex row">
+              <div className="col-4">
+                <div className="third-title text-left mt-20">專案名稱</div>
+                <div className="main-shadow model-checkbox w-100 d-flex justify-content-start align-items-center p-10">
+                  <input name='pjName' className='w-100' type="text" onChange={this.handleChange}/>
+                </div>
+              </div>
+              <div className="col-8">
+                <div className="third-title text-left mt-20">參數設定</div>
+                <div className="d-flex">
+                  <div className="d-flex w-100">
+                    <div className="main-shadow model-checkbox newmodel-param-icons d-flex justify-content-center align-items-center">
+                      <img src="/images/custom/lr.png" width="40" />
+                    </div>
+                    <div className="justify-content-between main-shadow model-checkbox w-75 ml-10 d-flex justify-content-start align-items-center p-10">
+                      Learning Rate
+                      <input name='learningRate' className='w-50 text-right' type="text" onChange={this.handleChange}/>
+                    </div>
+                  </div>
+                  <div className="d-flex w-100">
+                    <div className="main-shadow model-checkbox newmodel-param-icons d-flex justify-content-center align-items-center">
+                      <img src="/images/custom/epoch.png" width="40" />
+                    </div>
+                    <div className="justify-content-between main-shadow model-checkbox w-75 ml-10 d-flex justify-content-start align-items-center p-10">
+                      Epoch
+                      <input name='epoch' className='w-50 text-right' type="text" onChange={this.handleChange}/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="d-flex row mt-3">
               <div className="col-4">
                 <div className="third-title text-left">模型選擇</div>
                 <div>
@@ -72,49 +117,10 @@ class NewModel extends Component {
                     className="disable-model"
                   />
                 </div>
-                {/* </div>
-              <div className="col-4"> */}
-                <div className="third-title text-left mt-20">參數設定</div>
-                <div className="d-flex">
-                  <div className="model-checkbox newmodel-param-icons d-flex justify-content-center align-items-center">
-                    <img src="/images/custom/lr.png" width="40" />
-                  </div>
-                  <div className="model-checkbox w-75 ml-10 d-flex justify-content-start align-items-center p-10">
-                    Learning Rate
-                  </div>
-                </div>
-                <div className="d-flex">
-                  <div className="model-checkbox newmodel-param-icons d-flex justify-content-center align-items-center">
-                    <img src="/images/custom/epoch.png" width="40" />
-                  </div>
-                  <div className="model-checkbox w-75 ml-10 d-flex justify-content-start align-items-center p-10">
-                    Epoch
-                  </div>
-                </div>
-                <div className="third-title text-left mt-20">參數說明</div>
-                <div className="mt-20">
-                  <button className="btn-main btn-param">
-                    <img
-                      src="/images/custom/lr.png"
-                      width="30"
-                      className="mr-10"
-                    />
-                    Learning Rate
-                  </button>
-
-                  <button className="btn-main btn-param ml-20">
-                    <img
-                      src="/images/custom/epoch.png"
-                      width="30"
-                      className="mr-10"
-                    />
-                    Epoch
-                  </button>
-                </div>
               </div>
               <div className="col-8">
                 <div className="third-title text-left">架構預覽</div>
-                <div className="model-checkbox summary p-5 d-flex justify-content-center">
+                <div className="model-checkbox summary p-5 d-flex justify-content-center" style={{cursor:'auto'}}>
                   <code>
                     ________________________________________________________
                     <br />
@@ -152,7 +158,7 @@ class NewModel extends Component {
                   </code>
                 </div>
                 <div className="d-flex justify-content-center align-items-center mt-20">
-                  <button className="btn-main">下一步</button>
+                  <Link to={{pathname:'/labelandImage', state: {pjName:pjName, learningRate:learningRate, epoch:epoch}}}><button className="btn-main" onClick={this.handleNext}>下一步</button></Link>
                 </div>
               </div>
             </div>
@@ -164,3 +170,5 @@ class NewModel extends Component {
 }
 
 export default NewModel;
+
+// {pjName:pjName, learningRate:learningRate, epoch:epoch}
