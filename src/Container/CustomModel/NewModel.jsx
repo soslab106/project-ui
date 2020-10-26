@@ -19,7 +19,11 @@ class NewModel extends Component {
   }
 
   handleNext = (e)=> {
-    console.log(this.state)
+    const {pjName, learningRate, epoch} = this.state
+    if(!pjName || !learningRate || !epoch){
+      alert('設定完再進行下一步呦！')
+      window.location.href='new-model'
+    }
   }
 
   handleModels = (e) => {
@@ -120,7 +124,7 @@ class NewModel extends Component {
               </div>
               <div className="col-8">
                 <div className="third-title text-left">架構預覽</div>
-                <div className="model-checkbox summary p-5 d-flex justify-content-center" style={{cursor:'auto'}}>
+                <div className="model-checkbox summary p-5 d-flex justify-content-center">
                   <code>
                     ________________________________________________________
                     <br />
