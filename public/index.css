@@ -183,7 +183,8 @@ img {
   height: 80%;
 }
 
-.pointer, .close-modal:hover {
+.pointer,
+.close-modal:hover {
   cursor: pointer;
 }
 
@@ -420,7 +421,7 @@ label {
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
   color: #ffffff !important;
-  background-color: #29B4BE;  /*要改的地方 #5f7171*/
+  background-color: #29b4be; /*要改的地方 #5f7171*/
   border-color: transparent;
   /* border-radius: 10px!important; */
 }
@@ -534,7 +535,7 @@ label {
 }
 
 #labelandimage-left > div {
-  height: 60vh;
+  height: 70vh;
   overflow: scroll;
 }
 #labelandimage-right > div {
@@ -550,9 +551,9 @@ input {
 }
 
 .active-news-tab-img {
-  border: 8px solid #FDBA4E;
-  width: 100px!important;
-  height: 100px!important;
+  border: 8px solid #fdba4e;
+  width: 100px !important;
+  height: 100px !important;
   transition: all 0.25s;
 }
 
@@ -572,7 +573,7 @@ input {
   width: 150px;
 }
 
-.news-title{
+.news-title {
   color: #29b4be;
 }
 
@@ -602,4 +603,45 @@ a{
   color: #5f7171!important;
   text-decoration: none;
   margin-top: 10px!important;
+}
+
+.boards {
+  margin-left: 35%;
+  color: #5f7171;
+}
+
+.forumpost {
+  border-bottom: 1px solid #707070;
+  width: 100%;
+  height: 10vh;
+}
+
+.post-title {
+  cursor: pointer;
+}
+
+.post-content {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.forum-post-list {
+  height: 200vh;
+}
+
+.setting-info {
+  height: 75px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.setting-info > div {
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #5f7171;
+  font-weight: bold;
 }
