@@ -52,16 +52,16 @@ class NavBar extends Component {
                 </a>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a className="dropdown-item" href="/vgg-playground">
-                    物體辨識 (VGG16)
+                    物體辨識 VGG16
                   </a>
                   <a className="dropdown-item" href="/yolov3-playground">
-                    物體定位 (YOLOV3)
+                    物體定位 YOLOV3
                   </a>
                   <a className="dropdown-item" href="/facenet-playground">
-                    臉部辨識 (FaceNet)
+                    臉部辨識 FaceNet
                   </a>
                   <a className="dropdown-item" href="/cyclegan-playground">
-                    風格轉換 (CycleGAN)
+                    風格轉換 CycleGAN
                   </a>
                   <div className="dropdown-divider"></div>
                   <a className="dropdown-item" href="/ModelInfoList">
@@ -95,19 +95,15 @@ class NavBar extends Component {
                   <a className="dropdown-item" href="/knowledge">
                     知識補充站首頁
                   </a>
-                  <a className="dropdown-item" href="/Intro">
-                    人工智慧
+                  <a className="dropdown-item" href="/knowledge#teachings">
+                    教學專區
                   </a>
-                  <a className="dropdown-item" href="/ModelInfoList">
-                    模型架構
+                  <a className="dropdown-item" href="/knowledge#evaluate">
+                    學習成效評估
                   </a>
-                  <a className="dropdown-item" href="NewsPage">
-                    產業應用新知
+                  <a className="dropdown-item" href="/knowledge#news">
+                    HowAI News
                   </a>
-                  <a className="dropdown-item" href="CNN">
-                    專有名詞
-                  </a>
-                  <a className="dropdown-item" href="#"></a>
                 </div>
               </li>
 
@@ -146,20 +142,20 @@ class NavBar extends Component {
                   </div>
                 </li>
               ) : (
-                <React.Fragment>
-                  <li className="nav-item mr-3">
-                    <a className="nav-link" href="/signin">
-                      登入
+                  <React.Fragment>
+                    <li className="nav-item mr-3">
+                      <a className="nav-link" href="/signin">
+                        登入
                     </a>
-                  </li>
+                    </li>
 
-                  <li className="nav-item mr-3">
-                    <a className="nav-link" href="/signupnew">
-                      註冊
+                    <li className="nav-item mr-3">
+                      <a className="nav-link" href="/signupnew">
+                        註冊
                     </a>
-                  </li>
-                </React.Fragment>
-              )}
+                    </li>
+                  </React.Fragment>
+                )}
             </ul>
           </div>
         </div>
