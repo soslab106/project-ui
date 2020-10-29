@@ -35,8 +35,8 @@ function LabelandImage() {
   }
 
   function handleshowLabel(event) {
-    // console.log(event.currentTarget);
-    console.log("hi");
+    console.log(event.currentTarget);
+    // console.log("hi");
   }
 
   function getAPI() {
@@ -76,7 +76,7 @@ function LabelandImage() {
                       <div
                         className="d-flex justify-content-between labellist-label"
                         name={label}
-                        onclick={handleshowLabel}
+                        onClick={handleshowLabel}
                       >
                         <div>{label}</div>
                         <input
@@ -123,12 +123,12 @@ function LabelandImage() {
               </div>
             </span>
             <div className="d-flex flex-wrap align-items-start box p-3">
-              {imageList ? <div>ddd</div> : <div>aaa</div>}
-              {/* {imageList ? (
-                imageList.forEach((image) => <Image src="/images/nopic.png" />)
+              {imageList!=false ? <div>ddd</div> : <div>aaa</div>}
+              {imageList!=false ? (
+                imageList.map((image) => <Image src={URL.createObjectURL(image)} />)
               ) : (
                 <div>NO PICTURE</div>
-              )} */}
+              )}
             </div>
             <button className="btn-main my-4" onclick={() => getAPI()}>
               開始訓練
