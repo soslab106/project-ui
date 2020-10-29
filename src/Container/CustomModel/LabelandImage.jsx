@@ -8,7 +8,7 @@ function LabelandImage() {
 
   const [label, setlabel] = useState("");
   const [labelList, setlabelList] = useState(["aaa"]);
-  const [imageList, setimageList] = useState({});
+  const [imageList, setimageList] = useState([]);
 
   const newlabel = (label) => {
     setlabelList((oldlabelList) => [...oldlabelList, label]);
@@ -27,9 +27,24 @@ function LabelandImage() {
   }
 
   function handleFileChange(e) {
-    setimageList(e.target.files);
+    const origFile = [...imageList];
+    origFile.push(...e.target.files);
+    setimageList(origFile);
     // console.log(imageList);
     // console.log(e.target.files);
+  }
+
+  function handleshowLabel(event) {
+    // console.log(event.currentTarget);
+    console.log("hi");
+  }
+
+  function getAPI() {
+    let formData = new FormData();
+    formData.append("pjName", location.state["pjName"]);
+    formData.append("learningRate", location.state["learningRate"]);
+    formData.append("epoch", location.state["epoch"]);
+    formData.append("trainingData", imageList);
   }
 
   useEffect(() => {
@@ -58,7 +73,11 @@ function LabelandImage() {
                 <div id="labellist">
                   {labelList ? (
                     labelList.map((label) => (
-                      <div className="d-flex justify-content-between labellist-label">
+                      <div
+                        className="d-flex justify-content-between labellist-label"
+                        name={label}
+                        onclick={handleshowLabel}
+                      >
                         <div>{label}</div>
                         <input
                           id="file"
@@ -89,23 +108,31 @@ function LabelandImage() {
             className="col-12 col-md-9 d-flex flex-column justify-content-center align-items-end"
             id="labelandimage-right"
           >
+            <span className="setting-info box d-flex align-items-center justify-content-start">
+              <div>
+                <span>專案名稱: </span>
+                {location.state.pjName}
+              </div>
+              <div>
+                <span>Learning Rate: </span>
+                {location.state.learningRate}
+              </div>
+              <div>
+                <span>Epoch數: </span>
+                {location.state.epoch}
+              </div>
+            </span>
             <div className="d-flex flex-wrap align-items-start box p-3">
-              <Image />
-              <Image />
-              <Image />
-              <Image />
-              <Image />
-              <Image />
-              <Image />
-              <Image />
-              <Image />
-              <Image />
-              <Image />
-              <Image />
-              <Image />
-              <Image />
+              {imageList ? <div>ddd</div> : <div>aaa</div>}
+              {/* {imageList ? (
+                imageList.forEach((image) => <Image src="/images/nopic.png" />)
+              ) : (
+                <div>NO PICTURE</div>
+              )} */}
             </div>
-            <button className="btn-main my-4">開始訓練</button>
+            <button className="btn-main my-4" onclick={() => getAPI()}>
+              開始訓練
+            </button>
           </div>
         </div>
       </div>
