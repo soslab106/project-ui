@@ -19,12 +19,12 @@ class KnowledgeHome extends Component {
               專有名詞解釋及定義釐清
             </div>
           ),
-          link: "r3rji2orjo3irj",
+          link: "https://hackmd.io/nAjgl0OLT7Ow2grzPtya8g?view",
         },
         {
           title: "類神經網路",
           desc: <div>深度學習的基礎原理、來源等等的背景知識介紹</div>,
-          link: "r3rji2orjo3irj",
+          link: "https://hackmd.io/EBuUE2WgSPW6vDRsWWJkYw?view",
         },
         {
           title: "電腦視覺",
@@ -42,7 +42,7 @@ class KnowledgeHome extends Component {
               介紹可應用於電腦視覺的基礎深度學習模型、及其相關簡易運作原理
             </div>
           ),
-          link: "r3rji2orjo3irj",
+          link: "https://hackmd.io/3A_SaNrqTuGGNnQlVLEONQ",
         },
         {
           title: "自然語言處理",
@@ -64,12 +64,25 @@ class KnowledgeHome extends Component {
         },
       ],
       model: [
-        { title: "tittitititllle", desc: "fjeifef", link: "r3rji2orjo3irj" },
-        { title: "tittitititllle", desc: "fjeifef", link: "r3rji2orjo3irj" },
-        { title: "tittitititllle", desc: "fjeifef", link: "r3rji2orjo3irj" },
-        { title: "tittitititllle", desc: "fjeifef", link: "r3rji2orjo3irj" },
-        { title: "tittitititllle", desc: "fjeifef", link: "r3rji2orjo3irj" },
-        { title: "tittitititllle", desc: "fjeifef", link: "r3rji2orjo3irj" },
+        {
+          title: "圖像分類 VGG16",
+          desc:
+            "2014年分類亞軍(定位冠軍)VGGNet透過建立更多層的模型，達到了16及19個隱藏層",
+          link: "https://hackmd.io/abl-pYsXTiKAO3vdt1yVCg?view",
+        },
+        {
+          title: "人臉辨識 FaceNet",
+          desc:
+            "現階段的人臉辨識，是由一系列的便是問題所組成，本文將詳述辨識各項步驟",
+          link: "https://hackmd.io/aquN3Hk7RLmXgNDmERdXcw",
+        },
+        {
+          title: "物體定位 YOLOv3",
+          desc:
+            "Yolo系列是關於物件偵測的類神經網路演算法，能夠快速判斷圖形內的物體位置與類別...",
+          link: "https://drive.google.com/file/d/18tqj_GZ-nM9FCNlzMLGSvt4-QsT-jdya/view?usp=sharing",
+        },
+        { title: "風格轉換 CycleGAN", desc: "fjeifef", link: "r3rji2orjo3irj" },
       ],
       cv: [
         { title: "tittitititllle", desc: "fjeifef", link: "r3rji2orjo3irj" },
@@ -80,8 +93,18 @@ class KnowledgeHome extends Component {
         { title: "tittitititllle", desc: "fjeifef", link: "r3rji2orjo3irj" },
       ],
       video: [
-        { title: "tittitititllle", desc: "fjeifef", link: "r3rji2orjo3irj" },
-        { title: "tittitititllle", desc: "fjeifef", link: "r3rji2orjo3irj" },
+        {
+          title: "Machine Learning",
+          desc: "台大李宏毅老師",
+          link:
+            "https://www.youtube.com/watch?v=CXgbekl66jc&list=PLJV_el3uVTsPy9oCRY30oBPNLCo89yu49",
+        },
+        {
+          title: "Advanced Deep Learning",
+          desc: "台大李宏毅老師",
+          link:
+            "https://www.youtube.com/watch?v=IzHoNwlCGnE&list=PLJV_el3uVTsPMxPbjeX7PicgWbY7F8wW9",
+        },
         { title: "tittitititllle", desc: "fjeifef", link: "r3rji2orjo3irj" },
         { title: "tittitititllle", desc: "fjeifef", link: "r3rji2orjo3irj" },
         { title: "tittitititllle", desc: "fjeifef", link: "r3rji2orjo3irj" },
@@ -266,10 +289,9 @@ class KnowledgeHome extends Component {
       // console.log(i);
       let children = teaches.slice(i * 3, i * 3 + 3);
       children = children.map((child) => (
-        <div className="main-shadow border-radius p-3 w-32">
+        <div className="main-shadow border-radius p-3 w-32" onClick={()=>window.open(child.link, '_blank')}>
           <div className="third-title text-left">{child.title}</div>
           <div>{child.desc}</div>
-          {/* {child.link} */}
         </div>
       ));
       console.log(children.length);
@@ -359,7 +381,7 @@ class KnowledgeHome extends Component {
           imgPath="/images/knowledge/knowledge.png"
         />
         <div className="py-5 container">
-          <div className="secondary-title mb-3">教學專區</div>
+          <div className="secondary-title mb-3" id='teachings'>教學專區</div>
           <Tabs defaultActiveKey="basic" id="uncontrolled-tab-example">
             <Tab eventKey="basic" title="基本知識">
               {this.renderTeachings(this.state.teachings.basic)}
@@ -376,15 +398,27 @@ class KnowledgeHome extends Component {
           </Tabs>
 
           <div className="my-5 py-5">
-            <div className="secondary-title my-5">學習成效評估</div>
+            <div className="secondary-title my-5" id="evaluate">學習成效評估</div>
             <div className="d-flex justify-content-around align-items-center">
-              <button className="btn-main w-25" style={{height: "80px" }}>EASY<br/>簡單模式</button>
-              <button className="btn-main w-25" style={{height: "80px" }}>NORMAL<br/>一般模式</button>
-              <button className="btn-main w-25" style={{height: "80px" }}>HARD<br/>困難模式</button>
+              <button className="btn-main w-25" style={{ height: "80px" }}>
+                EASY
+                <br />
+                簡單模式
+              </button>
+              <button className="btn-main w-25" style={{ height: "80px" }}>
+                NORMAL
+                <br />
+                一般模式
+              </button>
+              <button className="btn-main w-25" style={{ height: "80px" }}>
+                HARD
+                <br />
+                困難模式
+              </button>
             </div>
           </div>
         </div>
-        <div className="w-100 panel py-5">
+        <div className="w-100 panel py-5" id='news'>
           <div className="container d-flex justify-content-between">
             <div>
               <div className="secondary-title text-left">HowAI News</div>

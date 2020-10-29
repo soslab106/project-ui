@@ -630,3 +630,21 @@ input {
   color: #5f7171;
   font-weight: bold;
 }
+
+.w-32 {
+  width: 32% !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+.footer-title {
+  font-size: 20px;
+  color: #2e3131;
+}
+.footer-link {
+  color: #5f7171 !important;
+  text-decoration: none;
+  margin-top: 10px !important;
+}

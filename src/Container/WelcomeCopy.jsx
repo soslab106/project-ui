@@ -38,7 +38,7 @@ class WelcomeCopy extends Component {
             <br />
             了解人工智慧不同面向！
           </div>
-          <div className="d-flex justify-content-between align-items-center my-5">
+          <div className="d-flex justify-content-between align-items-center pb-5 my-5">
             
             <CardSelect
               imgpath="/images/welcome/execute.png"
