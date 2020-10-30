@@ -183,6 +183,7 @@ img {
   height: 80%;
 }
 
+.pointer,
 .close-modal:hover {
   cursor: pointer;
 }
@@ -384,17 +385,15 @@ td {
 }
 
 .main-shadow {
-  box-shadow: 0px 0px 12px #a3b9ba;
+  box-shadow: 0px 0px 6px #a3b9ba;
 }
 
 .model-checkbox {
   height: 64px;
   border-radius: 10px;
   background: #fff;
-  cursor: pointer;
   color: #5f7171;
   margin-top: 20px !important;
-  cursor: pointer;
 }
 
 label {
@@ -422,7 +421,7 @@ label {
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
   color: #ffffff !important;
-  background-color: #5f7171;
+  background-color: #29b4be; /*要改的地方 #5f7171*/
   border-color: transparent;
   /* border-radius: 10px!important; */
 }
@@ -536,10 +535,116 @@ label {
 }
 
 #labelandimage-left > div {
-  height: 60vh;
+  height: 70vh;
   overflow: scroll;
 }
 #labelandimage-right > div {
   height: 60vh;
   overflow: scroll;
+}
+
+input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid black;
+}
+
+.active-news-tab-img {
+  border: 8px solid #fdba4e;
+  width: 100px !important;
+  height: 100px !important;
+  transition: all 0.25s;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 15px 15px 15px;
+  border-color: transparent transparent #29b4be transparent;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.explore-theme {
+  width: 150px;
+}
+
+.news-title {
+  color: #29b4be;
+}
+
+.news-tab {
+  border-top: 5px solid #29b4be;
+  border-left: 5px solid #29b4be;
+  border-right: 5px solid #29b4be;
+  border-bottom: 5px solid #29b4be;
+  padding-right: 5rem !important;
+  padding-left: 5rem !important;
+}
+
+.w-32 {
+  width: 32% !important;
+}
+
+.boards {
+  margin-left: 35%;
+  color: #5f7171;
+}
+
+.forumpost {
+  border-bottom: 1px solid #707070;
+  width: 100%;
+  height: 10vh;
+}
+
+.post-title {
+  cursor: pointer;
+}
+
+.post-content {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.forum-post-list {
+  height: 200vh;
+}
+
+.setting-info {
+  height: 75px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.setting-info > div {
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #5f7171;
+  font-weight: bold;
+}
+
+.w-32 {
+  width: 32% !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+.footer-title {
+  font-size: 20px;
+  color: #2e3131;
+}
+.footer-link {
+  color: #5f7171 !important;
+  text-decoration: none;
+  margin-top: 10px !important;
 }

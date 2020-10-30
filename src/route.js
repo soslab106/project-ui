@@ -27,9 +27,10 @@ import PersonalModelView from "./Container/CustomModel/PersonalModelView";
 import KnowledgeHome from "./Container/Knowledge/KnowledgeHome";
 import ForumHome from "./Container/Forum/ForumHome";
 import Finish from "./Container/CustomModel/Finish";
-import NewModel from "./Container/CustomModel/NewModel"
+import NewModel from "./Container/CustomModel/NewModel";
 import Trainning from "./Container/CustomModel/Trainning";
 import LabelandImage from "./Container/CustomModel/LabelandImage";
+import ForumAll from "./Container/Forum/ForumAll";
 
 export function route() {
   return (
@@ -59,6 +60,7 @@ export function route() {
         <Route path="/personal-model-list" component={PersonalModelView} />
         <Route path="/knowledge" component={KnowledgeHome} />
         <Route path="/forum" component={ForumHome} />
+        <Route path="/forum-all" component={ForumAll} />
         <Route path="/cyclegan-playground" component={CycleganPlayground} />
         <Route path="/finish" component={Finish} />
         <Route path="/new-model" component={NewModel} />

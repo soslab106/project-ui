@@ -1,9 +1,14 @@
 import React, { Component, useState, useEffect } from "react";
 import Image from "../../Components/Image";
+import { Link, useLocation } from "react-router-dom";
 
 function LabelandImage() {
+  let location = useLocation();
+  console.log(location);
+
   const [label, setlabel] = useState("");
   const [labelList, setlabelList] = useState(["aaa"]);
+  const [imageList, setimageList] = useState([]);
 
   const newlabel = (label) => {
     setlabelList((oldlabelList) => [...oldlabelList, label]);
@@ -20,6 +25,31 @@ function LabelandImage() {
   function handlelable(e) {
     setlabel(e.target.value);
   }
+
+  function handleFileChange(e) {
+    const origFile = [...imageList];
+    origFile.push(...e.target.files);
+    setimageList(origFile);
+    // console.log(imageList);
+    // console.log(e.target.files);
+  }
+
+  function handleshowLabel(event) {
+    console.log(event.currentTarget);
+    // console.log("hi");
+  }
+
+  function getAPI() {
+    let formData = new FormData();
+    formData.append("pjName", location.state["pjName"]);
+    formData.append("learningRate", location.state["learningRate"]);
+    formData.append("epoch", location.state["epoch"]);
+    formData.append("trainingData", imageList);
+  }
+
+  useEffect(() => {
+    console.log(imageList);
+  }, [imageList]);
 
   return (
     <div className="panel">
@@ -41,16 +71,24 @@ function LabelandImage() {
               <div className="third-title mb-3">標籤</div>
               <div id="label-config">
                 <div id="labellist">
-                  {labelList === null ? (
-                    <div>空</div>
-                  ) : (
+                  {labelList ? (
                     labelList.map((label) => (
-                      <div className="d-flex justify-content-between labellist-label">
+                      <div
+                        className="d-flex justify-content-between labellist-label"
+                        name={label}
+                        onClick={handleshowLabel}
+                      >
                         <div>{label}</div>
-                        <input id="file" type="file" />
+                        <input
+                          id="file"
+                          type="file"
+                          onChange={handleFileChange}
+                        />
                         <label for="file">上傳圖片</label>
                       </div>
                     ))
+                  ) : (
+                    <div>空</div>
                   )}
                 </div>
                 <div className="d-flex mt-1">
@@ -70,23 +108,31 @@ function LabelandImage() {
             className="col-12 col-md-9 d-flex flex-column justify-content-center align-items-end"
             id="labelandimage-right"
           >
+            <span className="setting-info box d-flex align-items-center justify-content-start">
+              <div>
+                <span>專案名稱: </span>
+                {location.state.pjName}
+              </div>
+              <div>
+                <span>Learning Rate: </span>
+                {location.state.learningRate}
+              </div>
+              <div>
+                <span>Epoch數: </span>
+                {location.state.epoch}
+              </div>
+            </span>
             <div className="d-flex flex-wrap align-items-start box p-3">
-              <Image />
-              <Image />
-              <Image />
-              <Image />
-              <Image />
-              <Image />
-              <Image />
-              <Image />
-              <Image />
-              <Image />
-              <Image />
-              <Image />
-              <Image />
-              <Image />
+              {imageList!=false ? <div>ddd</div> : <div>aaa</div>}
+              {imageList!=false ? (
+                imageList.map((image) => <Image src={URL.createObjectURL(image)} />)
+              ) : (
+                <div>NO PICTURE</div>
+              )}
             </div>
-            <button className="btn-main my-4">開始訓練</button>
+            <button className="btn-main my-4" onclick={() => getAPI()}>
+              開始訓練
+            </button>
           </div>
         </div>
       </div>
