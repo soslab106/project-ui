@@ -172,6 +172,21 @@ class CycleganPlayground extends Component {
         alert("請先選擇照片!");
         return;
       }
+    }else if(this.state.modelName === "cyclegan"){
+      if (this.state.file) {
+        this.setState({ loading: true });
+
+        let { modelName, category, file } = this.state;
+        formData.append("modelName", modelName);
+        formData.append("category", category);
+        formData.append("file", file);
+        formData.append("token", localStorage.getItem("token"));
+
+        formData.forEach((e) => console.log(e.toString()));
+      } else {
+        alert("請先選擇照片!");
+        return;
+      }
     } else {
       if (this.state.file) {
         this.setState({ loading: true });
@@ -240,8 +255,11 @@ class CycleganPlayground extends Component {
     }
   };
 
+  handleSwitchCategory = (e)=>{
+    this.setState({ category: e.target.value})
+  }
+
   render() {
-    console.log(this.state.input);
     const { file, modelName, loading } = this.state;
     const resultBlock = (
       <div
@@ -281,21 +299,21 @@ class CycleganPlayground extends Component {
           <div className="third-title">輸入設定</div>
           <Tabs defaultActiveKey="horse-zebra">
             <Tab eventKey="horse-zebra" title="馬與斑馬轉換">
-              <input name="direction" type="radio" id="zebra" value="zebra2horse.pb" onClick={(e)=>{console.log(e.target.value)}}/>
+              <input name="direction" type="radio" id="zebra" value="zebra2horse.pb" onClick={(e)=>{this.handleSwitchCategory(e)}}/>
               <label className="content-color p-3" for="zebra">
                 斑馬⟶馬
               </label>
-              <input name="direction" type="radio" id="horse" value="horse2zebra.pb" onClick={(e)=>{console.log(e.target.value)}}/>
+              <input name="direction" type="radio" id="horse" value="horse2zebra.pb" onClick={(e)=>{this.handleSwitchCategory(e)}}/>
               <label className="content-color p-3" for="horse">
                 馬⟶斑馬
               </label>
             </Tab>
             <Tab eventKey="apple-orange" title="蘋果橘子轉換">
-              <input name="direction" type="radio" id="apple" value="apple2orange.pb" onClick={(e)=>{console.log(e.target.value)}}/>
+              <input name="direction" type="radio" id="apple" value="apple2orange.pb" onClick={(e)=>{this.handleSwitchCategory(e)}}/>
               <label className="content-color p-3" for="apple">
                 蘋果⟶橘子
               </label>
-              <input name="direction" type="radio" id="orange" value="orange2apple.pb" onClick={(e)=>{console.log(e.target.value)}}/>
+              <input name="direction" type="radio" id="orange" value="orange2apple.pb" onClick={(e)=>{this.handleSwitchCategory(e)}}/>
               <label className="content-color p-3" for="orange">
                 橘子⟶蘋果
               </label>
