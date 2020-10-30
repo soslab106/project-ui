@@ -1,14 +1,16 @@
 import React, { Component, useState, useEffect } from "react";
 import Image from "../../Components/Image";
 import { Link, useLocation } from "react-router-dom";
+import { isConditionalExpression } from "typescript";
 
 function LabelandImage() {
   let location = useLocation();
-  console.log(location);
+  // console.log(location);
 
   const [label, setlabel] = useState("");
   const [labelList, setlabelList] = useState(["aaa"]);
   const [imageList, setimageList] = useState([]);
+  const [currentLabel, setcurrentLabel] = useState("");
 
   const newlabel = (label) => {
     setlabelList((oldlabelList) => [...oldlabelList, label]);
@@ -27,16 +29,23 @@ function LabelandImage() {
   }
 
   function handleFileChange(e) {
-    const origFile = [...imageList];
-    origFile.push(...e.target.files);
-    setimageList(origFile);
-    // console.log(imageList);
+    // const origFile = [...imageList];
+    // let obj = {};
+    // obj[currentLabel] = [...e.target.files];
+    // origFile.push(obj);
+    // setimageList(origFile);
+    console.log(currentLabel);
+    // console.log(currentLabel);
     // console.log(e.target.files);
   }
 
   function handleshowLabel(event) {
-    console.log(event.currentTarget);
-    // console.log("hi");
+    setcurrentLabel(
+      event.currentTarget.getAttribute("name")
+      // , console.log(currentLabel)
+    );
+    console.log(event.currentTarget.getAttribute("name"));
+    // ;
   }
 
   function getAPI() {
@@ -47,9 +56,10 @@ function LabelandImage() {
     formData.append("trainingData", imageList);
   }
 
-  useEffect(() => {
-    console.log(imageList);
-  }, [imageList]);
+  // useEffect(() => {
+  //   console.log(imageList);
+  //   console.log(currentLabel);
+  // }, [imageList, currentLabel]);
 
   return (
     <div className="panel">
@@ -83,6 +93,7 @@ function LabelandImage() {
                           id="file"
                           type="file"
                           onChange={handleFileChange}
+                          multiple
                         />
                         <label for="file">上傳圖片</label>
                       </div>
@@ -123,12 +134,13 @@ function LabelandImage() {
               </div>
             </span>
             <div className="d-flex flex-wrap align-items-start box p-3">
-              {imageList!=false ? <div>ddd</div> : <div>aaa</div>}
-              {imageList!=false ? (
-                imageList.map((image) => <Image src={URL.createObjectURL(image)} />)
+              {/* {imageList != false ? (
+                imageList.map((image) => (
+                  <Image src={URL.createObjectURL(image)} />
+                ))
               ) : (
-                <div>NO PICTURE</div>
-              )}
+                <div>請新增圖片</div>
+              )} */}
             </div>
             <button className="btn-main my-4" onclick={() => getAPI()}>
               開始訓練
