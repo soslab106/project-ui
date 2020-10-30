@@ -21,15 +21,16 @@ class CycleganPlayground extends Component {
     adversarial_description: "攻擊模型圖片",
     adv: [],
     adv_origin: [],
+    category: '', //for cycleGAN
   };
 
   componentDidMount() {
     const modelParam = this.props.match.params.model;
     this.changeModelsState(modelParam);
-    if (!localStorage.getItem('token') && this.state.modelName) {
-      window.location.href = '/signin'
-      alert('請先登入再進行測試呦!')
-    }
+    // if (!localStorage.getItem('token') && this.state.modelName) {
+    //   window.location.href = '/signin'
+    //   alert('請先登入再進行測試呦!')
+    // }
   }
 
   handleFileChange = (e) => {
@@ -86,6 +87,7 @@ class CycleganPlayground extends Component {
             file: undefined,
             file: "",
             result: "",
+            category: 'horse2zebra.pb',
           },
           () => this.changeActivatedModel(modelParam)
         );
@@ -279,21 +281,21 @@ class CycleganPlayground extends Component {
           <div className="third-title">輸入設定</div>
           <Tabs defaultActiveKey="horse-zebra">
             <Tab eventKey="horse-zebra" title="馬與斑馬轉換">
-              <input name="direction" type="radio" id="zebra" value="zebra" />
+              <input name="direction" type="radio" id="zebra" value="zebra2horse.pb" onClick={(e)=>{console.log(e.target.value)}}/>
               <label className="content-color p-3" for="zebra">
                 斑馬⟶馬
               </label>
-              <input name="direction" type="radio" id="horse" value="horse" />
+              <input name="direction" type="radio" id="horse" value="horse2zebra.pb" onClick={(e)=>{console.log(e.target.value)}}/>
               <label className="content-color p-3" for="horse">
                 馬⟶斑馬
               </label>
             </Tab>
             <Tab eventKey="apple-orange" title="蘋果橘子轉換">
-              <input name="direction" type="radio" id="apple" value="apple" />
+              <input name="direction" type="radio" id="apple" value="apple2orange.pb" onClick={(e)=>{console.log(e.target.value)}}/>
               <label className="content-color p-3" for="apple">
                 蘋果⟶橘子
               </label>
-              <input name="direction" type="radio" id="orange" value="orange" />
+              <input name="direction" type="radio" id="orange" value="orange2apple.pb" onClick={(e)=>{console.log(e.target.value)}}/>
               <label className="content-color p-3" for="orange">
                 橘子⟶蘋果
               </label>
