@@ -535,11 +535,11 @@ label {
 }
 
 #labelandimage-left > div {
-  height: 70vh;
+  height: 600px;
   overflow: scroll;
 }
 #labelandimage-right > div {
-  height: 60vh;
+  height: 525px;
   overflow: scroll;
 }
 
@@ -647,4 +647,9 @@ a {
   color: #5f7171 !important;
   text-decoration: none;
   margin-top: 10px !important;
+}
+
+.navbar-toggler {
+  color: #5f7171 !important;
+  border-color: #5f7171 !important;
 }
