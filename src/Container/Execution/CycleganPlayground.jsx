@@ -14,7 +14,6 @@ class CycleganPlayground extends Component {
     input: "",
     output: "",
     result: "",
-    api: "",
     showModal: false,
     showPic: false,
     labels: [],
@@ -27,7 +26,15 @@ class CycleganPlayground extends Component {
   componentDidMount() {
     const modelParam = this.props.match.params.model;
     this.changeModelsState(modelParam);
+    if (!localStorage.getItem('token') && this.state.modelName) {
+      window.location.href = '/signin'
+      alert('請先登入再進行測試呦!')
+    }
   }
+
+  handleFileChange = (e) => {
+    this.setState({ file: e.target.files[0] });
+  };
 
   // change model's corresponding state
   changeModelsState = (modelParam) => {
@@ -44,6 +51,8 @@ class CycleganPlayground extends Component {
             labels: yoloLabel,
             adv: [],
             adv_origin: [],
+            file: "",
+            result: "",
           },
           () => this.changeActivatedModel(modelParam)
         );
@@ -60,6 +69,8 @@ class CycleganPlayground extends Component {
             labels: imageNetLabel,
             adv: ["/adv/vgg/adv_vgg_1.jpg", "/adv/vgg/adv_vgg_2.jpg"],
             adv_origin: ["/adv/vgg/vgg_1.jpg", "/adv/vgg/vgg_2.jpg"],
+            file: "",
+            result: "",
           },
           () => this.changeActivatedModel(modelParam)
         );
@@ -72,6 +83,8 @@ class CycleganPlayground extends Component {
             input: "一張含有人臉圖片",
             output: "原圖轉為辛普森風格的圖片",
             file: undefined,
+            file: "",
+            result: "",
           },
           () => this.changeActivatedModel(modelParam)
         );
@@ -88,6 +101,8 @@ class CycleganPlayground extends Component {
             test: undefined,
             showModal: false,
             loading: false,
+            file: "",
+            result: "",
           },
           () => this.changeActivatedModel(modelParam)
         );
@@ -152,7 +167,7 @@ class CycleganPlayground extends Component {
         }
       } else {
         alert("請先選擇照片!");
-        window.location.reload();
+        return;
       }
     } else {
       if (this.state.file) {
@@ -166,7 +181,7 @@ class CycleganPlayground extends Component {
         formData.forEach((e) => console.log(e.toString()));
       } else {
         alert("請先選擇照片!");
-        window.location.reload();
+        return;
       }
     }
 
@@ -190,13 +205,41 @@ class CycleganPlayground extends Component {
       .catch((error) => {
         console.log(error.response.headers);
         alert("連線逾時或檔名有誤，即將重整頁面");
-        window.location.reload();
+        return;
       });
+  };
+
+  renderResult = (modelName) => {
+    if (modelName === "VGG16") {
+
+      return (
+        <table>
+          {this.state.result.map((each) => {
+            return (
+              <tr>
+                <td>{each[0]}</td>
+                <td>{each[1]}</td>
+              </tr>
+            );
+          })}
+        </table>
+      );
+    }else{
+       return (
+        <React.Fragment>
+          <img
+            src={this.state.result}
+            alt="no pic"
+            style={{ height: "35vh" }}
+          />
+        </React.Fragment>
+      );
+    }
   };
 
   render() {
     console.log(this.state.input);
-    const { file, modelName } = this.state;
+    const { file, modelName, loading } = this.state;
     const resultBlock = (
       <div
         className="d-flex flex-column io-box mb-5 align-items-center p-3"
@@ -356,7 +399,16 @@ class CycleganPlayground extends Component {
       </div>
     );
 
-    const exeMain = (
+    const loadingPage = (
+      <div className="loading d-flex flex-column align-items-center justify-content-center">
+        <img src="/images/Loading_2.gif" width="50" />
+        <div className="mt-3">Loading...</div>
+      </div>
+    );
+
+    const exeMain = (<>
+        {loading ? loadingPage : ""}
+
       <div className="panel w-100">
         <div className="container py-5">
           <div className="secondary-title">{modelName}</div>
@@ -420,7 +472,7 @@ class CycleganPlayground extends Component {
           </div>
         </div>
       </div>
-    );
+    </>);
     return modelName ? exeMain : NoMatch;
   }
 }
