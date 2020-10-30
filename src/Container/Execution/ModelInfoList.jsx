@@ -27,7 +27,7 @@ class ModelInfoList extends Component {
               imgpath="/images/execute/retina.png"
               iconsubtitle="使用2014年ImageNet競賽圖像分類亞軍：VGGNet"
               icontitle="影像辨識"
-              url="/vgg"
+              url="/cp-vgg"
               btnName="開始！"
             />
 
@@ -36,7 +36,7 @@ class ModelInfoList extends Component {
               iconsubtitle="採用目前最被廣泛應用的
                         物件偵測演算：YOLOV3"
               icontitle="物體定位"
-              url="/Yolov3"
+              url="/cp-yolo"
               btnName="開始！"
             />
 
@@ -44,7 +44,7 @@ class ModelInfoList extends Component {
               imgpath="/images/execute/face.png"
               iconsubtitle="使用Google 2015年提出的人臉辨識系統：Facenet"
               icontitle="人臉辨識"
-              url="/FaceNet"
+              url="/cp-facenet"
               btnName="開始！"
             />
 
@@ -52,7 +52,7 @@ class ModelInfoList extends Component {
               imgpath="/images/execute/cycleGan.png"
               iconsubtitle="採用無需成對示例的非監督訓練模型：CycleGAN"
               icontitle="風格轉換"
-              url="/cyclegan-playground"
+              url="/cp-cyclegan"
               btnName="開始！"
             />
           </div>

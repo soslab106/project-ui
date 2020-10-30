@@ -61,7 +61,7 @@ export function route() {
         <Route path="/knowledge" component={KnowledgeHome} />
         <Route path="/forum" component={ForumHome} />
         <Route path="/forum-all" component={ForumAll} />
-        <Route path="/cyclegan-playground" component={CycleganPlayground} />
+        <Route path="/cp-:model" component={CycleganPlayground} />
         <Route path="/finish" component={Finish} />
         <Route path="/new-model" component={NewModel} />
         <Route path="/trainning" component={Trainning} />

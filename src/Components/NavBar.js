@@ -51,17 +51,17 @@ class NavBar extends Component {
                   執行模型
                 </a>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a className="dropdown-item" href="/vgg-playground">
+                  <a className="dropdown-item" href="/cp-vgg">
                     物體辨識 VGG16
                   </a>
-                  <a className="dropdown-item" href="/yolov3-playground">
+                  <a className="dropdown-item" href="/cp-yolo">
                     物體定位 YOLOV3
                   </a>
-                  <a className="dropdown-item" href="/facenet-playground">
-                    臉部辨識 FaceNet
-                  </a>
-                  <a className="dropdown-item" href="/cyclegan-playground">
+                  <a className="dropdown-item" href="/cp-cyclegan">
                     風格轉換 CycleGAN
+                  </a>
+                  <a className="dropdown-item" href="/cp-facenet">
+                    臉部辨識 FaceNet
                   </a>
                   <div className="dropdown-divider"></div>
                   <a className="dropdown-item" href="/ModelInfoList">
