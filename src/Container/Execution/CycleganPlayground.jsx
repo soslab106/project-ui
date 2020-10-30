@@ -175,7 +175,7 @@ class CycleganPlayground extends Component {
         alert("請先選擇照片!");
         return;
       }
-    }else if(this.state.modelName === "cyclegan"){
+    }else if(this.state.modelName === "CycleGAN"){
       if (this.state.file) {
         this.setState({ loading: true });
 
@@ -185,7 +185,7 @@ class CycleganPlayground extends Component {
         formData.append("file", file);
         formData.append("token", localStorage.getItem("token"));
 
-        formData.forEach((e) => console.log(e.toString()));
+        formData.forEach((e) => console.log(e));
       } else {
         alert("請先選擇照片!");
         return;
