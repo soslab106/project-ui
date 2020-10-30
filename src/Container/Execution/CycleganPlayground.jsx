@@ -82,6 +82,7 @@ class CycleganPlayground extends Component {
             description: "風格轉換模型",
             input: "一張含有人臉圖片",
             output: "原圖轉為辛普森風格的圖片",
+            api: "http://140.119.19.99:8000/upload/cycleGAN",
             file: undefined,
             file: "",
             result: "",
