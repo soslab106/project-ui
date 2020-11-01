@@ -66,19 +66,21 @@ class SignupNew extends Component {
 
   render() {
     return (
-      <div className="container expand-full d-flex  justify-content-center align-items-center">
-        <div className="account-entry rounded bg-light-block d-flex flex-column align-items-center justify-content-center p-5">
-          <h1 className="text-center title"> 建立專屬於您的HowAILab帳戶 </h1>
-          <h5 className='text-center my-4' style={{color:"lightblue"}}> 可以用來記錄OOXX~~ </h5>
-          <div className="form-group mt-3">
+      <div className="expand-full d-flex  justify-content-center align-items-center">
+        <div className="container account-entry rounded bg-light-block d-flex flex-column align-items-center justify-content-center p-5">
+          <h1 className="text-center main-title"> 註冊 </h1>
+          <div className="form-group mt-4">
+            <div className="content-color mb-2">帳號名稱</div>
             <input
               className="form-control"
               type="text"
-              placeholder="使用者名稱"
+              placeholder="帳號名稱"
               onChange={(e) => this.handleFieldChange(e, "username")}
             />
           </div>
           <div className="form-group">
+            <div className="content-color mb-2">電子郵件</div>
+
             <input
               className="form-control"
               type="email"
@@ -87,17 +89,24 @@ class SignupNew extends Component {
             />
           </div>
           <div className="form-group">
+            <div className="content-color mb-2">
+              密碼
+              <span
+                className="ml-1"
+                style={{ color: "#FF4E00", fontSize: "12px" }}
+              >
+                需包含英文字母和數字
+              </span>
+            </div>
             <input
               className="form-control"
               type="password"
               placeholder="密碼"
               onChange={(e) => this.handleFieldChange(e, "password")}
             />
-            <little className="text-sm-left" style={{ color: "red" }}>
-              需包含英文字母和數字
-            </little>
           </div>
           <div className="form-group">
+            <div className="content-color mb-2">密碼確認</div>
             <input
               className="form-control"
               type="password"
@@ -105,9 +114,21 @@ class SignupNew extends Component {
               onChange={(e) => this.handleFieldChange(e, "repassword")}
             />
           </div>
-          <div className="form-group mt-4">
+          {/* <div className="form-group">
+            <input type="radio" name="private-policy" />
+            <label className='ml-2 content-color' for="private-policy">
+              我已閱讀並同意
+              <a
+                href="#"
+                style={{ color: "#29b4be", textDecoration: "underline" }}
+              >
+                隱私條款
+              </a>
+            </label>
+          </div> */}
+          <div className="form-group mt-3">
             <button
-              className="form-control btn btn-personal"
+              className="form-control btn btn-main"
               type="submit"
               onClick={(e) => this.signup(e)}
             >

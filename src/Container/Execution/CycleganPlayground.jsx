@@ -27,10 +27,10 @@ class CycleganPlayground extends Component {
   componentDidMount() {
     const modelParam = this.props.match.params.model;
     this.changeModelsState(modelParam);
-    // if (!localStorage.getItem('token') && this.state.modelName) {
-    //   window.location.href = '/signin'
-    //   alert('請先登入再進行測試呦!')
-    // }
+    if (!localStorage.getItem('token') && this.state.modelName) {
+      window.location.href = '/signin'
+      alert('請先登入再進行測試呦!')
+    }
   }
 
   handleFileChange = (e) => {
@@ -53,7 +53,8 @@ class CycleganPlayground extends Component {
             adv: [],
             adv_origin: [],
             file: "",
-            result: "",
+    api: "http://140.119.19.99:8000/upload/",
+    result: "",
           },
           () => this.changeActivatedModel(modelParam)
         );
@@ -70,7 +71,8 @@ class CycleganPlayground extends Component {
             labels: imageNetLabel,
             adv: ["/adv/vgg/adv_vgg_1.jpg", "/adv/vgg/adv_vgg_2.jpg"],
             adv_origin: ["/adv/vgg/vgg_1.jpg", "/adv/vgg/vgg_2.jpg"],
-            file: "",
+    api: "http://140.119.19.99:8000/upload/",
+    file: "",
             result: "",
           },
           () => this.changeActivatedModel(modelParam)
@@ -83,7 +85,7 @@ class CycleganPlayground extends Component {
             description: "風格轉換模型",
             input: "一張含有人臉圖片",
             output: "原圖轉為辛普森風格的圖片",
-            api: "http://140.119.19.99:8000/upload/cycleGAN",
+            api: "http://140.119.19.99:8000/upload/cycleGAN/",
             file: undefined,
             file: "",
             result: "",
@@ -102,7 +104,8 @@ class CycleganPlayground extends Component {
             output: "辨識照片中的人臉，框出位置，並標上圖片檔名",
             train: undefined,
             test: undefined,
-            showModal: false,
+    api: "http://140.119.19.99:8000/upload/",
+    showModal: false,
             loading: false,
             file: "",
             result: "",
@@ -172,6 +175,21 @@ class CycleganPlayground extends Component {
         alert("請先選擇照片!");
         return;
       }
+    }else if(this.state.modelName === "CycleGAN"){
+      if (this.state.file) {
+        this.setState({ loading: true });
+
+        let { modelName, category, file } = this.state;
+        // formData.append("modelName", modelName);
+        formData.append("category", category);
+        formData.append("file", file);
+        formData.append("token", localStorage.getItem("token"));
+
+        formData.forEach((e) => console.log(e));
+      } else {
+        alert("請先選擇照片!");
+        return;
+      }
     } else {
       if (this.state.file) {
         this.setState({ loading: true });
@@ -187,6 +205,8 @@ class CycleganPlayground extends Component {
         return;
       }
     }
+
+    formData.forEach((e) => console.log(e.toString()));
 
     axios
       .post(api, formData, {
@@ -240,8 +260,11 @@ class CycleganPlayground extends Component {
     }
   };
 
+  handleSwitchCategory = (e)=>{
+    this.setState({ category: e.target.value})
+  }
+
   render() {
-    console.log(this.state.input);
     const { file, modelName, loading } = this.state;
     const resultBlock = (
       <div
@@ -281,21 +304,21 @@ class CycleganPlayground extends Component {
           <div className="third-title">輸入設定</div>
           <Tabs defaultActiveKey="horse-zebra">
             <Tab eventKey="horse-zebra" title="馬與斑馬轉換">
-              <input name="direction" type="radio" id="zebra" value="zebra2horse.pb" onClick={(e)=>{console.log(e.target.value)}}/>
+              <input name="direction" type="radio" id="zebra" value="zebra2horse.pb" onClick={(e)=>{this.handleSwitchCategory(e)}}/>
               <label className="content-color p-3" for="zebra">
                 斑馬⟶馬
               </label>
-              <input name="direction" type="radio" id="horse" value="horse2zebra.pb" onClick={(e)=>{console.log(e.target.value)}}/>
+              <input name="direction" type="radio" id="horse" value="horse2zebra.pb" onClick={(e)=>{this.handleSwitchCategory(e)}}/>
               <label className="content-color p-3" for="horse">
                 馬⟶斑馬
               </label>
             </Tab>
             <Tab eventKey="apple-orange" title="蘋果橘子轉換">
-              <input name="direction" type="radio" id="apple" value="apple2orange.pb" onClick={(e)=>{console.log(e.target.value)}}/>
+              <input name="direction" type="radio" id="apple" value="apple2orange.pb" onClick={(e)=>{this.handleSwitchCategory(e)}}/>
               <label className="content-color p-3" for="apple">
                 蘋果⟶橘子
               </label>
-              <input name="direction" type="radio" id="orange" value="orange2apple.pb" onClick={(e)=>{console.log(e.target.value)}}/>
+              <input name="direction" type="radio" id="orange" value="orange2apple.pb" onClick={(e)=>{this.handleSwitchCategory(e)}}/>
               <label className="content-color p-3" for="orange">
                 橘子⟶蘋果
               </label>

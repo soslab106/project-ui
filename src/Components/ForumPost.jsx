@@ -5,7 +5,7 @@ class ForumPost extends Component {
     return (
       <div className="content-color py-4 px-5">
         <div className="forumpost">
-          <h2 className="post-title">
+          <h2 className="pointer">
             <a>Title</a>
           </h2>
           <p className="post-content my-1">

@@ -49,8 +49,8 @@ export function route() {
         <Route path="/facenet-playground" component={FaceNetPlayground} />
         <Route path="/playground-list" component={PlayGroundList} />
         <Route path="/settings" component={Settings} />
-        <Route path="/Signup" component={SignupNew} />
-        <Route path="/SignIn" component={SignIn} />
+        <Route path="/signup" component={SignupNew} />
+        <Route path="/signin" component={SignIn} />
         <Route path="/Menu" component={Menu} />
         <Route path="/TestingMenu" component={TestingMenu} />
         <Route path="/NewsPage" component={NewsPage} />
