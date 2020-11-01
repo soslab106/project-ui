@@ -2,15 +2,16 @@ import React, { Component, useState, useEffect } from "react";
 import Image from "../../Components/Image";
 import { Link, useLocation } from "react-router-dom";
 import { isConditionalExpression } from "typescript";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUpload } from "@fortawesome/free-solid-svg-icons";
 
 function LabelandImage() {
   let location = useLocation();
-  // console.log(location);
 
   const [label, setlabel] = useState("");
-  const [labelList, setlabelList] = useState(["aaa"]);
+  const [labelList, setlabelList] = useState(["default"]);
   const [imageList, setimageList] = useState([]);
-  const [currentLabel, setcurrentLabel] = useState("");
+  const [currentLabel, setcurrentLabel] = useState("default");
 
   const newlabel = (label) => {
     setlabelList((oldlabelList) => [...oldlabelList, label]);
@@ -29,22 +30,21 @@ function LabelandImage() {
   }
 
   function handleFileChange(e) {
-    // const origFile = [...imageList];
-    // let obj = {};
-    // obj[currentLabel] = [...e.target.files];
-    // origFile.push(obj);
-    // setimageList(origFile);
-    console.log(currentLabel);
-    // console.log(currentLabel);
-    // console.log(e.target.files);
+    const origFile = [...imageList];
+    let obj = {};
+    obj[currentLabel] = [...e.target.files];
+    origFile.push(obj);
+    setimageList(origFile);
+    console.log(currentLabel, imageList);
+    console.log(e.target.files);
   }
 
   function handleshowLabel(event) {
-    setcurrentLabel(
-      event.currentTarget.getAttribute("name")
-      // , console.log(currentLabel)
-    );
-    console.log(event.currentTarget.getAttribute("name"));
+    console.log(event.target);
+    console.log("event name", event.currentTarget.getAttribute("name"));
+    setcurrentLabel(event.currentTarget.getAttribute("name"));
+    console.log("currentLabel", currentLabel);
+
     // ;
   }
 
@@ -54,12 +54,29 @@ function LabelandImage() {
     formData.append("learningRate", location.state["learningRate"]);
     formData.append("epoch", location.state["epoch"]);
     formData.append("trainingData", imageList);
+
+    imageList.forEach((e) => console.log(e));
   }
 
-  // useEffect(() => {
-  //   console.log(imageList);
-  //   console.log(currentLabel);
-  // }, [imageList, currentLabel]);
+  function deleteLabel(e) {
+    let label = e.target.getAttribute("name");
+    let newLabels = labelList;
+    setlabelList(newLabels.filter((oldLabel) => oldLabel != label));
+    console.log(labelList);
+  }
+
+  function renderImgPreviews(imgs) {
+    imgs.forEach((e) => console.log(e));
+    let imgResult = [];
+    imgs.forEach((e) => {
+      if (currentLabel == Object.keys(e)) {
+        e[currentLabel].forEach((img) => {
+          imgResult.push(<img className='train-img' src={window.URL.createObjectURL(img)} onload={()=>window.URL.revokeObjectURL(this.src)}/>);
+        });
+      }
+    });
+    return imgResult;
+  }
 
   return (
     <div className="panel">
@@ -77,25 +94,36 @@ function LabelandImage() {
         </div>
         <div className="d-flex flex-wrap">
           <div className="col-12 col-md-3" id="labelandimage-left">
-            <div className="d-flex flex-column justify-content-start align-items-start box p-3">
+            <div className="d-flex flex-column justify-content-start align-items-center box p-3">
               <div className="third-title mb-3">標籤</div>
               <div id="label-config">
                 <div id="labellist">
                   {labelList ? (
                     labelList.map((label) => (
-                      <div
-                        className="d-flex justify-content-between labellist-label"
-                        name={label}
-                        onClick={handleshowLabel}
-                      >
-                        <div>{label}</div>
+                      <div className="row d-flex justify-content-between labellist-label">
+                        <div className="w-25">{label}</div>
                         <input
                           id="file"
                           type="file"
                           onChange={handleFileChange}
                           multiple
                         />
-                        <label for="file">上傳圖片</label>
+                        <div className="d-flex">
+                          <label
+                            for="file"
+                            name={label}
+                            onClick={handleshowLabel}
+                          >
+                            <FontAwesomeIcon icon={faUpload} />
+                          </label>
+                          <div
+                            className="text-center pointer ml-20"
+                            name={label}
+                            onClick={deleteLabel}
+                          >
+                            x
+                          </div>
+                        </div>
                       </div>
                     ))
                   ) : (
@@ -104,7 +132,7 @@ function LabelandImage() {
                 </div>
                 <div className="d-flex mt-1">
                   <input
-                    className="mt-10"
+                    className="mt-10 w-100"
                     type="text"
                     onInput={handlelable}
                     value={label}
@@ -134,15 +162,13 @@ function LabelandImage() {
               </div>
             </span>
             <div className="d-flex flex-wrap align-items-start box p-3">
-              {/* {imageList != false ? (
-                imageList.map((image) => (
-                  <Image src={URL.createObjectURL(image)} />
-                ))
+              {imageList != false ? (
+                renderImgPreviews(imageList)
               ) : (
                 <div>請新增圖片</div>
-              )} */}
+              )}
             </div>
-            <button className="btn-main my-4" onclick={() => getAPI()}>
+            <button className="btn-main my-4" onClick={() => getAPI()}>
               開始訓練
             </button>
           </div>
