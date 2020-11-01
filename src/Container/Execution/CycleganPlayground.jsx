@@ -27,10 +27,10 @@ class CycleganPlayground extends Component {
   componentDidMount() {
     const modelParam = this.props.match.params.model;
     this.changeModelsState(modelParam);
-    // if (!localStorage.getItem('token') && this.state.modelName) {
-    //   window.location.href = '/signin'
-    //   alert('請先登入再進行測試呦!')
-    // }
+    if (!localStorage.getItem('token') && this.state.modelName) {
+      window.location.href = '/signin'
+      alert('請先登入再進行測試呦!')
+    }
   }
 
   handleFileChange = (e) => {
