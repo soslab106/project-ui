@@ -27,10 +27,10 @@ class CycleganPlayground extends Component {
   componentDidMount() {
     const modelParam = this.props.match.params.model;
     this.changeModelsState(modelParam);
-    // if (!localStorage.getItem('token') && this.state.modelName) {
-    //   window.location.href = '/signin'
-    //   alert('請先登入再進行測試呦!')
-    // }
+    if (!localStorage.getItem('token') && this.state.modelName) {
+      window.location.href = '/signin'
+      alert('請先登入再進行測試呦!')
+    }
   }
 
   handleFileChange = (e) => {
@@ -104,7 +104,7 @@ class CycleganPlayground extends Component {
             output: "辨識照片中的人臉，框出位置，並標上圖片檔名",
             train: undefined,
             test: undefined,
-    api: "http://140.119.19.99:8000/upload/",
+    api: "http://140.119.19.99:8000/upload/multi/",
     showModal: false,
             loading: false,
             file: "",
