@@ -27,10 +27,10 @@ class CycleganPlayground extends Component {
   componentDidMount() {
     const modelParam = this.props.match.params.model;
     this.changeModelsState(modelParam);
-    if (!localStorage.getItem('token') && this.state.modelName) {
-      window.location.href = '/signin'
-      alert('請先登入再進行測試呦!')
-    }
+    // if (!localStorage.getItem('token') && this.state.modelName) {
+    //   window.location.href = '/signin'
+    //   alert('請先登入再進行測試呦!')
+    // }
   }
 
   handleFileChange = (e) => {
@@ -149,6 +149,15 @@ class CycleganPlayground extends Component {
   handleTestChange = (e) => {
     this.setState({ test: e.target.files[0] });
   };
+  //facenet render selected test
+  renderSelected = () => {
+    return (
+      <img
+        src={URL.createObjectURL(this.state.test)}
+        style={{ height: "35vh" }}
+      />
+    );
+  };
   // Facenet end
 
   // API
@@ -156,7 +165,7 @@ class CycleganPlayground extends Component {
     let { api } = this.state;
     let formData = new FormData();
 
-    if (this.state.modelName === "facenet") {
+    if (this.state.modelName === "FaceNet") {
       if (this.state.train && this.state.test) {
         this.setState({ loading: true });
 
@@ -179,8 +188,7 @@ class CycleganPlayground extends Component {
       if (this.state.file) {
         this.setState({ loading: true });
 
-        let { modelName, category, file } = this.state;
-        // formData.append("modelName", modelName);
+        let { category, file } = this.state;
         formData.append("category", category);
         formData.append("file", file);
         formData.append("token", localStorage.getItem("token"));
@@ -265,7 +273,7 @@ class CycleganPlayground extends Component {
   }
 
   render() {
-    const { file, modelName, loading } = this.state;
+    const { file, modelName, loading, test } = this.state;
     const resultBlock = (
       <div
         className="d-flex flex-column io-box mb-5 align-items-center p-3"
@@ -279,7 +287,7 @@ class CycleganPlayground extends Component {
           overflow="auto"
         >
           <img
-            src={file ? URL.createObjectURL(file) : "/images/nopic.png"}
+            src={file || test ? URL.createObjectURL(file || test) : "/images/nopic.png"}
             alt="無法顯示圖片"
             style={{ height: "35vh" }}
           />
