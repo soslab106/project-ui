@@ -4,7 +4,7 @@ import { Tabs, Tab } from "react-bootstrap";
 import { yoloLabel, imageNetLabel } from "./labels";
 import axios from "axios";
 
-class CycleganPlayground extends Component {
+class CPlayground extends Component {
   state = {
     file: "",
     modelName: "VGG16",
@@ -21,7 +21,7 @@ class CycleganPlayground extends Component {
     adversarial_description: "攻擊模型圖片",
     adv: [],
     adv_origin: [],
-    category: '', //for cycleGAN
+    category: "", //for cycleGAN
   };
 
   componentDidMount() {
@@ -53,8 +53,8 @@ class CycleganPlayground extends Component {
             adv: [],
             adv_origin: [],
             file: "",
-    api: "http://140.119.19.99:8000/upload/",
-    result: "",
+            api: "http://140.119.19.99:8000/upload/",
+            result: "",
           },
           () => this.changeActivatedModel(modelParam)
         );
@@ -71,8 +71,8 @@ class CycleganPlayground extends Component {
             labels: imageNetLabel,
             adv: ["/adv/vgg/adv_vgg_1.jpg", "/adv/vgg/adv_vgg_2.jpg"],
             adv_origin: ["/adv/vgg/vgg_1.jpg", "/adv/vgg/vgg_2.jpg"],
-    api: "http://140.119.19.99:8000/upload/",
-    file: "",
+            api: "http://140.119.19.99:8000/upload/",
+            file: "",
             result: "",
           },
           () => this.changeActivatedModel(modelParam)
@@ -89,7 +89,7 @@ class CycleganPlayground extends Component {
             file: undefined,
             file: "",
             result: "",
-            category: 'horse2zebra.pb',
+            category: "horse2zebra.pb",
           },
           () => this.changeActivatedModel(modelParam)
         );
@@ -104,8 +104,8 @@ class CycleganPlayground extends Component {
             output: "辨識照片中的人臉，框出位置，並標上圖片檔名",
             train: undefined,
             test: undefined,
-    api: "http://140.119.19.99:8000/upload/multi/",
-    showModal: false,
+            api: "http://140.119.19.99:8000/upload/multi/",
+            showModal: false,
             loading: false,
             file: "",
             result: "",
@@ -184,7 +184,7 @@ class CycleganPlayground extends Component {
         alert("請先選擇照片!");
         return;
       }
-    }else if(this.state.modelName === "CycleGAN"){
+    } else if (this.state.modelName === "CycleGAN") {
       if (this.state.file) {
         this.setState({ loading: true });
 
@@ -242,7 +242,6 @@ class CycleganPlayground extends Component {
 
   renderResult = (modelName) => {
     if (modelName === "VGG16") {
-
       return (
         <table>
           {this.state.result.map((each) => {
@@ -255,8 +254,8 @@ class CycleganPlayground extends Component {
           })}
         </table>
       );
-    }else{
-       return (
+    } else {
+      return (
         <React.Fragment>
           <img
             src={this.state.result}
@@ -268,16 +267,33 @@ class CycleganPlayground extends Component {
     }
   };
 
-  handleSwitchCategory = (e)=>{
-    this.setState({ category: e.target.value})
-  }
+  handleSwitchCategory = (e) => {
+    this.setState({ category: e.target.value });
+  };
+
+  modalClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    // e.stopImmediatePropagation();
+    return false;
+  };
 
   render() {
-    const { file, modelName, loading, test } = this.state;
+    const {
+      file,
+      modelName,
+      loading,
+      test,
+      showModal,
+      showPic,
+      labels,
+      adv,
+      adv_origin,
+    } = this.state;
     const resultBlock = (
       <div
         className="d-flex flex-column io-box mb-5 align-items-center p-3"
-        style={{ marginTop: "20px", height: "90vh" }}
+        style={{ marginTop: "20px", height: "120%" }}
       >
         <div className="third-title">輸入</div>
         <div
@@ -287,7 +303,11 @@ class CycleganPlayground extends Component {
           overflow="auto"
         >
           <img
-            src={file || test ? URL.createObjectURL(file || test) : "/images/nopic.png"}
+            src={
+              file || test
+                ? URL.createObjectURL(file || test)
+                : "/images/nopic.png"
+            }
             alt="無法顯示圖片"
             style={{ height: "35vh" }}
           />
@@ -312,21 +332,53 @@ class CycleganPlayground extends Component {
           <div className="third-title">輸入設定</div>
           <Tabs defaultActiveKey="horse-zebra">
             <Tab eventKey="horse-zebra" title="馬與斑馬轉換">
-              <input name="direction" type="radio" id="zebra" value="zebra2horse.pb" onClick={(e)=>{this.handleSwitchCategory(e)}}/>
+              <input
+                name="direction"
+                type="radio"
+                id="zebra"
+                value="zebra2horse.pb"
+                onClick={(e) => {
+                  this.handleSwitchCategory(e);
+                }}
+              />
               <label className="content-color p-3" for="zebra">
                 斑馬⟶馬
               </label>
-              <input name="direction" type="radio" id="horse" value="horse2zebra.pb" onClick={(e)=>{this.handleSwitchCategory(e)}}/>
+              <input
+                name="direction"
+                type="radio"
+                id="horse"
+                value="horse2zebra.pb"
+                onClick={(e) => {
+                  this.handleSwitchCategory(e);
+                }}
+              />
               <label className="content-color p-3" for="horse">
                 馬⟶斑馬
               </label>
             </Tab>
             <Tab eventKey="apple-orange" title="蘋果橘子轉換">
-              <input name="direction" type="radio" id="apple" value="apple2orange.pb" onClick={(e)=>{this.handleSwitchCategory(e)}}/>
+              <input
+                name="direction"
+                type="radio"
+                id="apple"
+                value="apple2orange.pb"
+                onClick={(e) => {
+                  this.handleSwitchCategory(e);
+                }}
+              />
               <label className="content-color p-3" for="apple">
                 蘋果⟶橘子
               </label>
-              <input name="direction" type="radio" id="orange" value="orange2apple.pb" onClick={(e)=>{this.handleSwitchCategory(e)}}/>
+              <input
+                name="direction"
+                type="radio"
+                id="orange"
+                value="orange2apple.pb"
+                onClick={(e) => {
+                  this.handleSwitchCategory(e);
+                }}
+              />
               <label className="content-color p-3" for="orange">
                 橘子⟶蘋果
               </label>
@@ -440,75 +492,177 @@ class CycleganPlayground extends Component {
       </div>
     );
 
-    const exeMain = (<>
-        {loading ? loadingPage : ""}
-
-      <div className="panel w-100">
-        <div className="container py-5">
-          <div className="secondary-title">{modelName}</div>
-          <div className="d-flex row my-5">
-            <div className="col-4">
-              <div className="info-title">模型選擇</div>
-              <div onClick={this.handleModels}>
-                <ModelCheckboxExclusive
-                  // className="toggleClicked"
-                  // checked={modelName === "VGG16" ? "checked" : ""}
-                  modelName="影像辨識 - VGG"
-                  id="vgg"
-                />
-                <ModelCheckboxExclusive
-                  modelName="物體定位 - YOLOv3"
-                  id="yolo"
-                />
-                <ModelCheckboxExclusive
-                  modelName="風格轉換 - CycleGAN"
-                  id="cyclegan"
-                />
-                <ModelCheckboxExclusive
-                  modelName="人臉辨識 - FaceNet"
-                  id="facenet"
-                />
-              </div>
-
-              <div className="box mt-20 p-20">
-                <div className="third-title" style={{ textAlign: "left" }}>
-                  輸入格式
-                </div>
-                <div>
-                  {this.state.input}
-                  <br />
-                  <span style={{ color: "#29B4BE" }}>**檔名須為英文**</span>
-                </div>
-              </div>
-              <div className="box mt-20 p-20">
-                <div className="third-title" style={{ textAlign: "left" }}>
-                  輸出格式
-                </div>
-                <div> {this.state.output}</div>
-              </div>
-              <div className="third-title mt-20" style={{ textAlign: "left" }}>
-                其他輔助功能
-              </div>
-              <div className="d-flex flex-column">
-                <button className="btn btn-main mt-10">辨識類別</button>
-                <button
-                  className="btn btn-main mt-10"
-                  style={{ width: "185px" }}
-                >
-                  攻擊模型圖片
-                </button>
-              </div>
-            </div>
-
-            {/* result */}
-            {/* {modelName === "CycleGAN" ? facenetResult : normalResult}  */}
-            {modelName === "CycleGAN" ? (cycleganResult) : (modelName==='FaceNet' ? facenetResult : normalResult)} 
+    const popupLabels = (
+      <div
+        className="background-close d-flex justify-content-center align-items-center"
+        onClick={() => this.setState({ showModal: false })}
+      >
+        <div className="label-modal" onClick={(e) => this.modalClick(e)}>
+          <div className="d-flex justify-content-between">
+            <h4 className="third-title">可辨識類別 - {modelName}</h4>
+            <h4
+              className="close-modal"
+              onClick={() => this.setState({ showModal: false })}
+            >
+              &times;
+            </h4>
+          </div>
+          <div
+            className="content-color"
+            style={{ height: "90%", overflow: "auto" }}
+          >
+            {labels.map((label) => (
+              <li>{label}</li>
+            ))}
           </div>
         </div>
       </div>
-    </>);
+    );
+
+    const adv_map = adv.map((e, i) => (
+      <div>
+        {i + 1}.<br />
+        <img src={e} />
+      </div>
+    ));
+    const adv_origin_map = adv_origin.map((e, i) => (
+      <div>
+        {i + 1}.<br />
+        <img src={e} />
+      </div>
+    ));
+    const popupPics = (
+      <div
+        className="background-close d-flex justify-content-center align-items-center"
+        onClick={() => this.setState({ showPic: false })}
+      >
+        <div className="adv-modal" onClick={(e) => this.modalClick(e)}>
+          <div className="d-flex justify-content-between">
+            <h4 className="third-title">攻擊模型圖片</h4>
+
+            <h4
+              className="close-modal"
+              onClick={() => this.setState({ showPic: false })}
+            >
+              &times;
+            </h4>
+          </div>
+          <div style={{ height: "90%", overflow: "auto" }}>
+            <h4 className="info-title">原始圖片</h4>
+            <div>{adv_origin_map}</div>
+            <h4 className="info-title">Adversarial圖片</h4>
+            <div>{adv_map}</div>
+          </div>
+        </div>
+      </div>
+    );
+
+    const exeMain = (
+      <>
+        {loading ? loadingPage : ""}
+        {showModal ? popupLabels : ""}
+        {showPic ? popupPics : ""}
+        <div className="panel w-100">
+          <div className="container py-5">
+            {/* d-flex flex-column align-items-center  */}
+            <div className="secondary-title">{modelName}</div>
+            <div className="d-flex row my-5">
+              <div className="col-4">
+                <div className="info-title">模型選擇</div>
+                <div onClick={this.handleModels}>
+                  <ModelCheckboxExclusive
+                    // className="toggleClicked"
+                    // checked={modelName === "VGG16" ? "checked" : ""}
+                    modelName="影像辨識 - VGG"
+                    id="vgg"
+                  />
+                  <ModelCheckboxExclusive
+                    modelName="物體定位 - YOLOv3"
+                    id="yolo"
+                  />
+                  <ModelCheckboxExclusive
+                    modelName="風格轉換 - CycleGAN"
+                    id="cyclegan"
+                  />
+                  <ModelCheckboxExclusive
+                    modelName="人臉辨識 - FaceNet"
+                    id="facenet"
+                  />
+                </div>
+
+                <div className="box mt-20 p-20">
+                  <div className="info-title" style={{ textAlign: "left" }}>
+                    輸入格式
+                  </div>
+                  <div>
+                    {this.state.input}
+                    <br />
+                    <span style={{ color: "#29B4BE" }}>**檔名須為英文**</span>
+                  </div>
+                </div>
+                <div className="box mt-20 p-20">
+                  <div className="info-title" style={{ textAlign: "left" }}>
+                    輸出格式
+                  </div>
+                  <div> {this.state.output}</div>
+                </div>
+                {modelName == "VGG16" || modelName == "YOLOv3" ? (
+                  <>
+                    <div
+                      className="info-title mt-20"
+                      style={{ textAlign: "left" }}
+                    >
+                      其他輔助功能
+                    </div>
+                    <div className="d-flex flex-column">
+                      <button
+                        className="btn btn-main mt-10"
+                        onClick={() =>
+                          this.setState(
+                            { showModal: true },
+                            console.log(showModal)
+                          )
+                        }
+                      >
+                        辨識類別
+                      </button>
+                      {modelName == "VGG16" ? (
+                        <button
+                          className="btn btn-main mt-10"
+                          style={{ width: "185px" }}
+                          onClick={() =>
+                            this.setState(
+                              { showPic: true },
+                              console.log(showPic)
+                            )
+                          }
+                        >
+                          攻擊模型圖片
+                        </button>
+                      ) : (
+                        ""
+                      )}
+                    </div>
+                  </>
+                ) : (
+                  ""
+                )}
+              </div>
+
+              {/* result */}
+              {/* {modelName === "CycleGAN" ? facenetResult : normalResult}  */}
+              {modelName === "CycleGAN"
+                ? cycleganResult
+                : modelName === "FaceNet"
+                ? facenetResult
+                : normalResult}
+            </div>
+          </div>
+        </div>
+      </>
+    );
     return modelName ? exeMain : NoMatch;
   }
 }
 
-export default CycleganPlayground;
+export default CPlayground;

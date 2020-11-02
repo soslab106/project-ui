@@ -20,7 +20,7 @@ import Menu from "./Container/Knowledge/Menu";
 import TestingMenu from "./Container/TestingMenu";
 import NewsPage from "./Container/Knowledge/NewsPage";
 import ModelInfoList from "./Container/Execution/ModelInfoList";
-import CycleganPlayground from "./Container/Execution/CycleganPlayground";
+import CPlayground from "./Container/Execution/CPlayground";
 import Profile from "./Container/Profile";
 import CustomHome from "./Container/CustomModel/CustomHome";
 import PersonalModelView from "./Container/CustomModel/PersonalModelView";
@@ -61,7 +61,7 @@ export function route() {
         <Route path="/knowledge" component={KnowledgeHome} />
         <Route path="/forum" component={ForumHome} />
         <Route path="/forum-all" component={ForumAll} />
-        <Route path="/cp-:model" component={CycleganPlayground} />
+        <Route path="/cp-:model" component={CPlayground} />
         <Route path="/finish" component={Finish} />
         <Route path="/new-model" component={NewModel} />
         <Route path="/trainning" component={Trainning} />

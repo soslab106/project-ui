@@ -15,7 +15,7 @@ body {
 }
 
 .title {
-  color: #31a3e0;
+  color: #29b4be;
 }
 
 .bg-light-block {
@@ -166,20 +166,17 @@ img {
 
 .label-modal,
 .adv-modal {
-  background-color: #1f2e41;
-  top: 20vh;
+  background-color: #fff;
   position: fixed;
   width: 50%;
-  height: 50%;
-  z-index: 9999;
+  height: 400px;
+  z-index: 100;
   border-radius: 10px;
   padding: 30px;
-  box-shadow: 0 0 500px #000000;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
 }
 
 .adv-modal {
-  top: 10vh;
-  width: 50%;
   height: 80%;
 }
 
@@ -289,7 +286,7 @@ a:hover {
 }
 
 .third-title {
-  font-size: 24px;
+  font-size: 28px;
   color: #5f7171;
   text-align: center;
 }
@@ -593,16 +590,6 @@ a{
   
 }
 
-.footer-title{
-  font-size: 20px;
-  color: #2E3131;
-}
-.footer-link{
-  color: #5f7171!important;
-  text-decoration: none;
-  margin-top: 10px!important;
-}
-
 .boards {
   margin-left: 35%;
   color: #5f7171;
@@ -653,4 +640,12 @@ a{
 .navbar-toggler {
   color: #5f7171 !important;
   border-color: #5f7171 !important;
+}
+
+.background-close{
+  background-color: rgba(0,0,0,0.16);
+  width:100vw!important;
+  height: 95vh!important;
+  position: fixed;
+  z-index: 200;
 }
