@@ -380,8 +380,8 @@ class KnowledgeHome extends Component {
           }
           imgPath="/images/knowledge/knowledge.png"
         />
-        <div className="py-5 container">
-          <div className="secondary-title mb-3" id='teachings'>教學專區</div>
+        <div className="py-5 container" id='teachings'>
+          <div className="secondary-title mb-3">教學專區</div>
           <Tabs defaultActiveKey="basic" id="uncontrolled-tab-example">
             <Tab eventKey="basic" title="基本知識">
               {this.renderTeachings(this.state.teachings.basic)}
@@ -397,8 +397,8 @@ class KnowledgeHome extends Component {
             </Tab>
           </Tabs>
 
-          <div className="my-5 py-5">
-            <div className="secondary-title my-5" id="evaluate">學習成效評估</div>
+          <div className="my-5 py-5" id="evaluate">
+            <div className="secondary-title my-5">學習成效評估</div>
             <div className="d-flex justify-content-around align-items-center">
               <button className="btn-main w-25" style={{ height: "80px" }}>
                 EASY
