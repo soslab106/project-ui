@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 class PersonalModelView extends Component {
   // Call API to get users' all custom models
@@ -36,36 +37,37 @@ class PersonalModelView extends Component {
         date: "2020/09/13",
         base: "VGG",
         modellink: `${localStorage.getItem("username")} abc`,
-      },
-      {
-        modelName: "ddd",
-        date: "2020/09/13",
-        base: "VGG",
-        modellink: `${localStorage.getItem("username")} abc`,
-      },
-      {
-        modelName: "ddd",
-        date: "2020/09/13",
-        base: "VGG",
-        modellink: `${localStorage.getItem("username")} abc`,
-      },
-      {
-        modelName: "ddd",
-        date: "2020/09/13",
-        base: "VGG",
-        modellink: `${localStorage.getItem("username")} abc`,
-      },
+      }
     ],
   };
+
+  componentDidMount = ()=>{
+    axios.get('http://140.119.19.99:8000/upload/load/', {
+      headers: {
+        Authorization: `JWT ${localStorage.getItem("token")}`,
+      }})
+      .then(res=>{
+        const result = res.data.result
+        console.log(result)
+        this.setState({modelList:result})
+      })
+      .catch(error=>{
+        if(!error.response){
+          console.log('network error')
+        }else{
+          console.log(error.response.data.message)
+        }
+      })
+  }
 
   renderTable = () => {
     return this.state.modelList.map((model) => (
       <>
         <div className="py-3 d-flex w-100 justify-content-around">
-          <div>{model.modelName}</div>
+          <div>{model.name}</div>
           <div>{model.date}</div>
-          <div>{model.base}</div>
-          <div>{model.modellink}</div>
+          <div>VGG16</div>
+          <div>{model.name}</div>
         </div>
       </>
     ));
