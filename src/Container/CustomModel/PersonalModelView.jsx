@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import {Link} from 'react-router-dom'
 
 class PersonalModelView extends Component {
   // Call API to get users' all custom models
@@ -76,10 +77,15 @@ class PersonalModelView extends Component {
   render() {
     return (
       <div
-        className="py-5 d-flex flex-column align-items-center flex-column"
+        className="py-5 d-flex align-items-center flex-column"
         style={{ backgroundColor: "#F6F8F8", fontSize: "20px" }}
       >
-        <div className="secondary-title">個人模型庫</div>
+        <div className="d-flex justify-content-center align-items-center">
+          <div className="secondary-title">個人模型庫</div>
+          <div className='ml-3' id='model-list-add'>
+          <Link to={{pathname:'/new-model'}}><div className="d-flex justify-content-center align-items-center h-100"><FontAwesomeIcon icon={faPlus} style={{color:'#F6F8F8'}}/></div></Link>
+          </div>
+        </div>
 
         {/* table */}
         <div className="w-75 mt-5" id="model-list">
@@ -94,7 +100,6 @@ class PersonalModelView extends Component {
 
         {/* add button */}
         <div className="border rounded-circle" id="add-model">
-          <FontAwesomeIcon icon={faPlusCircle} size='3x'/>
           {/* <img src="/images/custom/add.png" width="60" /> */}
         </div>
       </div>

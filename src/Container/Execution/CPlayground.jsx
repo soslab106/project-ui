@@ -9,6 +9,7 @@ class CPlayground extends Component {
     file: "",
     modelName: "VGG16",
     modelList: ["vgg", "yolo", "cyclegan", "facenet"], //get from api
+    customModelList: [], //get from api
     api: "http://140.119.19.99:8000/upload/",
     description: "",
     input: "",
@@ -31,6 +32,26 @@ class CPlayground extends Component {
     //   window.location.href = '/signin'
     //   alert('請先登入再進行測試呦!')
     // }
+
+    //get customModelList
+    axios
+      .get("http://140.119.19.99:8000/upload/load/", {
+        headers: {
+          Authorization: `JWT ${localStorage.getItem("token")}`,
+        },
+      })
+      .then((res) => {
+        const result = res.data.result;
+        console.log(result);
+        this.setState({ customModelList: result });
+      })
+      .catch((error) => {
+        if (!error.response) {
+          console.log("network error");
+        } else {
+          console.log(error.response.data.message);
+        }
+      });
   }
 
   handleFileChange = (e) => {
@@ -229,9 +250,9 @@ class CPlayground extends Component {
         let { data } = res;
         console.log(data);
         this.setState({ result: data.result });
-        if(this.state.modelName=='VGG16'){
-          document.querySelector('#result-img').classList.remove('main-shadow')
-          document.querySelector('#result-img').classList.add('w-50')
+        if (this.state.modelName == "VGG16") {
+          document.querySelector("#result-img").classList.remove("main-shadow");
+          document.querySelector("#result-img").classList.add("w-50");
         }
       })
       .then(() => {
@@ -247,13 +268,17 @@ class CPlayground extends Component {
   renderResult = (modelName) => {
     if (modelName === "VGG16") {
       return (
-        <div className='box p-3'>
+        <div className="box p-3">
           {this.state.result.map((each) => {
             return (
-              <div className='d-flex row'>
-                <div className='col-6'>{each[0]}</div>
-                <div className='col-6 text-
-                '>{each[1].toFixed(3)}</div>
+              <div className="d-flex row">
+                <div className="col-6">{each[0]}</div>
+                <div
+                  className="col-6 text-
+                "
+                >
+                  {each[1].toFixed(3)}
+                </div>
               </div>
             );
           })}
@@ -274,6 +299,17 @@ class CPlayground extends Component {
 
   handleSwitchCategory = (e) => {
     this.setState({ category: e.target.value });
+  };
+
+  renderModelCheckbox = () => {
+    const { customModelList } = this.state;
+    if (customModelList) {
+      return customModelList.map((c) => (
+        <ModelCheckboxExclusive modelName={c.name} id={c.name} />
+      ));
+    } else {
+      return;
+    }
   };
 
   modalClick = (e) => {
@@ -318,7 +354,11 @@ class CPlayground extends Component {
           />
         </div>
         <div className="third-title">輸出</div>
-        <div id='result-img' className="m-3 mb-3 main-shadow" style={{ height: "35vh" }}>
+        <div
+          id="result-img"
+          className="m-3 mb-3 main-shadow"
+          style={{ height: "35vh" }}
+        >
           {this.state.result ? (
             this.renderResult(modelName)
           ) : (
@@ -487,7 +527,10 @@ class CPlayground extends Component {
     const NoMatch = (
       <div className="expand-full">
         <div className="container d-flex flex-column justify-content-center align-items-center h-100">
-        <code className='info-title' style={{color:'#29b4be'}}>{this.props.match.url}</code><div className='info-title'>無此頁面</div>
+          <code className="info-title" style={{ color: "#29b4be" }}>
+            {this.props.match.url}
+          </code>
+          <div className="info-title">無此頁面</div>
         </div>
       </div>
     );
@@ -577,12 +620,7 @@ class CPlayground extends Component {
               <div className="col-4">
                 <div className="info-title">模型選擇</div>
                 <div onClick={this.handleModels}>
-                  <ModelCheckboxExclusive
-                    // className="toggleClicked"
-                    // checked={modelName === "VGG16" ? "checked" : ""}
-                    modelName="影像辨識 - VGG"
-                    id="vgg"
-                  />
+                  <ModelCheckboxExclusive modelName="影像辨識 - VGG" id="vgg" />
                   <ModelCheckboxExclusive
                     modelName="物體定位 - YOLOv3"
                     id="yolo"

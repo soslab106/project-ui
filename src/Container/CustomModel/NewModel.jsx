@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ModelCheckboxExclusive from "../../Components/ModelCheckboxExclusive";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 class NewModel extends Component {
   state = {
@@ -8,23 +8,31 @@ class NewModel extends Component {
     currentModel: "VGG",
     modelList: ["VGG", "YOLO", "CycleGAN", "FaceNet"], //get from api
     pjName: "",
-    learningRate:'',
-    epoch: '',
+    learningRate: "",
+    epoch: "",
   };
 
   handleChange = (e) => {
-    let targetState=e.target.name
-    let value=e.target.value
-    this.setState({[targetState]:value})
-  }
+    let targetState = e.target.name;
+    let value = e.target.value;
+    this.setState({ [targetState]: value });
+  };
 
-  handleNext = (e)=> {
-    const {pjName, learningRate, epoch} = this.state
-    if(!pjName || !learningRate || !epoch){
-      alert('設定完再進行下一步呦！')
-      window.location.href='new-model'
+  handleNext = (e) => {
+    const { pjName, learningRate, epoch } = this.state;
+    if (!pjName || !learningRate || !epoch) {
+      alert("設定完再進行下一步呦！");
+      window.location.href = "new-model";
     }
-  }
+    if (parseFloat(learningRate).toString() == "NaN") {
+      alert("Learning Rate 請輸入數字");
+      window.location.href = "new-model";
+    }
+    if (parseFloat(epoch).toString() == "NaN") {
+      alert("Epoch 請輸入數字");
+      window.location.href = "new-model";
+    }
+  };
 
   handleModels = (e) => {
     const { modelList } = this.state;
@@ -67,7 +75,12 @@ class NewModel extends Component {
               <div className="col-4">
                 <div className="third-title text-left mt-20">專案名稱</div>
                 <div className="main-shadow model-checkbox w-100 d-flex justify-content-start align-items-center p-10">
-                  <input name='pjName' className='w-100' type="text" onChange={this.handleChange}/>
+                  <input
+                    name="pjName"
+                    className="w-100"
+                    type="text"
+                    onChange={this.handleChange}
+                  />
                 </div>
               </div>
               <div className="col-8">
@@ -79,7 +92,12 @@ class NewModel extends Component {
                     </div>
                     <div className="justify-content-between main-shadow model-checkbox w-75 ml-10 d-flex justify-content-start align-items-center p-10">
                       Learning Rate
-                      <input name='learningRate' className='w-50 text-right' type="text" onChange={this.handleChange}/>
+                      <input
+                        name="learningRate"
+                        className="w-50 text-right"
+                        type="text"
+                        onChange={this.handleChange}
+                      />
                     </div>
                   </div>
                   <div className="d-flex w-100">
@@ -88,7 +106,12 @@ class NewModel extends Component {
                     </div>
                     <div className="justify-content-between main-shadow model-checkbox w-75 ml-10 d-flex justify-content-start align-items-center p-10">
                       Epoch
-                      <input name='epoch' className='w-50 text-right' type="text" onChange={this.handleChange}/>
+                      <input
+                        name="epoch"
+                        className="w-50 text-right"
+                        type="text"
+                        onChange={this.handleChange}
+                      />
                     </div>
                   </div>
                 </div>
@@ -162,7 +185,20 @@ class NewModel extends Component {
                   </code>
                 </div>
                 <div className="d-flex justify-content-center align-items-center mt-20">
-                  <Link to={{pathname:'/labelandImage', state: {pjName:pjName, learningRate:learningRate, epoch:epoch}}}><button className="btn-main" onClick={this.handleNext}>下一步</button></Link>
+                  <Link
+                    to={{
+                      pathname: "/labelandImage",
+                      state: {
+                        pjName: pjName,
+                        learningRate: learningRate,
+                        epoch: epoch,
+                      },
+                    }}
+                  >
+                    <button className="btn-main" onClick={this.handleNext}>
+                      下一步
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
