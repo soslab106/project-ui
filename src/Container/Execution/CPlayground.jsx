@@ -229,6 +229,10 @@ class CPlayground extends Component {
         let { data } = res;
         console.log(data);
         this.setState({ result: data.result });
+        if(this.state.modelName=='VGG16'){
+          document.querySelector('#result-img').classList.remove('main-shadow')
+          document.querySelector('#result-img').classList.add('w-50')
+        }
       })
       .then(() => {
         this.setState({ loading: false });
@@ -243,16 +247,17 @@ class CPlayground extends Component {
   renderResult = (modelName) => {
     if (modelName === "VGG16") {
       return (
-        <table>
+        <div className='box p-3'>
           {this.state.result.map((each) => {
             return (
-              <tr>
-                <td>{each[0]}</td>
-                <td>{each[1]}</td>
-              </tr>
+              <div className='d-flex row'>
+                <div className='col-6'>{each[0]}</div>
+                <div className='col-6 text-
+                '>{each[1].toFixed(3)}</div>
+              </div>
             );
           })}
-        </table>
+        </div>
       );
     } else {
       return (
@@ -313,7 +318,7 @@ class CPlayground extends Component {
           />
         </div>
         <div className="third-title">輸出</div>
-        <div className="m-3 mb-3 main-shadow" style={{ height: "35vh" }}>
+        <div id='result-img' className="m-3 mb-3 main-shadow" style={{ height: "35vh" }}>
           {this.state.result ? (
             this.renderResult(modelName)
           ) : (
