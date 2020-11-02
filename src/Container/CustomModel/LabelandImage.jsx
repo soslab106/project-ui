@@ -10,7 +10,10 @@ function LabelandImage() {
 
   const [label, setlabel] = useState("");
   const [labelList, setlabelList] = useState(["default"]);
-  const [imageList, setimageList] = useState([]);
+  const [imageList, setimageList] = useState([
+    { default: "lalla" },
+    // { secondary: "second" },
+  ]);
   const [currentLabel, setcurrentLabel] = useState("default");
 
   const newlabel = (label) => {
@@ -31,16 +34,27 @@ function LabelandImage() {
 
   function handleFileChange(e) {
     const origFile = [...imageList];
-    let obj = {};
-    obj[currentLabel] = [...e.target.files];
-    origFile.push(obj);
-    setimageList(origFile);
-    console.log(currentLabel, imageList);
-    console.log(e.target.files);
+    for (let i in origFile) {
+      if (currentLabel == Object.keys(origFile[i])) {
+        const temp = [...Object.values(origFile[i])];
+        // temp.push(...e.target.files);
+        temp.push("success");
+        console.log(Object.values(origFile[i]));
+        console.log(temp);
+      } else {
+        let obj = {};
+        // obj[currentLabel] = [...e.target.files];
+        obj[currentLabel] = "success no label";
+        origFile.push(obj);
+        setimageList(origFile);
+        console.log(currentLabel, imageList);
+        // console.log(e.target.files);
+      }
+    }
   }
 
   function handleshowLabel(event) {
-    console.log(event.target);
+    // console.log(event.target);
     console.log("event name", event.currentTarget.getAttribute("name"));
     setcurrentLabel(event.currentTarget.getAttribute("name"));
     console.log("currentLabel", currentLabel);
@@ -62,21 +76,26 @@ function LabelandImage() {
     let label = e.target.getAttribute("name");
     let newLabels = labelList;
     setlabelList(newLabels.filter((oldLabel) => oldLabel != label));
-    console.log(labelList);
+    // console.log(labelList);
   }
 
   function renderImgPreviews(imgs) {
-    imgs.forEach((e) => console.log(e));
+    // imgs.forEach((e) => console.log(e));
     let imgResult = [];
-    imgs.forEach((e) => {
-      if (currentLabel == Object.keys(e)) {
-        e[currentLabel].forEach((img) => {
-          imgResult.push(<img className='train-img' src={window.URL.createObjectURL(img)} onload={()=>window.URL.revokeObjectURL(this.src)}/>);
-        });
-      }
-    });
+    // imgs.forEach((e) => {
+    //   if (currentLabel == Object.keys(e)) {
+    //     e[currentLabel].forEach((img) => {
+    //       imgResult.push(<Image src={window.URL.createObjectURL(img)} />);
+    //       // imgResult.push(<img className='train-img' src={window.URL.createObjectURL(img)} onload={()=>window.URL.revokeObjectURL(this.src)}/>);
+    //     });
+    //   }
+    // });
     return imgResult;
   }
+
+  useEffect(() => {
+    console.log(imageList);
+  }, [imageList]);
 
   return (
     <div className="panel">
@@ -108,6 +127,7 @@ function LabelandImage() {
                           onChange={handleFileChange}
                           multiple
                         />
+                        {handleFileChange()}
                         <div className="d-flex">
                           <label
                             for="file"
