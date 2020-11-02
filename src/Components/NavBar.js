@@ -64,7 +64,7 @@ class NavBar extends Component {
                     臉部辨識 FaceNet
                   </a>
                   <div className="dropdown-divider"></div>
-                  <a className="dropdown-item" href="/ModelInfoList">
+                  <a className="dropdown-item" href="/execution">
                     操作教學
                   </a>
                 </div>

@@ -44,7 +44,7 @@ class WelcomeCopy extends Component {
               imgpath="/images/welcome/execute.png"
               icontitle="執行模型"
               iconsubtitle="想知道當代模型具有那些功能，並且有哪些結果嗎，快來體驗看看吧！"
-              url='/ModelInfoList'
+              url='/execution'
             />
             <CardSelect
               imgpath="/images/welcome/custom.png"

@@ -32,9 +32,9 @@ class NeuralNetworkIntro extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="container">
-          <h1 className="title col-12">類神經網路</h1>
-          <h2 className="title col-12">Artificial Neural Network</h2>
+        <div className="container pt-5">
+          <h1 className="main-color col-12">類神經網路</h1>
+          <h2 className="main-color col-12">Artificial Neural Network</h2>
           <TextAndImg
             my="5"
             textWidth="9"
@@ -54,11 +54,11 @@ class NeuralNetworkIntro extends Component {
           <div className="col-12">
             {this.mapTextList(this.state.nn_content_3)}
           </div>
-          <img className="col-6 mt-2 mb-5" src="/images/NN_3.png" />
+          <img className="col-6 my-2" src="/images/NN_3.png" />
         </div>
-        <FullWidthBlock py="4" my="4">
-          <h2 className="title col-12">激勵函數 Activation Function</h2>
+        <FullWidthBlock py="4">
           <TextAndImg
+            title="激勵函數 Activation Function"
             my="4"
             textWidth="8"
             imgWidth="400"
@@ -67,21 +67,13 @@ class NeuralNetworkIntro extends Component {
             imgPos="right"
           />
         </FullWidthBlock>
-        <div className="d-flex flex-column align-items-center justify-content-center mt-5">
-          <div className='mb-3'>還不夠了解人工智慧嗎？試著操作模型看看吧！</div>
-          <div className="d-flex flex-column justify-content-around align-items-center" style={{height: '100px'}}>
-          <a href="/TestingMenu">
-            <button className="btn btn-previous">模型操作主選單</button>
-          </a>
-           <div className='mb-3'>還不夠了解人工智慧嗎？試著操作模型看看吧！</div>
-          <a href="/">
-              <button
-                className="btn btn-previous"
-                style={{ width: "100px" }}
-              >
-                回到首頁
-              </button>
-            </a></div>
+        <div className="d-flex flex-column align-items-center justify-content-center my-4">
+          <div
+            className="d-flex flex-column justify-content-around align-items-center"
+            style={{ height: "100px" }}
+          >
+            <button className="btn btn-main" onClick={()=>window.close()}>關閉視窗</button>
+          </div>
         </div>
       </React.Fragment>
     );

@@ -13,15 +13,15 @@ class FaceNet extends Component {
       "Deep Architecture → Inception",
       "ResNet-v2用於特徵學習的 CNN 架構",
       "L2 → L2 normalization 加速收斂",
-      "Embedding → 經過 CNN 模型以及 L2 歸一化後生成的特徵向量(?)",
-      "Triplet Loss → 從向量中取得一個 embedding 函數 f（x），讓相同孔之間的特徵距離要盡可能的小，而不同孔之間的特徵距離要盡可能的大。",
+      "Embedding → 經過 CNN 模型以及 L2 Regularization 後生成的特徵向量",
+      "Triplet Loss → 從向量中取得一個 embedding 函數 f(x)，讓相同孔之間的特徵距離要盡可能的小，而不同孔之間的特徵距離要盡可能的大。",
     ],
   };
   render() {
     return (
       <React.Fragment>
-        <div className="container d-flex flex-column align-items-center">
-          <h1 className="title">Face Recognition</h1>
+        <div className="container pt-5 d-flex flex-column align-items-center">
+          <h1 className="main-color">Face Recognition</h1>
           <TextAndImg
             my="5"
             textWidth="5"
@@ -30,23 +30,25 @@ class FaceNet extends Component {
             imgPath="/images/FN_1.png"
             imgPos="right"
           />
-          <FullWidthBlock py="4" my="4">
-            <TextAndImg
-              my="5"
-              textWidth="5"
-              imgWidth="900"
-              textList={this.state.facenet_2}
-              imgPath="/images/FN_2.png"
-              imgPos="left"
-            />
-          </FullWidthBlock>
-          <div className="my-4">
-            <a href="/cnn" className="mx-2">
-              <button className="btn btn-previous">回到圖像分類介紹</button>
-            </a>
-            <a href="/facenet-playground" className="mx-2">
-              <button className="btn btn-main">前往Face Recognition操作</button>
-            </a>
+        </div>
+        <FullWidthBlock py="4" my="4">
+          <TextAndImg
+            my="5"
+            textWidth="5"
+            imgWidth="900"
+            textList={this.state.facenet_2}
+            imgPath="/images/FN_2.png"
+            imgPos="left"
+          />
+        </FullWidthBlock>
+        <div className="d-flex flex-column align-items-center justify-content-center my-4">
+          <div
+            className="d-flex flex-column justify-content-around align-items-center"
+            style={{ height: "100px" }}
+          >
+            <button className="btn btn-main" onClick={() => window.close()}>
+              關閉視窗
+            </button>
           </div>
         </div>
       </React.Fragment>

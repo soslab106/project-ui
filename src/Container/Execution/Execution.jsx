@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import CardSelect from "../../Components/CardSelect";
 import HomeInstances from "../../Components/HomeInstances";
 
-class ModelInfoList extends Component {
+class Execution extends Component {
   render() {
     return (
       <>
@@ -67,4 +67,4 @@ class ModelInfoList extends Component {
   }
 }
 
-export default ModelInfoList;
+export default Execution;

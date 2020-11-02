@@ -15,11 +15,11 @@ class Intro extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="container" style={{marginBottom: '150px'}}>
-          <div className="d-flex align-items-center my-4">
+        <div className="container py-5">
+          <div className="d-flex align-items-center pb-5">
             <div className="col-5">
-              <h1 className="title"> 人工智慧 </h1>
-              <h3 className="title"> Artificial Intelligence </h3>
+              <h1 className="main-color"> 人工智慧 </h1>
+              <h3 className="main-color"> Artificial Intelligence </h3>
               <div className="my-5"> {this.state.intro_1} </div>
             </div>
             <div className="col-7" overflow="hidden">
@@ -27,7 +27,7 @@ class Intro extends Component {
             </div>
           </div>
           <TextAndImg
-            my="5"
+            className="py-5"
             textWidth="5"
             imgWidth="1200"
             textList={this.state.intro_2}
@@ -51,17 +51,12 @@ class Intro extends Component {
               <button className="btn btn-model mt-4 mx-2">
                 模型攻擊 Adversarial
               </button>
-<<<<<<< HEAD:src/Container/Intro.js
             </div>
           </div>
-=======
-            </div> 
-          </div> 
->>>>>>> tung:src/Container/Intro.jsx
         </FullWidthBlock> */}
-        <div className="" style={{paddingTop:'0px !important'}}>
-          <h1 className="text-center title"> 深度學習 </h1>
-          <h3 className="text-center title"> Deep Learning </h3>
+        <div className="" style={{ paddingTop: "0px !important" }}>
+          <h1 className="text-center main-color"> 深度學習 </h1>
+          <h3 className="text-center main-color"> Deep Learning </h3>
           <div className="text-center my-5" id="dl-intro">
             人工智慧有了近年來的蓬勃發展， 深度學習功不可沒。
             深度學習經由模仿人類大腦自我學習的類神經網路得出預測結果。
@@ -91,19 +86,15 @@ class Intro extends Component {
               content="人工智慧也常用在醫療照護的方面，協助醫生進行醫療數據分析、疾病診斷、病患數據即時監控、疾病諮詢等等。"
             />
           </div>
-          <div className="d-flex flex-column justify-content-center align-items-center mt-3">
-            <div className='my-3'>在初步了解人工智慧的應用，接下來我們了解AI背後的構造吧！</div>
-            <a href="/nn-intro">
-              <button className="btn btn-main mt-5"> 神經網路概述 </button>
-            </a>
-            <a href="/">
-              <button
-                className="btn btn-previous mt-5"
-                style={{ width: "100px" }}
-              >
-                回到首頁
+          <div className="d-flex flex-column align-items-center justify-content-center my-4">
+            <div
+              className="d-flex flex-column justify-content-around align-items-center"
+              style={{ height: "100px" }}
+            >
+              <button className="btn btn-main" onClick={() => window.close()}>
+                關閉視窗
               </button>
-            </a>
+            </div>
           </div>
         </div>
       </React.Fragment>

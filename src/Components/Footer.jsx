@@ -11,7 +11,7 @@ class Footer extends Component {
               <div>
                 <div
                   className="footer-title content-color"
-                  href="/ModelInfoList"
+                  href="/execution"
                 >
                   執行模型
                 </div>

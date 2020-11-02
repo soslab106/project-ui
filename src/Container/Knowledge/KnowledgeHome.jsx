@@ -19,12 +19,12 @@ class KnowledgeHome extends Component {
               專有名詞解釋及定義釐清
             </div>
           ),
-          link: "https://hackmd.io/nAjgl0OLT7Ow2grzPtya8g?view",
+          link: "/intro",
         },
         {
           title: "類神經網路",
           desc: <div>深度學習的基礎原理、來源等等的背景知識介紹</div>,
-          link: "https://hackmd.io/EBuUE2WgSPW6vDRsWWJkYw?view",
+          link: "/nn-intro",
         },
         {
           title: "電腦視覺",
@@ -80,7 +80,7 @@ class KnowledgeHome extends Component {
           title: "物體定位 YOLOv3",
           desc:
             "Yolo系列是關於物件偵測的類神經網路演算法，能夠快速判斷圖形內的物體位置與類別...",
-          link: "https://drive.google.com/file/d/18tqj_GZ-nM9FCNlzMLGSvt4-QsT-jdya/view?usp=sharing",
+          link: "/yolov3",
         },
         { title: "風格轉換 CycleGAN", desc: "fjeifef", link: "r3rji2orjo3irj" },
       ],

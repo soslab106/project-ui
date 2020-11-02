@@ -14,8 +14,8 @@ class Yolov3 extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="container d-flex flex-column align-items-center">
-          <h1 className="title mb-3">YOLOV3模型介紹</h1>
+        <div className="container d-flex flex-column align-items-center pt-5">
+          <h1 className="main-color mb-3">YOLOV3模型介紹</h1>
           <div>
             <TextAndImg
               my="5"
@@ -30,14 +30,18 @@ class Yolov3 extends Component {
           <div className="my-3">
             <p className="bgc">{this.state.yolov3_2}</p>
           </div>
-
-          <div className="my-4">
-            <a href="/cnn" className="mx-2">
-              <button className="btn btn-previous">回到圖像分類介紹</button>
-            </a>
-            <a href="/yolov3-playground" className="mx-2">
-              <button className="btn btn-main">前往YOLOV3操作</button>
-            </a>
+        </div>
+        <div className="d-flex flex-column align-items-center justify-content-center pb-5">
+          <div
+            className="d-flex flex-column justify-content-around align-items-center"
+            style={{ height: "100px" }}
+          >
+            <button className="btn btn-main mb-4" onClick={()=>window.open('https://drive.google.com/file/d/18tqj_GZ-nM9FCNlzMLGSvt4-QsT-jdya/view', '_blank')}>
+              介紹簡報
+            </button>
+            <button className="btn btn-main" onClick={() => window.close()}>
+              關閉視窗
+            </button>
           </div>
         </div>
       </React.Fragment>
