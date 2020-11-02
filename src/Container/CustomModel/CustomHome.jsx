@@ -27,18 +27,18 @@ class CustomHome extends Component {
                 </button>
               </a>
               <a href="new-model" className="ml-3">
-                <button
-                  className="btn btn-main mt-3"
-                >
-                  創建新模型
-                </button>
+                <button className="btn btn-main mt-3">創建新模型</button>
               </a>
             </>
           }
         />
 
-        <div className="mt-5 container">
+        <div className="py-5 container">
           <div className="secondary-title">操作說明</div>
+          <div className="py-5">
+            <img src="/images/custom/custom-tutor.jpg" alt="" />
+            <img className='pt-5' src="/images/custom/custom-tutor2.jpg" alt="" />
+          </div>
         </div>
       </>
     );
