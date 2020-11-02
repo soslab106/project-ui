@@ -8,7 +8,7 @@ class CPlayground extends Component {
   state = {
     file: "",
     modelName: "VGG16",
-    modelList: ["vgg", "yolo", "cyclegan", "facenet"], //get from api
+    modelList: ["vgg", "yolo", "cyclegan", "facenet"], 
     customModelList: [], //get from api
     api: "http://140.119.19.99:8000/upload/",
     description: "",
@@ -26,12 +26,12 @@ class CPlayground extends Component {
   };
 
   componentDidMount() {
-    const modelParam = this.props.match.params.model;
-    this.changeModelsState(modelParam);
-    // if (!localStorage.getItem('token') && this.state.modelName) {
-    //   window.location.href = '/signin'
-    //   alert('請先登入再進行測試呦!')
-    // }
+    this.changeModelsState(this.props.match.params.model);
+
+    if (!localStorage.getItem('token') && this.state.modelName) {
+      window.location.href = '/signin'
+      alert('請先登入再進行測試呦!')
+    }
 
     //get customModelList
     axios
@@ -42,8 +42,13 @@ class CPlayground extends Component {
       })
       .then((res) => {
         const result = res.data.result;
+        const { modelList } = this.state;
+        let newModelList = [...modelList];
         console.log(result);
-        this.setState({ customModelList: result });
+        result.forEach((e) => {
+          newModelList.push(e.name);
+        });
+        this.setState({ customModelList: result, modelList: newModelList });
       })
       .catch((error) => {
         if (!error.response) {
@@ -135,7 +140,24 @@ class CPlayground extends Component {
         );
         break;
       default:
-        this.setState({ modelName: "" });
+        this.setState(
+          {
+            modelName: modelParam,
+            description:
+              "此模型使用ImageNet Dataset訓練，可以辨識一千種物體，詳細類別請查看以下連結",
+            input: "一張含有特定物體的圖片",
+            output: "可能性前五高的類別，及其機率",
+            file: undefined,
+            labels: imageNetLabel,
+            adv: ["/adv/vgg/adv_vgg_1.jpg", "/adv/vgg/adv_vgg_2.jpg"],
+            adv_origin: ["/adv/vgg/vgg_1.jpg", "/adv/vgg/vgg_2.jpg"],
+            api: "http://140.119.19.99:8000/upload/load",
+            file: "",
+            result: "",
+          },
+          () => this.changeActivatedModel(modelParam)
+        );
+        break;
     }
   };
 
@@ -156,9 +178,7 @@ class CPlayground extends Component {
     const target = e.target.id;
     if (target) {
       console.log(target);
-      // this.changeActivatedModel(target)
       this.changeModelsState(target);
-      // this.setState({modelName:target})
     }
   };
 
@@ -633,6 +653,8 @@ class CPlayground extends Component {
                     modelName="人臉辨識 - FaceNet"
                     id="facenet"
                   />
+
+                  {this.renderModelCheckbox()}
                 </div>
 
                 <div className="box mt-20 p-20">
