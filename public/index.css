@@ -650,3 +650,9 @@ a{
   position: fixed;
   z-index: 200;
 }
+
+.exec-func-info{
+  background-color: #29B4BE;
+  width:280px!important;
+  height:280px!important;
+}
