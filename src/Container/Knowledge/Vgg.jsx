@@ -1,10 +1,50 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 class Vgg extends Component {
+  state={
+    label1:[],
+    label2:[]
+  }
+
+  getAPI = ()=>{
+    let trainingData = {'label1':this.state.label1, 'label2':this.state.label2}
+
+    let formData = new FormData();
+    formData.append("pjName", 'test');
+    formData.append("learningRate", 0.0001);
+    formData.append("epoch", 10);
+    formData.append("trainingData", trainingData);
+
+
+    axios
+      .post('http://140.119.19.99:8000/upload/trans/', formData, {
+        headers: {
+          "content-type": "multipart/form-data",
+          Authorization: `JWT ${localStorage.getItem("token").toString()}`,
+        },
+      })
+
+      .then((res) => {
+        console.log(res.status);})
+      .catch((error) => {
+        console.log(error.response.headers);
+      });
+  }
+
+
+  handlechange = (e)=>{
+    this.setState({label1:e.target.files})
+  }
+
   render() {
     return (
       <div className="container expand-full">
-        <div className="d-flex">
+
+        <input type='file' multiple onChange={this.handlechange}/>
+        <br/><br/><br/><br/><input type='file' multiple onChange={this.handlechange}/>
+        <button onClick={this.getAPI}>submit</button>
+        {/*<div className="d-flex">
           <div className="col-8">
             <h1 className="title my-5">VGG模型架構介紹</h1>
             <div className="my-3">
@@ -34,7 +74,7 @@ class Vgg extends Component {
           <a href="/vgg-playground">
             <button className="btn btn-main m-3">前往VGG16操作</button>
           </a>
-        </div>
+    </div>*/}
       </div>
     );
   }
