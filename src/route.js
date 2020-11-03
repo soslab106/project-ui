@@ -30,6 +30,7 @@ import NewModel from "./Container/CustomModel/NewModel";
 import Trainning from "./Container/CustomModel/Trainning";
 import LabelandImage from "./Container/CustomModel/LabelandImage";
 import ForumAll from "./Container/Forum/ForumAll";
+import Exam from "./Container/Knowledge/Exam";
 
 export function route() {
   return (
@@ -55,11 +56,9 @@ export function route() {
         <Route exact path="/nn-intro" component={NeuralNetworkIntro} />
         <Route path="/intro" component={Intro} />
         <Route path="/YOLOV3" component={Yolov3} />
+        <Route path="/exam" component={Exam} />
         {/* Forum page */}
         <Route path="/forum" component={Forum} />
-
-
-
 
         {/* 可用/尚未改完 */}
         <Route path="/cnn-detail" component={CNNDetail} />
@@ -79,7 +78,6 @@ export function route() {
         <Route path="/facenet-playground" component={FaceNetPlayground} /> 
 
         <Route path="/:model" component={NoMatch} />
-
       </Switch>
     </Router>
   );
