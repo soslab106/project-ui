@@ -68,7 +68,7 @@ export function route() {
         <Route path="/FaceNet" component={FaceNet} />
 
         {/* 刪掉 */}
-        {/* <Route path="/CNN" component={CNNIntro} />
+        <Route path="/CNN" component={CNNIntro} />
         <Route path="/img-classify" component={ImgClassification} />
         <Route path="/vgg" component={Vgg} />
         <Route path="/resnet" component={ResNet} />
@@ -76,7 +76,7 @@ export function route() {
         <Route path="/NewsPage" component={NewsPage} />
         <Route path="/Menu" component={Menu} />
         <Route path="/TestingMenu" component={TestingMenu} />
-        <Route path="/facenet-playground" component={FaceNetPlayground} /> */}
+        <Route path="/facenet-playground" component={FaceNetPlayground} /> 
 
         <Route path="/:model" component={NoMatch} />
 
