@@ -33,7 +33,7 @@ class KnowledgeHome extends Component {
               介紹電腦視覺的基礎知識，以及如何將人工智慧、深度學習應用在此領域中
             </div>
           ),
-          link: "r3rji2orjo3irj",
+          link: "",
         },
         {
           title: "卷積神經網路",
@@ -51,7 +51,7 @@ class KnowledgeHome extends Component {
               介紹自然語言定義、相關處理，與可分析之方法、深度學習模型等等
             </div>
           ),
-          link: "r3rji2orjo3irj",
+          link: "",
         },
         {
           title: "遞迴神經網路",
@@ -60,7 +60,7 @@ class KnowledgeHome extends Component {
               介紹可應用於自然語言處理的基礎深度學習模型，以及基礎運作原理
             </div>
           ),
-          link: "r3rji2orjo3irj",
+          link: "",
         },
       ],
       model: [
@@ -82,15 +82,15 @@ class KnowledgeHome extends Component {
             "Yolo系列是關於物件偵測的類神經網路演算法，能夠快速判斷圖形內的物體位置與類別...",
           link: "/yolov3",
         },
-        { title: "風格轉換 CycleGAN", desc: "fjeifef", link: "r3rji2orjo3irj" },
+        { title: "風格轉換 CycleGAN", desc: "fjeifef", link: "" },
       ],
       cv: [
-        { title: "tittitititllle", desc: "fjeifef", link: "r3rji2orjo3irj" },
-        { title: "tittitititllle", desc: "fjeifef", link: "r3rji2orjo3irj" },
-        { title: "tittitititllle", desc: "fjeifef", link: "r3rji2orjo3irj" },
-        { title: "tittitititllle", desc: "fjeifef", link: "r3rji2orjo3irj" },
-        { title: "tittitititllle", desc: "fjeifef", link: "r3rji2orjo3irj" },
-        { title: "tittitititllle", desc: "fjeifef", link: "r3rji2orjo3irj" },
+        { title: "Object Detection 的演變", desc: <div>介紹物體定位演變的重要模型，與基礎原理<br/>包含R-CNN一直到近代的YOLO及M2Det</div>, link: "https://hackmd.io/Od3xxvfGQbKC0_1p7oOCsA" },
+        // { title: "tittitititllle", desc: "fjeifef", link: "" },
+        // { title: "tittitititllle", desc: "fjeifef", link: "" },
+        // { title: "tittitititllle", desc: "fjeifef", link: "" },
+        // { title: "tittitititllle", desc: "fjeifef", link: "" },
+        // { title: "tittitititllle", desc: "fjeifef", link: "" },
       ],
       video: [
         {
@@ -105,10 +105,10 @@ class KnowledgeHome extends Component {
           link:
             "https://www.youtube.com/watch?v=IzHoNwlCGnE&list=PLJV_el3uVTsPMxPbjeX7PicgWbY7F8wW9",
         },
-        { title: "tittitititllle", desc: "fjeifef", link: "r3rji2orjo3irj" },
-        { title: "tittitititllle", desc: "fjeifef", link: "r3rji2orjo3irj" },
-        { title: "tittitititllle", desc: "fjeifef", link: "r3rji2orjo3irj" },
-        { title: "tittitititllle", desc: "fjeifef", link: "r3rji2orjo3irj" },
+        { title: "深度學習 - Coursera", desc: "Andrew Ng 吳恩達教授", link: "https://www.coursera.org/specializations/deep-learning" },
+        { title: "Stanford CS231n", desc: "CNN for Visual Recognition", link: "http://cs231n.stanford.edu/index.html" },
+        // { title: "tittitititllle", desc: "fjeifef", link: "" },
+        // { title: "tittitititllle", desc: "fjeifef", link: "" },
       ],
     },
     categories: [
@@ -281,6 +281,14 @@ class KnowledgeHome extends Component {
     triangle.classList.remove("hidden");
   };
 
+  openTab = (link)=>{
+    if(link.length>0){
+      window.open( link, '_blank')
+    }else{
+      return;
+    }
+  }
+
   renderTeachings = (teaches) => {
     let tempTeaching = []; //teaches
     // console.log(Math.ceil(teaches.length / 3));
@@ -289,7 +297,7 @@ class KnowledgeHome extends Component {
       // console.log(i);
       let children = teaches.slice(i * 3, i * 3 + 3);
       children = children.map((child) => (
-        <div className="main-shadow border-radius p-3 w-32" onClick={()=>window.open(child.link, '_blank')}>
+        <div className="main-shadow border-radius p-3 w-32" onClick={()=>this.openTab(child.link)}>
           <div className="third-title text-left">{child.title}</div>
           <div>{child.desc}</div>
         </div>
