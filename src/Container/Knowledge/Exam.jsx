@@ -140,7 +140,7 @@ function Exam() {
           </div>
           <div>
             <div className="quiz">{showQuestion(api)}</div>
-            <button onClick={(event) => showResult(event)}>提交</button>
+            <button onClick={() => showResult()}>提交</button>
             <div id="result">{renderResult()}</div>
           </div>
         </div>
