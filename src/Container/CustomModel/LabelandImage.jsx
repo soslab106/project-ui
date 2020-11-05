@@ -16,7 +16,7 @@ function LabelandImage() {
   const [labelList, setlabelList] = useState(["a", "b"]);
   const [imageList, setimageList] = useState([]);
   const [currentLabel, setcurrentLabel] = useState("");
-  // const [currentimageList, setcurrentimageList] = useState([]);
+  const [currentimageList, setcurrentimageList] = useState([]);
 
   const newlabel = (label) => {
     setlabelList((oldlabelList) => [...oldlabelList, label]);
@@ -106,32 +106,34 @@ function LabelandImage() {
 
   function renderImgPreviews(imgs) {
     let imgResult = [];
-    // imgs.forEach((e) => {
+    // imgs.forEach((img) => {
     // if (currentLabel == Object.keys(e)) {
     // e[currentLabel].forEach((img) => {
-    //   imgResult.push(<Image src={window.URL.createObjectURL(img)} />);
+    // imgResult.push(<Image src={window.URL.createObjectURL(img)} />);
     // });
     // }
     // });
     return imgResult;
   }
 
-  // function handlecurrentImage() {
-  //   imageList.forEach((each) => {
-  //     if (Object.keys(each) == currentLabel) {
-  //       setcurrentimageList(Object.values(each));
-  //     }
-  //   });
-  // }
+  function handlecurrentImage() {
+    imageList.forEach((each) => {
+      if (Object.keys(each) == currentLabel) {
+        setcurrentimageList(Object.values(each));
+        // console.log(Object.values(each));
+      }
+    });
+  }
 
-  // useEffect(() => {
-  // handlecurrentImage();
-  // const [flag, index] = checkhaslabelimage(imageList);
-  // console.log(flag);
-  // console.log(index);
-  //   console.log(currentLabel);
-  //   console.log(imageList);
-  // }, [imageList]);
+  useEffect(() => {
+    handlecurrentImage();
+    // const [flag, index] = checkhaslabelimage(imageList);
+    // console.log(flag);
+    // console.log(index);
+    console.log(currentLabel);
+    console.log(currentimageList);
+    console.log(imageList);
+  }, [currentLabel]);
 
   function modalClick(e) {
     e.preventDefault();
@@ -310,7 +312,11 @@ function LabelandImage() {
                         style={{ height: "40px" }}
                         name={label}
                       >
-                        <div onClick={() => setcurrentLabel(label)}>
+                        <div
+                          name={label}
+                          onClick={handleshowLabel}
+                          style={{ width: "100%" }}
+                        >
                           {label}
                         </div>
                         <input
@@ -394,8 +400,8 @@ function LabelandImage() {
                 </div>
               </span>
               <div className="d-flex flex-wrap align-items-start box p-3">
-                {imageList != false ? (
-                  renderImgPreviews(imageList)
+                {currentimageList != false ? (
+                  renderImgPreviews(currentimageList)
                 ) : (
                   <div>請新增圖片</div>
                 )}
