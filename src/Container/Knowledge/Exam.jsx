@@ -138,10 +138,19 @@ function Exam() {
             說明填答說明填答說明填答說明填答說明填答說明填答說明填答說明填答說明填答說明填答說明填答說明填答說明填答說明填答說明填答
             說明填答說明填答說明填答說明填答說明填答說明
           </div>
-          <div>
+          <div className="">
             <div className="quiz">{showQuestion(api)}</div>
-            <button onClick={() => showResult()}>提交</button>
-            <div id="result">{renderResult()}</div>
+            <div className="d-flex justify-content-start">
+              <button
+                className="btn btn-main ml-3"
+                onClick={() => showResult()}
+              >
+                提交
+              </button>
+            </div>
+            <div id="result" className="d-flex justify-content-center">
+              {renderResult()}
+            </div>
           </div>
         </div>
       </div>
