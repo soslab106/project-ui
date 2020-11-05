@@ -13,7 +13,7 @@ function LabelandImage() {
   const [showModal, setShowModal] = useState(false);
 
   const [label, setlabel] = useState("");
-  const [labelList, setlabelList] = useState(["a", "b"]);
+  const [labelList, setlabelList] = useState([]);
   const [imageList, setimageList] = useState([]);
   const [currentLabel, setcurrentLabel] = useState("a");
   const [currentimageList, setcurrentimageList] = useState([]);
@@ -135,15 +135,15 @@ function LabelandImage() {
     console.log(imageList);
   }, [currentLabel]);
 
-  useEffect(() => {
-    // handlecurrentImage();
-    // const [flag, index] = checkhaslabelimage(imageList);
-    // console.log(flag);
-    // console.log(index);
-    console.log(currentLabel);
-    console.log(currentimageList);
-    // console.log(imageList);
-  }, [currentimageList]);
+  // useEffect(() => {
+  // handlecurrentImage();
+  // const [flag, index] = checkhaslabelimage(imageList);
+  // console.log(flag);
+  // console.log(index);
+  console.log(currentLabel);
+  console.log(currentimageList);
+  // console.log(imageList);
+  // }, [currentimageList]);
 
   function modalClick(e) {
     e.preventDefault();
