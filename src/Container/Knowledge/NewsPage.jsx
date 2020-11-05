@@ -1,15 +1,61 @@
 import React, { Component } from "react";
-import NewsBlock from "../../Components/NewsBlock";
-class NewsPage extends Component {
-  render(props) {
-    return (
-      <div>
-        <div className="d-flex justify-content-start w-75 ml-5">
-          <h3 className="ml-5">精選文章</h3>
-        </div>
-      </div>
-    );
+import { imageNetLabel } from "./News";
+
+function NewsPage() {
+  function handleNews(news) {
+    const page = [];
+    for (let i = 0; i < news.length; i++) {
+      Object.values(news[i]).forEach((each) => {
+        const key = Object.keys(each)[0];
+        const value = Object.values(each);
+
+        console.log(key, value);
+        switch (key) {
+          case "title":
+            page.push(
+              <div className="d-flex justify-content-start">
+                <div className="main-title">{value[0]}</div>
+              </div>
+            );
+            break;
+          case "author":
+            page.push(
+              <div>
+                By: {value[0][0]} <a href={value[0][1]}>原文出處</a>
+              </div>
+            );
+            break;
+          case "content":
+            page.push(<div className="my-2">{value[0]}</div>);
+            break;
+          case "picture":
+            page.push(
+              <div className="d-flex flex-column align-items-center justify-content-center my-3">
+                <img className="news-img" src={value[0]} />
+                <span className="news-img-discription d-flex justify-content-center">
+                  {value[0][1]}
+                </span>
+              </div>
+            );
+            break;
+          case "contenttitle":
+            page.push(<div className="news-secondary-title">{value[0]}</div>);
+            break;
+          default:
+            break;
+        }
+      });
+    }
+    return page;
   }
+
+  return (
+    <div>
+      <div className="d-flex flex-column container my-5">
+        {handleNews(imageNetLabel)}
+      </div>
+    </div>
+  );
 }
 
 export default NewsPage;

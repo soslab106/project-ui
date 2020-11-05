@@ -724,3 +724,17 @@ td {
 .plant input {
   color: #000;
 }
+
+.news-img-discription {
+  font-size: 16px;
+  color: #2e3131;
+}
+
+.news-img {
+  width: 75%;
+}
+
+.news-secondary-title {
+  font-size: 26px;
+  color: #29b4be;
+}
