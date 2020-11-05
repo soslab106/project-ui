@@ -5,8 +5,8 @@ class Image extends Component {
     return (
       <div className="col-12 col-sm-6 col-lg-4 my-3">
         <img
-          src={this.props.src}
-          onLoad={() => window.URL.revokeObjectURL(this.src)}
+          src={this.props.imgPath}
+          onload={() => window.URL.revokeObjectURL(this.src)}
         ></img>
       </div>
     );

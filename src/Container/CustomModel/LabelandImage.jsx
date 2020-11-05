@@ -15,7 +15,7 @@ function LabelandImage() {
   const [label, setlabel] = useState("");
   const [labelList, setlabelList] = useState(["a", "b"]);
   const [imageList, setimageList] = useState([]);
-  const [currentLabel, setcurrentLabel] = useState("");
+  const [currentLabel, setcurrentLabel] = useState("a");
   const [currentimageList, setcurrentimageList] = useState([]);
 
   const newlabel = (label) => {
@@ -58,6 +58,7 @@ function LabelandImage() {
         origFile.push(obj);
         setimageList(origFile);
       }
+      setcurrentimageList([...e.target.files]);
     }
   }
 
@@ -104,25 +105,24 @@ function LabelandImage() {
     // console.log(labelList);
   }
 
-  function renderImgPreviews(imgs) {
-    let imgResult = [];
-    // imgs.forEach((img) => {
-    // if (currentLabel == Object.keys(e)) {
-    // e[currentLabel].forEach((img) => {
-    // imgResult.push(<Image src={window.URL.createObjectURL(img)} />);
-    // });
-    // }
-    // });
-    return imgResult;
+  function renderImgPreviews() {
+    return currentimageList.map((e) => (
+      <Image imgPath={window.URL.createObjectURL(e)} />
+    ));
   }
 
   function handlecurrentImage() {
+    let currentLabelList = [];
     imageList.forEach((each) => {
-      if (Object.keys(each) == currentLabel) {
-        setcurrentimageList(Object.values(each));
-        // console.log(Object.values(each));
-      }
+      currentLabelList.push(Object.keys(each)[0]);
     });
+    let [flag, index] = checkhaslabelimage(imageList);
+    console.log(flag, index);
+    if (flag) {
+      setcurrentimageList(imageList[index][currentLabel]);
+    } else {
+      setcurrentimageList([]);
+    }
   }
 
   useEffect(() => {
@@ -134,6 +134,16 @@ function LabelandImage() {
     console.log(currentimageList);
     console.log(imageList);
   }, [currentLabel]);
+
+  useEffect(() => {
+    // handlecurrentImage();
+    // const [flag, index] = checkhaslabelimage(imageList);
+    // console.log(flag);
+    // console.log(index);
+    console.log(currentLabel);
+    console.log(currentimageList);
+    // console.log(imageList);
+  }, [currentimageList]);
 
   function modalClick(e) {
     e.preventDefault();
@@ -314,8 +324,8 @@ function LabelandImage() {
                       >
                         <div
                           name={label}
-                          onClick={handleshowLabel}
                           style={{ width: "100%" }}
+                          onClick={handleshowLabel}
                         >
                           {label}
                         </div>
@@ -401,7 +411,7 @@ function LabelandImage() {
               </span>
               <div className="d-flex flex-wrap align-items-start box p-3">
                 {currentimageList != false ? (
-                  renderImgPreviews(currentimageList)
+                  renderImgPreviews()
                 ) : (
                   <div>請新增圖片</div>
                 )}
