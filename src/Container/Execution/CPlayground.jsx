@@ -74,7 +74,6 @@ class CPlayground extends Component {
               "本YOLOv3模型是使用COCO dataset進行訓練，因此本模型可以框出81種類別物件",
             input: "一張含有多個物體的圖片",
             output: "框出所有物體位置的圖片",
-            file: undefined,
             labels: yoloLabel,
             adv: [],
             adv_origin: [],
@@ -93,7 +92,6 @@ class CPlayground extends Component {
               "此模型使用ImageNet Dataset訓練，可以辨識一千種物體，詳細類別請查看以下連結",
             input: "一張含有特定物體的圖片",
             output: "可能性前五高的類別，及其機率",
-            file: undefined,
             labels: imageNetLabel,
             adv: ["/adv/vgg/adv_vgg_1.jpg", "/adv/vgg/adv_vgg_2.jpg"],
             adv_origin: ["/adv/vgg/vgg_1.jpg", "/adv/vgg/vgg_2.jpg"],
@@ -112,7 +110,6 @@ class CPlayground extends Component {
             input: "一張含有人臉圖片",
             output: "原圖轉為辛普森風格的圖片",
             api: "http://140.119.19.99:8000/upload/cycleGAN/",
-            file: undefined,
             file: "",
             result: "",
             category: "horse2zebra.pb",
@@ -146,7 +143,6 @@ class CPlayground extends Component {
             description: "此模型為客製化模型，模型前半由ImageNet Dataset訓練",
             input: "一張含有特定物體的圖片",
             output: "可能性前五高的類別，及其機率",
-            file: undefined,
             labels: imageNetLabel,
             adv: ["/adv/vgg/adv_vgg_1.jpg", "/adv/vgg/adv_vgg_2.jpg"],
             adv_origin: ["/adv/vgg/vgg_1.jpg", "/adv/vgg/vgg_2.jpg"],
@@ -269,7 +265,7 @@ class CPlayground extends Component {
         let { data } = res;
         console.log(data);
         this.setState({ result: data.result });
-        if (this.state.modelName == "VGG16") {
+        if (this.state.modelName !== "YOLOv3"||'CycleGAN'||'FaceNet') {
           document.querySelector("#result-img").classList.remove("main-shadow");
           document.querySelector("#result-img").classList.add("w-50");
         }
@@ -285,7 +281,7 @@ class CPlayground extends Component {
   };
 
   renderResult = (modelName) => {
-    if (model === "VGG16") {
+    if (modelName === "VGG16") {
       return (
         <div className="box p-3">
           {this.state.result.map((each) => {
@@ -318,7 +314,7 @@ class CPlayground extends Component {
         </React.Fragment>
       );
     } else {
-    return <React.Fragment>{}</React.Fragment>
+    return  <div className="box p-3 text-center">{this.state.result}</div>
     }
   };
 
