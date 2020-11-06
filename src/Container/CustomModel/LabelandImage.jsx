@@ -11,7 +11,8 @@ function LabelandImage() {
   let location = useLocation();
 
   const [showModal, setShowModal] = useState(false);
-
+  const [loading, setLoading] = useState(false);
+  const [finished, setFinished] = useState(true);
   const [label, setlabel] = useState("");
   const [labelList, setlabelList] = useState([]);
   const [imageList, setimageList] = useState([]);
@@ -67,6 +68,7 @@ function LabelandImage() {
   }
 
   function getAPI() {
+    setLoading(true);
     let formData = new FormData();
     formData.append("pjName", location.state["pjName"]);
     formData.append("learningRate", location.state["learningRate"]);
@@ -91,6 +93,8 @@ function LabelandImage() {
         })
         .then((res) => {
           console.log(res.status);
+          setLoading(false);
+          setFinished(true);
         })
         .catch((error) => {
           console.log(error.response.headers);
@@ -254,6 +258,29 @@ function LabelandImage() {
     return plantLabels;
   }
 
+  const loadingPage = (
+    <div className="loading d-flex flex-column align-items-center justify-content-center">
+      <img src="/images/Loading_2.gif" width="50" />
+      <div className="mt-3">Loading...</div>
+    </div>
+  );
+
+  function labelListHtml(){
+    return labelList.map(e=><span className='ml-2'>e</span>)
+  }
+
+  const finishedPage = (
+    <div className="loading d-flex flex-column align-items-center justify-content-center">
+      <div className="box w-50 h-50 text-center p-3">
+        <div className="main-title">訓練完成！</div>
+        <div className="content-color pt-3 third-title">
+          模型名稱: <span className='main-color' style={{fontWeight: '1000'}}>{location.state.pjName}</span>
+        </div>
+  <div className="content-color">Labels: {labelListHtml()}</div>
+      </div>
+    </div>
+  );
+
   const plantModal = (
     <div
       className="background-close d-flex justify-content-center align-items-center"
@@ -293,6 +320,8 @@ function LabelandImage() {
 
   return (
     <>
+      {loading ? loadingPage : ""}
+      {finished ? finishedPage : ""}
       {showModal ? plantModal : ""}
       <div className="panel">
         <div className="container py-5">

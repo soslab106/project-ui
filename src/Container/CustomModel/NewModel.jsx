@@ -97,6 +97,7 @@ class NewModel extends Component {
                         className="w-50 text-right"
                         type="text"
                         onChange={this.handleChange}
+                        placeholder='0.0001'
                       />
                     </div>
                   </div>
@@ -111,6 +112,7 @@ class NewModel extends Component {
                         className="w-50 text-right"
                         type="text"
                         onChange={this.handleChange}
+                        placeholder='10'
                       />
                     </div>
                   </div>
