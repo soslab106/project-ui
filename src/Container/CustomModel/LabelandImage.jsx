@@ -275,7 +275,7 @@ function LabelandImage() {
   const finishedPage = (
     <div className="background-close d-flex justify-content-center align-items-center">
         <div className="d-flex justify-content-between">
-          <div className="box text-center p-3">
+          <div className="box text-center p-5">
             <div className="main-title">訓練完成！</div>
             <div className="content-color pt-3 third-title">
               模型名稱:{" "}
