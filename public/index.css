@@ -730,3 +730,14 @@ td {
   font-size: 26px;
   color: #29b4be;
 }
+
+.disable-btn{
+  background-color: #f6f8f8;
+  /* color: #fff; */
+}
+
+.disable-btn:hover{
+  background-color: #f6f8f8;
+  color: #5f7171;
+  cursor: auto;
+}

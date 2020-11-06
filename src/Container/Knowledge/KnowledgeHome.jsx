@@ -455,12 +455,12 @@ class KnowledgeHome extends Component {
                 <br />
                 簡單模式
               </button>
-              <button className="btn-main w-25" style={{ height: "80px" }}>
+              <button className="btn-main w-25 disable-btn" style={{ height: "80px" }} disable>
                 NORMAL
                 <br />
                 一般模式
               </button>
-              <button className="btn-main w-25" style={{ height: "80px" }}>
+              <button className="btn-main w-25 disable-btn" style={{ height: "80px" }} disable>
                 HARD
                 <br />
                 困難模式
