@@ -268,18 +268,25 @@ function LabelandImage() {
     </div>
   );
 
-  function labelListHtml(){
-    return labelList.map(e=><span className='ml-2'>e</span>)
+  function labelListHtml() {
+    return labelList.map((e) => <span className="ml-2">e</span>);
   }
 
   const finishedPage = (
-    <div className="loading d-flex flex-column align-items-center justify-content-center">
-      <div className="box w-50 h-50 text-center p-3">
-        <div className="main-title">訓練完成！</div>
-        <div className="content-color pt-3 third-title">
-          模型名稱: <span className='main-color' style={{fontWeight: '1000'}}>{location.state.pjName}</span>
+    <div className="background-close d-flex justify-content-center align-items-center">
+      <div className="label-modal" onClick={(e) => this.modalClick(e)}>
+        <div className="d-flex justify-content-between">
+          <div className="box w-50 h-50 text-center p-3">
+            <div className="main-title">訓練完成！</div>
+            <div className="content-color pt-3 third-title">
+              模型名稱:{" "}
+              <span className="main-color" style={{ fontWeight: "1000" }}>
+                {location.state.pjName}
+              </span>
+            </div>
+            <div className="content-color">Labels: {labelListHtml()}</div>
+          </div>
         </div>
-  <div className="content-color">Labels: {labelListHtml()}</div>
       </div>
     </div>
   );
