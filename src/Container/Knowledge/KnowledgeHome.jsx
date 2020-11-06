@@ -4,6 +4,7 @@ import ArticleCard from "../../Components/ArticleCard";
 import { Tab, Tabs } from "react-bootstrap";
 import NewsTab from "../../Components/knowledge/NewsTab";
 import NewsTheme from "../../Components/knowledge/NewsTheme";
+import { Link } from "react-router-dom";
 
 class KnowledgeHome extends Component {
   state = {
@@ -464,21 +465,35 @@ class KnowledgeHome extends Component {
           <div className="my-5 py-5" id="evaluate">
             <div className="secondary-title my-5">學習成效評估</div>
             <div className="d-flex justify-content-around align-items-center">
-              <button className="btn-main w-25" style={{ height: "80px" }}>
-                EASY
-                <br />
-                簡單模式
-              </button>
-              <button className="btn-main w-25 disable-btn" style={{ height: "80px" }} disable>
-                NORMAL
-                <br />
-                一般模式
-              </button>
-              <button className="btn-main w-25 disable-btn" style={{ height: "80px" }} disable>
-                HARD
-                <br />
-                困難模式
-              </button>
+              <Link className="w-100 text-center" to={{ pathname: "" }}>
+                <button className="btn-main w-75" style={{ height: "80px" }}>
+                  EASY
+                  <br />
+                  簡單模式
+                </button>
+              </Link>
+              <Link className="w-100 text-center">
+                <button
+                  className="btn-main w-75 disable-btn"
+                  style={{ height: "80px" }}
+                  disable
+                >
+                  NORMAL
+                  <br />
+                  一般模式
+                </button>
+              </Link>
+              <Link className="w-100 text-center">
+                <button
+                  className="btn-main w-75 disable-btn"
+                  style={{ height: "80px" }}
+                  disable
+                >
+                  HARD
+                  <br />
+                  困難模式
+                </button>
+              </Link>
             </div>
           </div>
         </div>
