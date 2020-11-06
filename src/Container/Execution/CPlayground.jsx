@@ -151,7 +151,7 @@ class CPlayground extends Component {
             labels: imageNetLabel,
             adv: ["/adv/vgg/adv_vgg_1.jpg", "/adv/vgg/adv_vgg_2.jpg"],
             adv_origin: ["/adv/vgg/vgg_1.jpg", "/adv/vgg/vgg_2.jpg"],
-            api: "http://140.119.19.99:8000/upload/load",
+            api: "http://140.119.19.99:8000/upload/load/",
             file: "",
             result: "",
           },

@@ -14,7 +14,7 @@ class Vgg extends Component {
     formData.append("pjName", 'test');
     formData.append("learningRate", 0.0001);
     formData.append("epoch", 10);
-    
+
     for (const key of Object.keys(this.state.label1)) {
       formData.append("train_label1", this.state.label1[key]);
     }
