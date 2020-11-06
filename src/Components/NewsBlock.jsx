@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {Link} from 'react-router-dom'
 class NewsBlock extends Component {
     render() {
         return (
@@ -10,7 +10,7 @@ class NewsBlock extends Component {
                         <div class="card-body">
                             <h5 className='card-title'>{this.props.card_title}</h5>
                             <p class="card-text">{this.props.card_text}</p>
-                            <a href={this.props.url} class="btn btn-primary">詳全文</a>
+                            <Link to={{pathname: this.props.url}}><div class="btn btn-primary">詳全文</div></Link>
                         </div>
                     </div>
                 </div>

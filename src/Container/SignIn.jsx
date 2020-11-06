@@ -32,6 +32,8 @@ class SignIn extends Component {
         let { data } = res;
         console.log(data);
         localStorage.setItem("token", data.token);
+        localStorage.setItem("email", data.user.email);
+        localStorage.setItem("username", data.user.username);
         this.setState({
           logged_in: true,
           username: data.user.username,

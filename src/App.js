@@ -50,7 +50,7 @@ class App extends Component {
                 username={this.state.username}
                 logout={this.logout}
             /> {routes} <Footer />
-            </React.Fragment>
+        </React.Fragment>
         );
     }
 }

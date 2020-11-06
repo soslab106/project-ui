@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from 'react-router-dom'
 
 class CardSelect extends Component {
   render() {
@@ -8,7 +9,7 @@ class CardSelect extends Component {
         <img src={imgpath} width='150'/>
         <div className="secondary-title mt-4">{icontitle}</div>
         <div className='content-color text-center mt-4'>{iconsubtitle}</div>
-        <a href={this.props.url}><button className="btn-main mt-4">{btnName?btnName:'了解更多'}</button></a>
+        <Link to={{pathname: this.props.url}}><button className="btn-main mt-4">{btnName?btnName:'了解更多'}</button></Link>
       </div>
     );
   }

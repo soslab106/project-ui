@@ -1,6 +1,19 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Profile extends Component {
+  state = {
+    logged_in: localStorage.getItem("token") ? true : false,
+    username: localStorage.getItem("username"),
+    email: localStorage.getItem("email"),
+  };
+
+  componentDidMount = () => {
+    if (!localStorage.getItem("token")) {
+      window.location.href = "/signin";
+      alert("請先登入!");
+    }
+  };
   render() {
     return (
       <div className="h-100 panel">
@@ -19,39 +32,39 @@ class Profile extends Component {
                 <div className="d-flex flex-row justify-content-between">
                   <div>
                     <div>電子郵件</div>
-                    <div>HowAILab@gmail.com.tw</div>
+                    <div>{this.state.email}</div>
                   </div>
 
-                  <a href="/Menu">
+                  <Link to="/#">
                     <button className="btn-main">修改email</button>
-                  </a>
+                  </Link>
                 </div>
                 <div className="d-flex flex-row justify-content-between">
                   <div>
                     <div>密碼</div>
                     <div>*********</div>
                   </div>
-                  <a href="/Menu">
+                  <Link to="/#">
                     <button className="btn btn-lg btn-main ">更改密碼</button>
-                  </a>
+                  </Link>
                 </div>
-                <div className="d-flex flex-row justify-content-between">
+                {/* <div className="d-flex flex-row justify-content-between">
                   <div>
                     <div>使用過的模型</div>
                     <div></div>
                   </div>
-                  <a href="/Menu">
+                  <Link to="/Menu">
                     <button className="btn btn-lg btn-main ">顯示列表</button>
-                  </a>
-                </div>
+                  </Link>
+                </div> */}
                 <div className="d-flex flex-row justify-content-between">
                   <div>
                     <div>客製化模型記錄</div>
                     <div></div>
                   </div>
-                  <a href="/Menu">
+                  <Link to="/personal-model-list">
                     <button className="btn btn-lg btn-main ">顯示列表</button>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
