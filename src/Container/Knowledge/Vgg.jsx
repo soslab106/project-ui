@@ -3,8 +3,8 @@ import axios from "axios";
 
 class Vgg extends Component {
   state={
-    label1:[],
-    label2:[]
+    label1: undefined,
+    label2: undefined,
   }
 
   getAPI = ()=>{
@@ -14,7 +14,13 @@ class Vgg extends Component {
     formData.append("pjName", 'test');
     formData.append("learningRate", 0.0001);
     formData.append("epoch", 10);
-    formData.append("trainingData", trainingData);
+    
+    for (const key of Object.keys(this.state.label1)) {
+      formData.append("train_label1", this.state.label1[key]);
+    }
+    for (const key of Object.keys(this.state.label2)) {
+      formData.append("train_label2", this.state.label2[key]);
+    }
 
 
     axios
@@ -34,15 +40,19 @@ class Vgg extends Component {
 
 
   handlechange = (e)=>{
-    this.setState({label1:e.target.files})
-  }
+    this.setState({ label1:e.target.files })
+  };
+  handlechange2 = (e)=>{
+    this.setState({ label2:e.target.files })
+  };
 
   render() {
     return (
       <div className="container expand-full">
 
         <input type='file' multiple onChange={this.handlechange}/>
-        <br/><br/><br/><br/><input type='file' multiple onChange={this.handlechange}/>
+        <br/><br/><br/><br/>
+        <input type='file' multiple onChange={this.handlechange2}/>
         <button onClick={this.getAPI}>submit</button>
         {/*<div className="d-flex">
           <div className="col-8">
