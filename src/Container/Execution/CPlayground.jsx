@@ -8,7 +8,7 @@ class CPlayground extends Component {
   state = {
     file: "",
     modelName: "VGG16",
-    modelList: ["vgg", "yolo", "cyclegan", "facenet"], 
+    modelList: ["vgg", "yolo", "cyclegan", "facenet"],
     customModelList: [], //get from api
     api: "http://140.119.19.99:8000/upload/",
     description: "",
@@ -28,9 +28,9 @@ class CPlayground extends Component {
   componentDidMount() {
     this.changeModelsState(this.props.match.params.model);
 
-    if (!localStorage.getItem('token') && this.state.modelName) {
-      window.location.href = '/signin'
-      alert('請先登入再進行測試呦!')
+    if (!localStorage.getItem("token") && this.state.modelName) {
+      window.location.href = "/signin";
+      alert("請先登入再進行測試呦!");
     }
 
     //get customModelList
@@ -143,8 +143,7 @@ class CPlayground extends Component {
         this.setState(
           {
             modelName: modelParam,
-            description:
-              "此模型為客製化模型，模型前半由ImageNet Dataset訓練",
+            description: "此模型為客製化模型，模型前半由ImageNet Dataset訓練",
             input: "一張含有特定物體的圖片",
             output: "可能性前五高的類別，及其機率",
             file: undefined,
@@ -286,7 +285,13 @@ class CPlayground extends Component {
   };
 
   renderResult = (modelName) => {
-    if (modelName === "VGG16") {
+    if (
+      !(
+        modelName === "CycleGAN" ||
+        modelName === "YOLOv3" ||
+        modelName === "FaceNet"
+      )
+    ) {
       return (
         <div className="box p-3">
           {this.state.result.map((each) => {
