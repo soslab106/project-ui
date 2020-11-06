@@ -23,7 +23,7 @@ class Profile extends Component {
             <div className="col-4 d-flex flex-column align-items-center">
               <img src="/images/user.png" className="profile-img mb-3" />
               <div className="d-flex flex-column align-items-center justify-content-center">
-                <div>王曉明</div>
+                <div>{this.state.username}</div>
                 <div>上次登入時間 2020/2/2</div>
               </div>
             </div>

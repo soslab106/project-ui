@@ -42,7 +42,7 @@ class SignIn extends Component {
         window.location.href = "/";
       })
       .catch((error) => {
-        console.error(error);
+      console.error(error);
         alert("登入失敗，請檢查填寫欄位！");
       });
   };
