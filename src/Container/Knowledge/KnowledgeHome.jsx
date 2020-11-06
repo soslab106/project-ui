@@ -143,6 +143,7 @@ class KnowledgeHome extends Component {
             desc:
               "圍棋人工智慧AlphaGo在前年（2017）以連三勝的戰績打敗人類棋王， 轟動了整個世界。另一方面，人們也開始思考人工智慧技術在金融界的應用，如何幫助使用者更方便快速地使用服務、減少人力成本？...",
             id: 0,
+            eventKey: "finance",
           },
           {
             title: "人工智慧與金融應用 - IBM",
@@ -152,6 +153,7 @@ class KnowledgeHome extends Component {
             desc:
               "現今消費者自我意識增強，期望企業可瞭解個體差異，以提供更貼近個人化需求之服務，若企業僅以人工預設的簡單規則、制式化的輪播廣告方式行銷，已無法滿足消費者所需...",
             id: 1,
+            eventKey: "finance",
           },
           {
             title: "攜手AI擁抱創新路 四大應用讓台灣金融業改頭換面",
@@ -161,6 +163,7 @@ class KnowledgeHome extends Component {
             desc:
               "金融科技的應用，應以客戶需求為依歸，而不是為了實驗金融科技而應用科技。面對快速變遷，金融機構需要關注人工智慧發展趨勢，攜手科技公司，提升人工智慧相關金融應用知識，以激發創新應用。...",
             id: 2,
+            eventKey: "finance",
           },
           {
             title: "央行示警：AI 運用於金融科技有六大潛在風險",
@@ -170,6 +173,7 @@ class KnowledgeHome extends Component {
             desc:
               "AI是金融科技的先進技術之一，但 AI 運用於金融服務亦存在六大潛在風險，包含道德問題、隱私保護問題、市場波動性提高、市場價格操縱、集中委外風險以及「黑箱」決策....",
             id: 3,
+            eventKey: "finance",
           },
         ],
       },
@@ -187,6 +191,7 @@ class KnowledgeHome extends Component {
             desc:
               "雖然工業4.0已經從概念走向應用，但多數人談論時，依然把焦點放在技術，這會限縮它的效益。",
             id: 0,
+            eventKey: "industry",
           },
           {
             title: "工業4.0大全，從淺到深一篇搞懂它！",
@@ -196,6 +201,7 @@ class KnowledgeHome extends Component {
             desc:
               "生產一個客製化的產品，需要多久時間？答案是58秒。  這並非未來，在工業4.0的時代，是現在進行式。",
             id: 1,
+            eventKey: "industry",
           },
           {
             title: "工業4.0──58秒的競爭",
@@ -205,6 +211,7 @@ class KnowledgeHome extends Component {
             desc:
               "2016年中，天下再報導工業4.0，這次前進六個國家、九個現場，親訪德國的兩位大師，帶回「工業4.0不是自動化，而是整條價值鏈全週期管理與服務」的新觀念。",
             id: 2,
+            eventKey: "industry",
           },
           {
             title: "善用IAI工業人工智慧 打造無憂工廠",
@@ -213,6 +220,7 @@ class KnowledgeHome extends Component {
             desc:
               "人工智慧(AI)的概念，近年來隨著各產業與領域中的普及應用導入，已經越來越為人所知。相較於人工智慧，更專注應用在工業生產領域中的工業人工智慧(IAI)則就相對讓人感到陌生。",
             id: 3,
+            eventKey: "industry",
           },
         ],
       },
@@ -229,6 +237,7 @@ class KnowledgeHome extends Component {
             desc:
               "2016年Google旗下研發機構發表第一篇藉由機器深度學習，早期診斷糖尿病視網膜病變的論文，將人工智慧於醫療之應用，推向新的紀元（PingWest, 2017）。...",
             id: 0,
+            eventKey: "med",
           },
           {
             title: "現階段AI人工智慧在醫療領域的4大應用",
@@ -238,6 +247,7 @@ class KnowledgeHome extends Component {
             desc:
               "AI人工智慧最初在科幻小說或電影中登場，被賦予了很多的科幻和未來的想像；而今AI人工智慧蓬勃發展，應用在生活各個領域，科學家也想辦法開發人工智慧應用於解決醫療領域的問題，希望能夠幫助患者診斷疾病或治療。...",
             id: 1,
+            eventKey: "med",
           },
           {
             title:
@@ -248,6 +258,7 @@ class KnowledgeHome extends Component {
             desc:
               "隨著現代人生活步調越來越快，大海撈針式的查詢功能已經無法滿足使用者需求...",
             id: 2,
+            eventKey: "med",
           },
           {
             title: "AI風潮來襲！人工智慧的醫療照護應用",
@@ -257,6 +268,7 @@ class KnowledgeHome extends Component {
             desc:
               "近年來，國內外積極推出智慧健康照護機器人，銀髮族藉由聲控方式與機器人對話，從對話與數據傳輸進行遠端諮詢與簡單健康檢測...",
             id: 3,
+            eventKey: "med",
           },
         ],
       },
@@ -274,6 +286,7 @@ class KnowledgeHome extends Component {
             desc:
               "從物聯網概念的誕生，到 5G 行動通訊技術、人工智慧等新科技的高速發展，各種創新應用紛紛問世...",
             id: 0,
+            eventKey: "iot",
           },
           {
             title: "智慧城市十年藍圖，AIoT 的應用趨勢與挑戰",
@@ -283,6 +296,7 @@ class KnowledgeHome extends Component {
             desc:
               "結合人工智慧與物聯網兩大技術的「智慧物聯網」，在 5G 時代下將成為更熱門、且落實於人們生活當中的科技名詞。當 AIoT 技術帶來更高效的物連網運作，透過人工智慧即時分析數據，將之轉化為實用資訊與具體決策...",
             id: 1,
+            eventKey: "iot",
           },
           {
             title: "AIoT：未來 20 年最強的產業顛覆力",
@@ -292,6 +306,7 @@ class KnowledgeHome extends Component {
             desc:
               "AIoT 可說是眾多科技關鍵字裡，改變世界力量最強、產值也最大的現在進行式之一。顧名思義，AIoT 是人工智慧（AI） 加上物聯網（IoT）混合產出的架構...",
             id: 2,
+            eventKey: "iot",
           },
           {
             title: "什麼是AIoT？人工智慧照亮IoT進化路，推動3大關鍵應用領域",
@@ -301,6 +316,7 @@ class KnowledgeHome extends Component {
             desc:
               "IoT（物聯網）導入AI（人工智慧）成為AIoT（人工智慧物聯網），許多家電產品、工廠生產都有了「智慧」，究竟各家大廠口中的智慧家居升級是什麼概念呢？AIoT又憑何本事滿足人類需求？...",
             id: 3,
+            eventKey: "iot",
           },
         ],
       },
@@ -331,7 +347,6 @@ class KnowledgeHome extends Component {
   renderTeachings = (teaches) => {
     let tempTeaching = []; //teaches
     // console.log(Math.ceil(teaches.length / 3));
-    console.log(this.props);
     for (let i = 0; i < Math.ceil(teaches.length / 3); i++) {
       // console.log(i);
       let children = teaches.slice(i * 3, i * 3 + 3);
@@ -344,7 +359,6 @@ class KnowledgeHome extends Component {
           <div>{child.desc}</div>
         </div>
       ));
-      console.log(children.length);
       if (children.length === 2) {
         children.push(<ArticleCard visibility="hidden" />);
       }

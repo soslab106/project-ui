@@ -1,14 +1,17 @@
 import React, { Component } from "react";
-import ArticleCard from "../../Components/ArticleCard"
+import ArticleCard from "../../Components/ArticleCard";
 
 class NewsTab extends Component {
   renderNews = () => {
     let tempNews = []; //this.props.News
     // console.log(Math.ceil(this.props.News.length / 3));
-    console.log(this.props)
+    console.log(this.props);
     for (let i = 0; i < Math.ceil(this.props.news.length / 3); i++) {
       // console.log(i);
       let children = this.props.news.slice(i * 3, i * 3 + 3);
+      children.forEach((e) => {
+        console.log(e.title, e.eventKey);
+      });
       children = children.map((child) => (
         <ArticleCard
           title={child.title}
@@ -16,6 +19,7 @@ class NewsTab extends Component {
           date={child.date}
           desc={child.desc}
           newsId={child.id}
+          eventKey={child.eventKey}
         />
       ));
       console.log(children.length);
@@ -38,7 +42,7 @@ class NewsTab extends Component {
   render() {
     return (
       <div className="pt-5 px-5 pb-3 news-tab">
-        <div className='secondary-title'>{this.props.title}</div>
+        <div className="secondary-title">{this.props.title}</div>
         {this.renderNews()}
       </div>
     );
