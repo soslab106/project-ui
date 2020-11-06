@@ -12,7 +12,7 @@ function LabelandImage() {
 
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [finished, setFinished] = useState(true);
+  const [finished, setFinished] = useState(false);
   const [label, setlabel] = useState("");
   const [labelList, setlabelList] = useState([]);
   const [imageList, setimageList] = useState([]);
@@ -284,7 +284,7 @@ function LabelandImage() {
               </span>
             </div>
             <div className="content-color">Labels: {labelListHtml()}</div>
-            <Link to={{pathname:'/execution'}}><button className="btn-main btn">前往使用</button></Link>
+            <Link to={{pathname:'/execution'}}><button className="btn-main btn mt-4">前往使用</button></Link>
           </div>
         </div>
     </div>
