@@ -71,17 +71,18 @@ function LabelandImage() {
     formData.append("pjName", location.state["pjName"]);
     formData.append("learningRate", location.state["learningRate"]);
     formData.append("epoch", location.state["epoch"]);
-    let trainingData = {};
-    imageList.forEach((e) => (trainingData[Object.keys(e)] = Object.values(e)));
-
-    formData.append("trainingData", trainingData);
-
+    imageList.forEach((each) => {
+      for (const value of Object.values(each)[0]) {
+        const train_name = `train_${Object.keys(each)[0]}`;
+        formData.append(train_name, value);
+      }
+    });
     if (
-      Object.keys(trainingData).length === 0 &&
-      trainingData.constructor === Object
+      // Object.keys(trainingData).length === 0 &&
+      // trainingData.constructor === Object
+      Array.isArray(imageList) &&
+      imageList.length
     ) {
-      alert("未上傳圖片！");
-    } else {
       axios
         .post("http://140.119.19.99:8000/upload/trans/", formData, {
           headers: {
@@ -95,6 +96,8 @@ function LabelandImage() {
         .catch((error) => {
           console.log(error.response.headers);
         });
+    } else {
+      alert("未上傳圖片！");
     }
   }
 
