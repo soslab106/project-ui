@@ -284,7 +284,7 @@ function LabelandImage() {
               </span>
             </div>
             <div className="content-color">Labels: {labelListHtml()}</div>
-            <Link to={{'/execution'}}><button className="btn-main btn">前往使用</button></Link>
+            <Link to={{pathname:'/execution'}}><button className="btn-main btn">前往使用</button></Link>
           </div>
         </div>
     </div>
