@@ -4,16 +4,15 @@ import { Link } from "react-router-dom";
 class ArticleCard extends Component {
   render() {
     return (
-    //   <Link
-    //     to={{
-    //       pathname: "/new-model",
-    //       state: {
-    //         pjName: pjName,
-    //         learningRate: learningRate,
-    //         epoch: epoch,
-    //       },
-    //     }}
-    //   >
+      <Link
+        to={{
+          pathname: "/newsPage",
+          state: {
+            newsId: this.props.newsId,
+            eventKey: this.props.eventKey,
+          },
+        }}
+      >
         <div
           className="card-select"
           style={{ height: "400px", visibility: this.props.visibility }}
@@ -32,7 +31,7 @@ class ArticleCard extends Component {
             <div style={{ fontSize: "14px" }}>{this.props.desc}</div>
           </div>
         </div>
-    //   </Link>
+      </Link>
     );
   }
 }
