@@ -285,13 +285,7 @@ class CPlayground extends Component {
   };
 
   renderResult = (modelName) => {
-    if (
-      !(
-        modelName === "CycleGAN" ||
-        modelName === "YOLOv3" ||
-        modelName === "FaceNet"
-      )
-    ) {
+    if (model === "VGG16") {
       return (
         <div className="box p-3">
           {this.state.result.map((each) => {
@@ -309,7 +303,11 @@ class CPlayground extends Component {
           })}
         </div>
       );
-    } else {
+    } else if (
+      modelName === "CycleGAN" ||
+      modelName === "YOLOv3" ||
+      modelName === "FaceNet"
+    ) {
       return (
         <React.Fragment>
           <img
@@ -319,6 +317,8 @@ class CPlayground extends Component {
           />
         </React.Fragment>
       );
+    } else {
+    return <React.Fragment>{}</React.Fragment>
     }
   };
 

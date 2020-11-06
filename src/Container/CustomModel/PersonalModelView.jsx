@@ -70,7 +70,7 @@ class PersonalModelView extends Component {
           <div>{model.name}</div>
           <div>{model.date}</div>
           <div>VGG16</div>
-          <Link to={{pathname: '/execution'}}><div><button className='btn btn-main'>前往使用</button></div></Link>
+          <Link to={{pathname: '/cp-vgg'}}><div><button className='btn btn-main'>前往使用</button></div></Link>
         </div>
       </>
     ));
