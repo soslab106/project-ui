@@ -33,6 +33,8 @@ class App extends Component {
                 .then(json => {
                     console.log(json)
                     if (json.username) {
+                        localStorage.setItem("email", json.email);
+                        localStorage.setItem("username", json.username);
                         this.setState({ username: json.username });
                     } else {
                         this.logout();
