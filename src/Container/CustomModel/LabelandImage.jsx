@@ -274,7 +274,6 @@ function LabelandImage() {
 
   const finishedPage = (
     <div className="background-close d-flex justify-content-center align-items-center">
-      <div className="label-modal" onClick={(e) => this.modalClick(e)}>
         <div className="d-flex justify-content-between">
           <div className="box w-50 h-50 text-center p-3">
             <div className="main-title">訓練完成！</div>
@@ -287,7 +286,6 @@ function LabelandImage() {
             <div className="content-color">Labels: {labelListHtml()}</div>
           </div>
         </div>
-      </div>
     </div>
   );
 
