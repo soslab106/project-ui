@@ -108,7 +108,7 @@ class NavBar extends Component {
               </li>
 
               <li className="nav-item dropdown mr-3">
-                <a className="nav-link" href="/forum" role="button">
+                <a className="nav-link" href="http://140.119.19.99:8000/" role="button">
                   HowAI 論壇
                 </a>
               </li>

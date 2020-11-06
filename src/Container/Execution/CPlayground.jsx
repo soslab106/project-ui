@@ -144,7 +144,7 @@ class CPlayground extends Component {
           {
             modelName: modelParam,
             description:
-              "此模型使用ImageNet Dataset訓練，可以辨識一千種物體，詳細類別請查看以下連結",
+              "此模型為客製化模型，模型前半由ImageNet Dataset訓練",
             input: "一張含有特定物體的圖片",
             output: "可能性前五高的類別，及其機率",
             file: undefined,

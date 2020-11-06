@@ -14,6 +14,7 @@ class NewsTab extends Component {
           title={child.title}
           imgPath={child.imgPath}
           date={child.date}
+          desc={child.desc}
         />
       ));
       console.log(children.length);

@@ -29,8 +29,7 @@ body {
   padding: 3px 10px !important;
 }
 
-.btn-personal,
-.btn-model {
+.btn-personal, .btn-model {
   border-radius: 80px;
   border: solid 1.25px #50eaff;
   color: #50eaff;
@@ -62,8 +61,7 @@ body {
   height: 40px;
 }
 
-.btn-personal:hover,
-.btn-model:hover {
+.btn-personal:hover, .btn-model:hover {
   background-color: #50eaff;
 }
 
@@ -74,8 +72,7 @@ body {
   color: #50eaff;
 }
 
-.btn-previous:hover,
-.btn-recoglist:hover {
+.btn-previous:hover, .btn-recoglist:hover {
   background-color: #fff;
 }
 
@@ -165,9 +162,7 @@ img {
   color: #dbe1e2;
 }
 
-.label-modal,
-.adv-modal,
-.plant-modal {
+.label-modal, .adv-modal, .plant-modal {
   background-color: #fff;
   position: fixed;
   width: 50%;
@@ -186,8 +181,7 @@ img {
   height: 80%;
 }
 
-.pointer,
-.close-modal:hover {
+.pointer, .close-modal:hover {
   cursor: pointer;
 }
 
@@ -317,8 +311,7 @@ a:hover {
   color: #fdba4e;
 }
 
-#model-list,
-.box {
+#model-list, .box {
   border-radius: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
   background: #fff;
@@ -326,7 +319,7 @@ a:hover {
   /* height: 612px; */
 }
 
-#model-list > div:nth-child(1) {
+#model-list>div:nth-child(1) {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   background: rgba(94, 215, 223, 0.5);
@@ -335,6 +328,8 @@ a:hover {
 .article-card-img {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  height: 150px;
+  background-size: contain !important;
 }
 
 #add-model {
@@ -369,8 +364,7 @@ a:hover {
   width: 100%;
 }
 
-.result-preview-text th,
-td {
+.result-preview-text th, td {
   padding-right: 15px;
   padding-bottom: 5px;
 }
@@ -421,8 +415,7 @@ label {
   transform: rotate(45deg);
 }
 
-.nav-tabs .nav-item.show .nav-link,
-.nav-tabs .nav-link.active {
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
   color: #ffffff !important;
   background-color: #29b4be;
   /*要改的地方 #5f7171*/
@@ -430,8 +423,7 @@ label {
   /* border-radius: 10px!important; */
 }
 
-.nav-tabs .nav-link:focus,
-.nav-tabs .nav-link:hover {
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
   border-color: #e9ecef #e9ecef #dee2e6;
   /* border-radius: 10px!important; */
 }
@@ -511,9 +503,7 @@ label {
   box-sizing: content-box;
 }
 
-.labellist-label,
-.add-label,
-.plant {
+.labellist-label, .add-label, .plant {
   padding: 5px 20px;
 }
 
@@ -537,12 +527,12 @@ label {
   cursor: pointer;
 }
 
-#labelandimage-left > div {
+#labelandimage-left>div {
   height: 600px;
   overflow: scroll;
 }
 
-#labelandimage-right > div {
+#labelandimage-right>div {
   height: 525px;
   overflow: scroll;
 }
@@ -628,7 +618,7 @@ a {
   margin-bottom: 10px;
 }
 
-.setting-info > div {
+.setting-info>div {
   margin-left: 20px;
   margin-right: 20px;
   color: #5f7171;
@@ -673,6 +663,7 @@ a {
   box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.16);
   color: #f6f8f8 !important;
 }
+
 .profile-img {
   width: 80%;
 }
@@ -684,13 +675,13 @@ a {
   padding: 50px;
 }
 
-.profile-info > div {
+.profile-info>div {
   border-bottom: 1px solid #707070;
   padding-bottom: 10px;
   padding-top: 30px;
 }
 
-.profile-info > div:last-child {
+.profile-info>div:last-child {
   border: 0;
 }
 
@@ -724,3 +715,4 @@ td {
 .plant input {
   color: #000;
 }
+
