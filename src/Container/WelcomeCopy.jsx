@@ -39,31 +39,32 @@ class WelcomeCopy extends Component {
             了解人工智慧不同面向！
           </div>
           <div className="d-flex justify-content-between align-items-center pb-5 my-5">
-            
             <CardSelect
               imgpath="/images/welcome/execute.png"
               icontitle="執行模型"
               iconsubtitle="想知道當代模型具有那些功能，並且有哪些結果嗎，快來體驗看看吧！"
-              url='/execution'
+              url="/execution"
             />
             <CardSelect
               imgpath="/images/welcome/custom.png"
               icontitle="客製化模型"
               iconsubtitle="還在苦惱訓練模型困難重重嗎？只要準備好資料集，就可以輕鬆訓練自己的模型！"
-              url='/custom'
+              url="/custom"
             />
             <CardSelect
               imgpath="/images/welcome/books.png"
               icontitle="知識補充站"
               iconsubtitle="當你對人工智慧技術知識和專有名詞感到頭痛的時候，快探索網頁來緩解你的痛"
-              url='/knowledge'
+              url="/knowledge"
             />
-            <CardSelect
-              imgpath="/images/welcome/forum.png"
-              icontitle="HowAI 論壇"
-              iconsubtitle="人工智慧知識交流問答區，快來與各方高手互相切磋討論吧！"
-              url='forum'
-            />
+            <a href="http://140.119.19.99:8000">
+              <CardSelect
+                imgpath="/images/welcome/forum.png"
+                icontitle="HowAI 論壇"
+                iconsubtitle="人工智慧知識交流問答區，快來與各方高手互相切磋討論吧！"
+                url=""
+              />
+            </a>
           </div>
         </div>
       </React.Fragment>

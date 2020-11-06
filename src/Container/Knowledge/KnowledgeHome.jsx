@@ -465,7 +465,7 @@ class KnowledgeHome extends Component {
           <div className="my-5 py-5" id="evaluate">
             <div className="secondary-title my-5">學習成效評估</div>
             <div className="d-flex justify-content-around align-items-center">
-              <Link className="w-100 text-center" to={{ pathname: "" }}>
+              <Link className="w-100 text-center" to={{ pathname: "/exam" }}>
                 <button className="btn-main w-75" style={{ height: "80px" }}>
                   EASY
                   <br />

@@ -108,7 +108,11 @@ class NavBar extends Component {
               </li>
 
               <li className="nav-item dropdown mr-3">
-                <a className="nav-link" href="http://140.119.19.99:8000/" role="button">
+                <a
+                  className="nav-link"
+                  href="http://140.119.19.99:8000/"
+                  role="button"
+                >
                   HowAI 論壇
                 </a>
               </li>
@@ -130,7 +134,7 @@ class NavBar extends Component {
                     className="dropdown-menu bg-dark text-white"
                     aria-labelledby="navbarDropdown"
                   >
-                    <a className="dropdown-item text-white" href="/settings">
+                    <a className="dropdown-item text-white" href="/profile">
                       個人設定
                     </a>
                     <a
@@ -142,20 +146,20 @@ class NavBar extends Component {
                   </div>
                 </li>
               ) : (
-                  <React.Fragment>
-                    <li className="nav-item mr-3">
-                      <a className="nav-link" href="/signin">
-                        登入
+                <React.Fragment>
+                  <li className="nav-item mr-3">
+                    <a className="nav-link" href="/signin">
+                      登入
                     </a>
-                    </li>
+                  </li>
 
-                    <li className="nav-item mr-3">
-                      <a className="nav-link" href="/signup">
-                        註冊
+                  <li className="nav-item mr-3">
+                    <a className="nav-link" href="/signup">
+                      註冊
                     </a>
-                    </li>
-                  </React.Fragment>
-                )}
+                  </li>
+                </React.Fragment>
+              )}
             </ul>
           </div>
         </div>
