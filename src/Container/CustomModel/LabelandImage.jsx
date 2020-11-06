@@ -269,7 +269,7 @@ function LabelandImage() {
   );
 
   function labelListHtml() {
-    return labelList.map((e) => <span className="ml-2">e</span>);
+    return labelList.map((e) => <span className="ml-2">{e}</span>);
   }
 
   const finishedPage = (
